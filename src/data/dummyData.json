@@ -1,0 +1,96 @@
+{ 
+  "users": [
+    {	
+        "id": 0,
+        "name": "admin",
+        "gender": null,
+        "days": [1, 3, 5],
+        "location": 1,
+        "expertise": 4,
+        "sport": "weightlifting",
+        "funFact": "I am an admin account"
+    },
+    {
+        "id": 1,
+	    "name": "Chris",
+	    "gender": "male",
+        "days": [1, 3, 5],
+        "location": 1,
+        "expertise": 4,
+        "sport": "weightlifting",
+        "funFact": "my favorite day is leg day"
+    },
+    {
+	    "id": 2,
+	    "name": "Claire",
+	    "gender": "female",
+        "days": [1, 3, 5],
+        "location": 1,
+        "expertise": 2,
+        "sport": "weightlifting",
+        "funFact": "bench: 225"
+    },
+    {
+	    "id": 3,
+	    "name": "Amy",
+	    "gender": "female",
+        "days": [2, 4, 5],
+        "location": 0,
+        "expertise": 3,
+        "sport": "pickleball",
+        "funFact": "i love to crochet"
+    },
+    {
+	    "id": 4,
+	    "name": "Maximus", 
+	    "gender": "male",
+        "days": [1,2,4],
+        "location": 0,
+        "expertise": 3,
+        "sport": "basketball",
+        "funFact": "I grow potatoes"
+        
+    },
+    {
+	    "id": 5, 
+        "name": "Joe",
+	    "gender": "male",
+        "days": [1, 3, 5],
+        "location": 1,
+        "expertise": 3,
+        "sport": "basketball",
+        "funFact": "ball is life"
+    },
+    {
+	    "id": 6,
+	    "name": "Jill",
+	    "gender": "female", 
+        "days": [6, 7],
+        "location": 1,
+        "expertise": 5,
+        "sport": "Yoga",
+        "funFact": ""
+    },
+    {
+	    "id": 7, 
+        "name": "Patrick",
+        "gender": "male", 
+        "days": [3, 5],
+        "location": 0,
+        "expertise": 1, 
+        "sport": "running",
+        "funFact": "I love dogs and work at a dog shelter!"
+    },
+    {
+	    "id": 7,
+        "name": "Linus",
+  	    "gender": "male",
+  	    "days": [6,7],
+ 	    "location": 1,
+  	    "expertise": 3,
+  	    "sport": "swimming",
+  	    "funFact": "My name is Linus, and I am your God"
+    }
+
+    ]
+}
