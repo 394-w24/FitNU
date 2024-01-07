@@ -20,6 +20,9 @@ const Navbar = () => {
       >
         Personalized
       </Button>
+      <Button variant="text" color="primary" onClick={() => navigate("/Chat")}>
+        Chat
+      </Button>
     </div>
   );
 };

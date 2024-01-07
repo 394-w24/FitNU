@@ -1,5 +1,5 @@
 const PersonalizedView = () => {
-  return <div></div>;
+  return <div className="personalized-view"></div>;
 };
 
 export default PersonalizedView;

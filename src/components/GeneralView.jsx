@@ -1,7 +1,5 @@
-import { defer } from "react-router-dom";
-
 const GeneralView = () => {
-  return <div></div>;
+  return <div className="general-view"></div>;
 };
 
 export default GeneralView;
