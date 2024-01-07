@@ -1,6 +1,7 @@
 .app {
+  display: flex;
   width: 375px;
   height: 1000px;
   max-width: 375px;
-  background-color: gray;
+  position: relative;
 }
