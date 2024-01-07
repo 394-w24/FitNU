@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  max-width: 360px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  z-index: 1500;
+}
+
+.header > img {
+  width: 40px;
+  height: 40px;
+}
+
+.header::before {
+  content: "";
+  width: 10%;
+  height: 100%;
+}
