@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  max-width: 360px;
   height: 70px;
   display: flex;
   align-items: center;
@@ -14,6 +15,8 @@
   height: 40px;
 }
 
-.header > h1 {
-  margin-left: 25%;
+.header::before {
+  content: "";
+  width: 10%;
+  height: 100%;
 }
