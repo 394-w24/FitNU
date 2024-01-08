@@ -9,7 +9,9 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Header />
-        <Router />
+        <div className="app-content">
+          <Router />
+        </div>
         <Navbar />
       </BrowserRouter>
     </div>
