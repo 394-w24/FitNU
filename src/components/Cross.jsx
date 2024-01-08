@@ -1,5 +1,5 @@
 import "./Check.css";
-// import nextProfile from "./ProfileHandler";
+import { nextProfile } from "./ProfileHandler";
 
 
 const Cross = () => {
@@ -14,6 +14,7 @@ const Cross = () => {
 
 function handleRejectClick() {
   alert("You clicked reject!");
+  nextProfile();
 };
 
 

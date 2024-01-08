@@ -1,6 +1,6 @@
 import DATAFILE from '../data/dummyData.json';
 
-let my_id = 1;
+let my_id = 0;
 let me = {};
 let matchablesDict = {};
 let matchables = [];
@@ -50,6 +50,7 @@ function calculateMatchingAll() {
 
     matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
 
+    matchables = matchables.filter(value => value !== my_id);
 
 
 };

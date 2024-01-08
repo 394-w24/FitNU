@@ -14,7 +14,7 @@ const Check = () => {
 
 function handleMatchClick() {
   console.log("You clicked me!");
-  nextProfile()
+  nextProfile();
 };
 
 
