@@ -37,22 +37,20 @@ function calculateMatchingAll() {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
 
 
-    console.log(1)
     let userDB = generateArrayOfDicts()
-    console.log(2)
     console.log(userDB)
-    me = userDB.find(user => user.id === my_id);
+    me = userDB.find(user => user.id == my_id);
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
     usersWithSameSport.forEach(user => {
         matchablesDict[user.id] = user.id;
     });
-    console.log(3)
 
     matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
 
-    matchables = matchables.filter(value => value !== my_id);
+    matchables = matchables.filter(value => value !== my_id.toString());
 
-
+    console.log(matchables[0])
+    console.log(matchables)
 };
 
 
@@ -72,7 +70,7 @@ function showEmpty() {
     alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
 
     seenProfiles = [];
-    nextProfile();
+    // nextProfile();
 
 }
 
