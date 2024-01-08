@@ -1,0 +1,12 @@
+.match-button .icon, .reject-button .icon {
+    width: 50px; /* or any other size */
+    height: 50px; /* or any other size */
+    cursor: pointer;
+}
+
+.match-button, .reject-button {
+    border: none;
+    background: none;
+    padding: 5px;
+    cursor: pointer;
+}
