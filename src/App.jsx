@@ -12,11 +12,6 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <div className="app-content">
-          <div className="personal">
-            <Check />
-            {/* profile image here */}
-            <Cross />
-          </div>
           <Router />
         </div>
         <Navbar />

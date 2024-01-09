@@ -3,12 +3,13 @@ import DATAFILE from '../data/dummyData.json';
 
 let my_id = 0;
 let me = {};
+let userDB = [];
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
 
 function generateArrayOfDicts() {
-    console.log(DATAFILE)
+    // console.log(DATAFILE)
 
     if (DATAFILE) {
         const arrayOfDicts = DATAFILE.users.map(user => {
@@ -38,7 +39,7 @@ function calculateMatchingAll() {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
 
 
-    let userDB = generateArrayOfDicts()
+    userDB = generateArrayOfDicts()
     // console.log(userDB)
     me = userDB.find(user => user.id == my_id);
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
@@ -58,8 +59,8 @@ function calculateMatchingAll() {
 function showCard(id) {
     // TODO: GROUP 1 needs to handle showing profile card
 
-    
-    console.log(id);  //temp call for checking that this step is reached
+
+    // console.log(id);  //temp call for checking that this step is reached
 }
 
 
@@ -77,8 +78,31 @@ function showEmpty() {
 }
 
 
+function getUser() {
+    return seenProfiles[-1];
+}
+
+
+function getUserName() {
+
+    let target = (userDB.find(user => user.id == (seenProfiles[seenProfiles.length - 1])))
+
+    if (target === undefined) {
+
+    } else {
+        console.log(target.name)
+
+        return target.name
+    }
+
+
+
+}
+
+
+
 function nextProfile() {
-    console.log("next profile initated");
+    // console.log("next profile initated");
     // something else to calcualte next user
     calculateMatchingAll();
 
@@ -98,4 +122,4 @@ function nextProfile() {
 
 
 
-export { nextProfile };
+export { getUserName, nextProfile };

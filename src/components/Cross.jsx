@@ -14,6 +14,9 @@ const Cross = () => {
 
 function handleRejectClick() {
   alert("You clicked reject!");
+
+  
+
   nextProfile();
 };
 

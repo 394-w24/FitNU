@@ -1,6 +1,5 @@
 import "./Check.css";
-import { nextProfile } from "./ProfileHandler";
-
+import { getUserName, nextProfile } from "./ProfileHandler";
 
 const Check = () => {
   return (
@@ -13,9 +12,16 @@ const Check = () => {
 };
 
 function handleMatchClick() {
-  console.log("You clicked me!");
+
+
+  let usr = getUserName();
+
+
+  alert("You sent a message to " + usr + "!");
+
   nextProfile();
 };
+
 
 
 
