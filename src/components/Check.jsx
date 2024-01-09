@@ -19,7 +19,4 @@ function handleMatchClick() {
 
 
 
-
-
-
 export default Check;

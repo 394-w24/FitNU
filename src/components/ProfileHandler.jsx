@@ -1,5 +1,6 @@
 import DATAFILE from '../data/dummyData.json';
 
+
 let my_id = 0;
 let me = {};
 let matchablesDict = {};
@@ -38,7 +39,7 @@ function calculateMatchingAll() {
 
 
     let userDB = generateArrayOfDicts()
-    console.log(userDB)
+    // console.log(userDB)
     me = userDB.find(user => user.id == my_id);
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
     usersWithSameSport.forEach(user => {
@@ -49,14 +50,15 @@ function calculateMatchingAll() {
 
     matchables = matchables.filter(value => value !== my_id.toString());
 
-    console.log(matchables[0])
-    console.log(matchables)
+    // console.log(matchables[0])
+    // console.log(matchables)
 };
 
 
 function showCard(id) {
     // TODO: GROUP 1 needs to handle showing profile card
 
+    
     console.log(id);  //temp call for checking that this step is reached
 }
 

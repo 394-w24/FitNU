@@ -12,9 +12,11 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <div className="app-content">
-          <Check />
-          {/* profile image here */}
-          <Cross />
+          <div className="personal">
+            <Check />
+            {/* profile image here */}
+            <Cross />
+          </div>
           <Router />
         </div>
         <Navbar />
