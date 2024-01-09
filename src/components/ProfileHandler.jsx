@@ -1,5 +1,6 @@
 import DATAFILE from '../data/dummyData.json';
 import ProfilePage from "./ProfilePage";
+import useProfileStore from '../utilities/store';
 
 
 let my_id = 0;
@@ -65,7 +66,8 @@ function showCard(id) {
     const user = userDB.find((user) => user.id == id);
 
     if (user) {
-        ProfilePage.changeUser(user);
+        // Update the user profile in the zustand store
+        useProfileStore.setState({ profile: user });
     } else {
         console.error('User not found with ID:', id);
     }

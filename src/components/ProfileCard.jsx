@@ -9,8 +9,7 @@ const Card = ({ profile }) => (
         <div className="card-body">
             <h5 className="card-title">{profile.name}</h5>
 
-            <p className="card-text">{profile.title}</p>
-            <p className="card-text">{formatPrice(profile)}</p>
+
         </div>
     </div>
 );

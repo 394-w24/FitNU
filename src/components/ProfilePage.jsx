@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { nextProfile } from './ProfileHandler'; // Import your ProfileHandler function
 import ProfileCard from './ProfileCard'; // Import the ProfileCard component
+import useProfileStore from '../utilities/store';
 
 const ProfilePage = () => {
-    const [currentUserId, setCurrentUser] = useState(null);
+    /*const [currentUserId, setCurrentUser] = useState(null);
 
     useEffect(() => {
         // Call nextProfile when the component mounts to initialize the first profile
@@ -23,13 +24,15 @@ const ProfilePage = () => {
         setCurrentUser(id);
     }
 
-    ProfilePage.changeUser = changeUser;
+    ProfilePage.changeUser = changeUser;*/
+
+    const { profile } = useProfileStore();
 
     return (
         <div className="Profile Page">
-            {currentUserId !== null ? (
+            {profile !== null ? (
                 <div>
-                    <ProfileCard userId={currentUserId} />
+                    <ProfileCard profile={profile} />
                 </div>
             ) : (
                 <p>No more profiles to display.</p>
