@@ -8,6 +8,8 @@ let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
 
+nextProfile();
+
 function generateArrayOfDicts() {
     // console.log(DATAFILE)
 
@@ -73,7 +75,7 @@ function showEmpty() {
     alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
 
     seenProfiles = [];
-    // nextProfile();
+    nextProfile();
 
 }
 
@@ -109,6 +111,7 @@ function nextProfile() {
     // let uid = matchables.shift()
     let uid = matchables.find(id => !seenProfiles.includes(id));
 
+    console.log(uid)
     if (uid === undefined) {
         showEmpty()
     } else {
@@ -122,4 +125,4 @@ function nextProfile() {
 
 
 
-export { getUserName, nextProfile };
+export { calculateMatchingAll, getUserName, nextProfile };
