@@ -1,5 +1,4 @@
 import DATAFILE from '../data/dummyData.json';
-import ProfilePage from "./ProfilePage";
 import useProfileStore from '../utilities/store';
 
 
