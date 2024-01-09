@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Check from "./components/Check";
 import Cross from "./components/Cross";
 import ProfilePage from "./components/ProfilePage";
+import UserProvider from './components/UserContext';
 
 const App = () => {
   return (
