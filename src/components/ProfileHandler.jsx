@@ -1,4 +1,5 @@
 import DATAFILE from '../data/dummyData.json';
+import ProfilePage from "./ProfilePage";
 
 
 let my_id = 0;
@@ -6,6 +7,10 @@ let me = {};
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
+let userDB = [];
+
+// quick fix
+nextProfile();
 
 function generateArrayOfDicts() {
     console.log(DATAFILE)
@@ -38,7 +43,7 @@ function calculateMatchingAll() {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
 
 
-    let userDB = generateArrayOfDicts()
+    userDB = generateArrayOfDicts()
     // console.log(userDB)
     me = userDB.find(user => user.id == my_id);
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
@@ -56,9 +61,15 @@ function calculateMatchingAll() {
 
 
 function showCard(id) {
-    // TODO: GROUP 1 needs to handle showing profile card
+    // Fetch user data based on the provided ID
+    const user = userDB.find((user) => user.id == id);
 
-    
+    if (user) {
+        ProfilePage.changeUser(user);
+    } else {
+        console.error('User not found with ID:', id);
+    }
+
     console.log(id);  //temp call for checking that this step is reached
 }
 

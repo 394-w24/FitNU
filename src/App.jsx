@@ -4,7 +4,8 @@ import Router from "./Router";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Check from "./components/Check";
-import Cross from "./components/Cross"
+import Cross from "./components/Cross";
+import ProfilePage from "./components/ProfilePage";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <div className="personal">
             <Check />
             {/* profile image here */}
+            <ProfilePage />
             <Cross />
           </div>
           <Router />
