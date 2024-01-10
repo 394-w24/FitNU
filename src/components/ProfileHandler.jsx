@@ -1,4 +1,5 @@
 import DATAFILE from '../data/dummyData.json';
+import useProfileStore from '../utilities/store';
 
 
 let my_id = 0;
@@ -7,6 +8,10 @@ let userDB = [];
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
+let userDB = [];
+
+// quick fix
+nextProfile();
 
 nextProfile();
 
@@ -59,10 +64,16 @@ function calculateMatchingAll() {
 
 
 function showCard(id) {
-    // TODO: GROUP 1 needs to handle showing profile card
+    // Fetch user data based on the provided ID
+    const user = userDB.find((user) => user.id == id);
 
+    if (user) {
+        // Update the user profile in the zustand store
+        useProfileStore.setState({ profile: user });
+    } else {
+        console.error('User not found with ID:', id);
+    }
 
-    // console.log(id);  //temp call for checking that this step is reached
 }
 
 
