@@ -13,7 +13,10 @@ const Cross = () => {
 };
 
 function handleRejectClick() {
-  alert("You clicked reject!");
+  alert("You rejected this match!");
+
+
+
   nextProfile();
 };
 

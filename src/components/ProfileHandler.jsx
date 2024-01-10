@@ -4,6 +4,7 @@ import useProfileStore from '../utilities/store';
 
 let my_id = 0;
 let me = {};
+let userDB = [];
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
@@ -12,8 +13,10 @@ let userDB = [];
 // quick fix
 nextProfile();
 
+nextProfile();
+
 function generateArrayOfDicts() {
-    console.log(DATAFILE)
+    // console.log(DATAFILE)
 
     if (DATAFILE) {
         const arrayOfDicts = DATAFILE.users.map(user => {
@@ -71,7 +74,6 @@ function showCard(id) {
         console.error('User not found with ID:', id);
     }
 
-    console.log(id);  //temp call for checking that this step is reached
 }
 
 
@@ -84,19 +86,43 @@ function showEmpty() {
     alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
 
     seenProfiles = [];
-    // nextProfile();
+    nextProfile();
 
 }
 
 
+function getUser() {
+    return seenProfiles[-1];
+}
+
+
+function getUserName() {
+
+    let target = (userDB.find(user => user.id == (seenProfiles[seenProfiles.length - 1])))
+
+    if (target === undefined) {
+
+    } else {
+        console.log(target.name)
+
+        return target.name
+    }
+
+
+
+}
+
+
+
 function nextProfile() {
-    console.log("next profile initated");
+    // console.log("next profile initated");
     // something else to calcualte next user
     calculateMatchingAll();
 
     // let uid = matchables.shift()
     let uid = matchables.find(id => !seenProfiles.includes(id));
 
+    console.log(uid)
     if (uid === undefined) {
         showEmpty()
     } else {
@@ -110,4 +136,4 @@ function nextProfile() {
 
 
 
-export { nextProfile };
+export { calculateMatchingAll, getUserName, nextProfile };
