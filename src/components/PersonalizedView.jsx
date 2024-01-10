@@ -7,18 +7,12 @@ import { calculateMatchingAll, nextProfile } from "./ProfileHandler";
 
 const PersonalizedView = () => {
   calculateMatchingAll()
-  return <div className="personalized-view">
-
-
-    <div>
+  return (
+    <div className="personalized-view">
+      <Cross />
       <Profile />
       <Check />
-      <Cross />
-    </div>
-
-  </div>;
+    </div>);
 };
-
-
 
 export default PersonalizedView;

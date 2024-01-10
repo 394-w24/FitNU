@@ -11,7 +11,7 @@
 
 .app-content {
   width: 100%;
-  flex-grow: 1; /* Takes up all available space */
+  flex-grow: 1; /*Takes up all available space */
   display: flex;
   align-items: center;
   justify-content: center;
