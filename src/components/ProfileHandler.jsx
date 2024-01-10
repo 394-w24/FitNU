@@ -8,7 +8,6 @@ let userDB = [];
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
-let userDB = [];
 
 // quick fix
 nextProfile();

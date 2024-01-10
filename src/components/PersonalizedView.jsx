@@ -10,9 +10,11 @@ const PersonalizedView = () => {
   return <div className="personalized-view">
 
 
-    <Check />
-    <Profile />
-    <Cross />
+    <div>
+      <Profile />
+      <Check />
+      <Cross />
+    </div>
 
   </div>;
 };
