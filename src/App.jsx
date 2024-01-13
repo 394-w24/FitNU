@@ -18,14 +18,15 @@ const App = () => {
 
   return (
     <div className="app">
-      {user ?
-        <BrowserRouter>
-          <Header />
-          <div className="app-content">
-            <Router />
-          </div>
-          <Navbar />
-        </BrowserRouter> : <LoginPage />}
+      {/* {user ? */}
+      <BrowserRouter>
+        <Header />
+        <div className="app-content">
+          <Router />
+        </div>
+        <Navbar />
+      </BrowserRouter>
+      {/* </BrowserRouter> : <LoginPage />} */}
     </div>
   );
 };
