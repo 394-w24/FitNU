@@ -1,29 +1,29 @@
 import DATAFILE from '../data/dummyData.json';
 import useProfileStore from '../utilities/store';
-import { useDbData } from "../utilities/firebase";
+import { useDbData, useDbUpdate } from "../utilities/firebase";
 
 
-let my_id = 0;
+let my_id = "0";
 let me = {};
 let userDB = [];
 let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
 
-// quick fix
-nextProfile();
 
-nextProfile();
+// quick fix
+// nextProfile();
 
 function generateArrayOfDicts() {
-    // console.log(DATAFILE)
-
+    var a = useDbData('/users/')
+    console.log(DATAFILE)
+    console.log(a[0])
     if (DATAFILE) {
         const arrayOfDicts = DATAFILE.users.map(user => {
             return {
-                id: user.id,
-                name: user.name,
-                gender: user.gender,
+                id: user.id.toString(),
+                name: user.name.toString(),
+                gender: user.gender.toString(),
                 days: user.days,
                 location: user.location,
                 expertise: user.expertise,
@@ -48,10 +48,10 @@ function calculateMatchingAll() {
 
     userDB = generateArrayOfDicts()
     // console.log(userDB)
-    me = userDB.find(user => user.id == my_id);
+    me = userDB.find(user => user.id == my_id.toString());
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
     usersWithSameSport.forEach(user => {
-        matchablesDict[user.id] = user.id;
+        matchablesDict[user.id] = user.id.toString();
     });
 
     matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
