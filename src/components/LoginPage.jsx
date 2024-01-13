@@ -1,32 +1,29 @@
 import "./LoginPage.css";
+import { signInWithGoogle } from "../utilities/firebase";
 
-// const LoginPage = () => (
-//     onClick = {() => {
-//     signInWithGoogle()
-//         .then(async ({ user }) => {
-//             await handleUserLogin(user);
-//             setLoginType("student");
-//         })
-//         .catch((error) =>
-//             alert(`Error while signing in ${error}. Please try again`)
-//         );
-// }}
+const SignInButton = () => {
+    // const [login, setLoginState] = useContext(LoginContext);
+    return (
+        <button
+            className="btn btn-dark"
+            onClick={() => {
+                signInWithGoogle();
+            }}
+        >
+            Sign in
+        </button>
+    );
+};
 
-// {/* <div className="login">
-//     <div className="login-logo">
-//         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Northwestern_wildcats_CMKY_80_100_0_0.svg" />
-//         <h1> FitNU </h1>
-//         {/* <button onClick={signInWithGoogle()
-//             .then(async ({ user }) => {
-//                 await handleUserLogin(user);
-//                 setLoginType("student");
-//             })
-//             .catch((error) =>
-//                 alert(`Error while signing in ${error}. Please try again`)
-//             );
-//       }/> */}
-//     </div>
-// </div>
-// ); */}
 
-export default LoginPage
+const LoginPage = () => (
+    <div className="login">
+        <div className="login-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Northwestern_wildcats_CMKY_80_100_0_0.svg" />
+            <h1> SportSync </h1>
+            <SignInButton></SignInButton>
+        </div>
+    </div>
+);
+
+export default LoginPage;
