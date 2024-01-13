@@ -3,6 +3,8 @@ import PersonalizedView from "./components/PersonalizedView";
 import GeneralView from "./components/GeneralView";
 import Chat from "./components/Chat";
 import PageNotFound from "./components/PageNotFound";
+import LoginPage from "./components/LoginPage";
+
 
 const Router = () => {
   return (
@@ -12,6 +14,7 @@ const Router = () => {
       <Route path="/PersonalizedView" element={<PersonalizedView />} />
       <Route path="/GeneralView" element={<GeneralView />} />
       <Route path="/Chat" element={<Chat />} />
+      <Route path="/LoginPage" element={<LoginPage />} />
     </Routes>
   );
 };

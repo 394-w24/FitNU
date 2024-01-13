@@ -1,0 +1,47 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* This ensures the aspect ratio is maintained while filling the viewport */
+}
+
+.login-logo {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo > img {
+  width: 250px;
+  height: 250px;
+  clip-path: inset(0 40px 0 0); /* top right bottom left */
+  margin-right: -30px;
+}
+
+.login-logo > h1 {
+  margin-top: 10px;
+}
+
+.login-logo > button:hover {
+  scale: 1.05;
+  cursor: pointer;
+  background-color: #4e2a84;
+}
+
+.login-logo > button {
+  width: 200px;
+  height: 200px;
+  color: white;
+  background-color: #4e2a84;
+  border-radius: 10px;
+  border: none;
+}
+
+.sign-in-button {
+  margin: 5px;
+}
