@@ -2,11 +2,16 @@ import "./LoginPage.css";
 import { auth, database } from "../utilities/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ref, child, get, set } from "firebase/database";
+import { setUID } from "./ProfileHandler";
 
 const handleUserLogin = (user) => {
     // console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
+
+    // commented out for now as to not cause crashes, but this is how we load user info via the uid
+    // setUID(uid);
+
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {

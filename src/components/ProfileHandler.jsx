@@ -10,6 +10,9 @@ let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
 
+function setUID(id) {
+    my_id = id;
+}
 
 // quick fix
 // nextProfile();
@@ -136,4 +139,4 @@ function nextProfile() {
 
 
 
-export { calculateMatchingAll, getUserName, nextProfile };
+export { setUID, calculateMatchingAll, getUserName, nextProfile };
