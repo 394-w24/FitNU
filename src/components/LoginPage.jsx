@@ -41,7 +41,6 @@ const handleUserLogin = (user) => {
         });
 };
 
-
 const signIn = () => {
     signInWithPopup(auth, new GoogleAuthProvider())
         .then((result) => {
@@ -51,8 +50,6 @@ const signIn = () => {
             alert(error.message);
         });
 };
-
-
 
 const SignInButton = () => {
     return (
