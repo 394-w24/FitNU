@@ -4,7 +4,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ref, child, get, set } from "firebase/database";
 import { setUID } from "./ProfileHandler";
 
-const handleUserLogin = (user) => {
+const handleUserLogin = (user, firstTimeUserCallBack) => {
     // console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
@@ -18,11 +18,12 @@ const handleUserLogin = (user) => {
                 console.log(`User with user_id ${uid} exists in /users.`);
             } else {
                 // new user login
+                firstTimeUserCallBack(true);
                 console.log(`User with user_id ${uid} does not exist in /users.`);
 
                 const userData = {
                     email: user.email,
-                    displayName: user.displayName,
+                    name: user.displayName,
                     photoURL: user.photoURL,
                 };
 
@@ -41,22 +42,22 @@ const handleUserLogin = (user) => {
         });
 };
 
-const signIn = () => {
+const signIn = (firstTimeUserCallBack) => {
     signInWithPopup(auth, new GoogleAuthProvider())
         .then((result) => {
-            handleUserLogin(result.user);
+            handleUserLogin(result.user, firstTimeUserCallBack);
         })
         .catch((error) => {
             alert(error.message);
         });
 };
 
-const SignInButton = () => {
+const SignInButton = ({ firstTimeUserCallBack }) => {
     return (
         <button
             className="btn btn-dark"
             onClick={() => {
-                signIn();
+                signIn(firstTimeUserCallBack);
             }}
         >
             Sign in
@@ -64,12 +65,12 @@ const SignInButton = () => {
     );
 };
 
-const LoginPage = () => (
+const LoginPage = ({ firstTimeUserCallBack }) => (
     <div className="login">
         <div className="login-logo">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Northwestern_wildcats_CMKY_80_100_0_0.svg" />
             <h1> FitNU </h1>
-            <SignInButton></SignInButton>
+            <SignInButton firstTimeUserCallBack={firstTimeUserCallBack}></SignInButton>
         </div>
     </div>
 );

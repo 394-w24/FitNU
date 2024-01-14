@@ -4,7 +4,6 @@ import { getDatabase, onValue, ref, update } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { useState, useEffect, useCallback } from "react";
-import { getDatabase, onValue, ref, update } from "firebase/database";
 
 import {
   getAuth,

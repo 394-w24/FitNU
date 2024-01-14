@@ -139,7 +139,7 @@ const CheckboxForm = ({ name, text, options, state, setState }) => {
 }
 
 
-const CreateProfile = ({ user }) => {
+const CreateProfile = ({ user, firstTimeUserCallBack }) => {
     const [state, setState] = useState({
         preferredName: '',
         sport: '',
@@ -155,36 +155,37 @@ const CreateProfile = ({ user }) => {
     const [update, result] = useDbUpdate(`users/${user}`); // if you need to include a dynamic part like userId
 
     const handleSubmit = (evt) => {
+        console.log('called handle submit');
         evt.preventDefault();
-
+        firstTimeUserCallBack(false);
         // Validate terms and conditions agreement
         /*if (!state.termsAgree) {
             alert('Please agree to the terms and conditions.');
             return;
         }*/
 
-        // Check for other validation errors
-        if (Object.values(state.errors).some(error => error !== '')) {
-            alert('Please correct the errors in the form.');
-            return;
-        }
+        // // Check for other validation errors
+        // if (Object.values(state.errors).some(error => error !== '')) {
+        //     alert('Please correct the errors in the form.');
+        //     return;
+        // }
 
-        // Convert necessary fields to numbers
-        const processedData = {
-            ...state,
-            age: Number(state.age) || 0, // Example of converting 'age' field to a number
-            // ... other fields to convert
-        };
+        // // Convert necessary fields to numbers
+        // const processedData = {
+        //     ...state,
+        //     age: Number(state.age) || 0, // Example of converting 'age' field to a number
+        //     // ... other fields to convert
+        // };
 
-        // Remove errors from the data being sent
-        delete processedData.errors;
+        // // Remove errors from the data being sent
+        // delete processedData.errors;
 
-        // Send data to Firebase
-        update(processedData).then(() => {
-            console.log('Data successfully submitted to Firebase');
-        }).catch(error => {
-            console.error('Error submitting data to Firebase:', error);
-        });
+        // // Send data to Firebase
+        // update(processedData).then(() => {
+        //     console.log('Data successfully submitted to Firebase');
+        // }).catch(error => {
+        //     console.error('Error submitting data to Firebase:', error);
+        // });
     };
 
     return (

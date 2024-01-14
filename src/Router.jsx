@@ -14,7 +14,6 @@ const Router = () => {
       <Route path="/PersonalizedView" element={<PersonalizedView />} />
       <Route path="/GeneralView" element={<GeneralView />} />
       <Route path="/Chat" element={<Chat />} />
-      <Route path="/LoginPage" element={<LoginPage />} />
     </Routes>
   );
 };
