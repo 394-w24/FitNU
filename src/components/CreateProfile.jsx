@@ -118,9 +118,7 @@ const CheckboxForm = ({ name, text, options, state, setState }) => {
         <form>
             <label>
                 Choose your preferred days:
-                <br>
-
-                </br>
+                <br />
                 {options.map((option, index) => (
                     <label key={index}>
                         <input
@@ -134,23 +132,21 @@ const CheckboxForm = ({ name, text, options, state, setState }) => {
                 ))}
                 {/* You can add more form elements here */}
             </label>
-        </form>
+        </form >
     );
 }
-
 
 const CreateProfile = ({ user, firstTimeUserCallBack }) => {
     const [state, setState] = useState({
         preferredName: '',
-        sport: '',
-        gym: '',
-        expertise: '',
+        sport: 'Cardio',
+        gym: 'SPAC',
+        expertise: 'Beginner',
         gender: '',
         funFact: '',
         days: '',
         errors: {}
     });
-
 
     const [update, result] = useDbUpdate(`users/${user}`); // if you need to include a dynamic part like userId
 
