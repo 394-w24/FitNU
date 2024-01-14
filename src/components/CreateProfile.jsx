@@ -157,7 +157,10 @@ const CreateProfile = ({ user, firstTimeUserCallBack }) => {
     const handleSubmit = (evt) => {
         console.log('called handle submit');
         evt.preventDefault();
-        firstTimeUserCallBack(false);
+        console.log(state);
+
+        //firstTimeUserCallBack(false);
+
         // Validate terms and conditions agreement
         /*if (!state.termsAgree) {
             alert('Please agree to the terms and conditions.');
@@ -227,7 +230,7 @@ const CreateProfile = ({ user, firstTimeUserCallBack }) => {
                 { value: 'sa', label: 'Saturday' },
                 { value: 'su', label: 'Sunday' },
             ]} state={state} setState={setState} />
-            <InputField name="Fun" text="Fun Fact" state={state} setState={setState} />
+            <InputField name="funFact" text="Fun Fact" state={state} setState={setState} />
             <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
         </form>
     );
