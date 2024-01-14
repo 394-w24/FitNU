@@ -20,7 +20,8 @@ const App = () => {
             <Router />
           </div>
           <Navbar />
-        </BrowserRouter> : <LoginPage />}
+        </BrowserRouter>
+        : <LoginPage />}
     </div>
   );
 };
