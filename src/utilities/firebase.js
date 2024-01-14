@@ -3,7 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { getDatabase, onValue, ref, update } from "firebase/database";
 
 import {
   getAuth,
@@ -28,6 +29,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
+const database = getDatabase(firebase);
 // const analytics = getAnalytics(app);
 
 export const signInWithGoogle = () =>

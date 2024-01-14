@@ -19,7 +19,7 @@ const PersonalizedView = () => {
           <Profile />
           <Check />
         </div>
-        : <CreateProfile />}
+        : <CreateProfile user={user} />}
 
     </div>);
 };
