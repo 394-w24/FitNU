@@ -5,12 +5,12 @@ import { ref, child, get, set } from "firebase/database";
 import { setUID } from "./ProfileHandler";
 
 const handleUserLogin = (user) => {
-    // console.log(user);
+    console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
     // commented out for now as to not cause crashes, but this is how we load user info via the uid
-    // setUID(uid);
+    setUID(uid);
 
     get(usersRef)
         .then((snapshot) => {
@@ -22,7 +22,7 @@ const handleUserLogin = (user) => {
 
                 const userData = {
                     email: user.email,
-                    displayName: user.displayName,
+                    name: user.displayName,
                     photoURL: user.photoURL,
                 };
 
