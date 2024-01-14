@@ -39,7 +39,7 @@ function generateArrayOfDicts() {
         });
 
         // Print or use the generated array of dictionaries
-        return (arrayOfDicts);
+        userDB = arrayOfDicts;
     }
 }
 
@@ -52,7 +52,7 @@ function calculateMatchingAll() {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
 
 
-    userDB = generateArrayOfDicts()
+    generateArrayOfDicts()
     // console.log(userDB)
     if (userDB) {
         me = userDB.find(user => user.id.toString() == my_id.toString());

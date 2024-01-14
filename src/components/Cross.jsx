@@ -3,6 +3,7 @@ import { nextProfile } from "./ProfileHandler";
 
 
 const Cross = () => {
+
   return (
     <div className="matchButton">
       <button onClick={handleRejectClick} class="reject-button">
@@ -16,6 +17,7 @@ function handleRejectClick() {
   alert("You rejected this match!");
 
 
+  calculateMatchingAll()
 
   nextProfile();
 };

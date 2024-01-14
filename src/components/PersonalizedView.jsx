@@ -6,6 +6,7 @@ import Profile from "./Profile";
 import { calculateMatchingAll, nextProfile } from "./ProfileHandler";
 
 const PersonalizedView = () => {
+  console.log("a")
   calculateMatchingAll()
   return (
     <div className="personalized-view">
