@@ -8,30 +8,39 @@ import { useAuthState, useDbData } from "../utilities/firebase";
 
 const PersonalizedView = () => {
   const [user] = useAuthState();
-  const userId = user ? user : null; // Or however you get the user's ID
-  const [userData, error] = userId ? useDbData(`users/${userId}`) : [null, null];
-  const [isLoading, setIsLoading] = useState(true);
+  const [userData, loading, error] = useDbData(user ? `users/${user.uid}` : null);
+  const [hasProfile, setHasProfile] = useState(false);
 
   useEffect(() => {
-    if (userData || error) {
-      setIsLoading(false);
+    if (!loading) {
+      if (userData) {
+        setHasProfile(true);
+      } else if (error) {
+        // Handle the error appropriately
+        console.error(error);
+      }
     }
-  }, [userData, error]);
+  }, [userData, loading, error]);
 
-  if (!user || isLoading) {
+  if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (!user) {
+    return <div>User not authenticated</div>;
   }
 
   return (
     <div className="personalized-view">
-      {userData ?
+      {hasProfile ? (
         <div>
           <Cross />
-          <Profile />
+          <Profile profileData={userData} />
           <Check />
         </div>
-        : <CreateProfile user={user} />
-      }
+      ) : (
+        <CreateProfile user={user} />
+      )}
     </div>
   );
 };
