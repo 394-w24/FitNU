@@ -70,6 +70,13 @@ export const useDbData = (path) => {
   return [data, error];
 };
 
+const makeResult = (error) => {
+  const timestamp = Date.now();
+  const message =
+    error?.message || `Updated: ${new Date(timestamp).toLocaleString()}`;
+  return { timestamp, error, message };
+};
+
 export const useDbUpdate = (path) => {
   const [result, setResult] = useState();
   const updateData = useCallback(

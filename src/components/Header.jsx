@@ -1,10 +1,13 @@
 import "./Header.css";
+import { signOut } from "../utilities/firebase";
 
-const Header = () => {
+
+const Header = ({ user }) => {
   return (
     <div className="header">
+      <button style={{ width: "50px", height: "50px" }} onClick={() => signOut()} >Sign Out</button>
       <h1>FitNU</h1>
-      <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" />
+      <img src={user.photoURL} />
     </div>
   );
 };

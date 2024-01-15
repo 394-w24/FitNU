@@ -20,13 +20,12 @@ const App = () => {
     <div className="app">
       {user ?
         firstTimeUser ?
-          <CreateProfile firstTimeUserCallBack={setFirstTimeUser} /> :
+          <CreateProfile user={user} firstTimeUserCallBack={setFirstTimeUser} /> :
           <BrowserRouter>
-            <Header />
+            <Header user={user} />
             <div className="app-content">
               <Router />
             </div>
-            <button style={{ width: "50px", height: "50px" }} onClick={() => signOut()} >Sign Out</button>
             <Navbar />
           </BrowserRouter>
         : <LoginPage firstTimeUserCallBack={setFirstTimeUser} />}

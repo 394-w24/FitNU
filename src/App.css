@@ -1,5 +1,4 @@
 .app {
-  overflow: auto;
   display: flex;
   flex-direction: column; /* Change to column to stack children vertically */
   width: 365px;
@@ -8,6 +7,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .app-content {

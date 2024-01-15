@@ -379,6 +379,7 @@
 
 import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase';
+import "./CreateProfile.css";
 
 function validateField(key, value) {
     const validators = {
@@ -461,111 +462,125 @@ function CheckboxGroup({ label, name, options, state, setState }) {
     );
 }
 
+const mapDaysToArr = (days) => {
+    return (
+        Object.entries(days).map(([key, val]) => val ? Number(key) : -1).filter(day => day !== -1)
+    );
+
+}
+
 function CreateProfile({ user, firstTimeUserCallBack }) {
+    //console.log(user.uid);
+    const [update] = useDbUpdate(`/users/${user.uid}/`);
+
+    // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState({
         preferredName: '',
-        sport: '',
-        gender: '',
-        gym: '',
-        expertise: '',
-        gender: '',
+        sport: 'cardio',
+        gym: '0',
+        expertise: '0',
+        gender: 'male',
         funFact: '',
         days: {},
         errors: {}
     });
 
-    const [update, result] = useDbUpdate(`users/${user}`);
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form Submitted:', state);
-
-        // Add additional form validation and submission logic here
-
-        // update(state).then(() => {
-        //     console.log('Data successfully submitted to Firebase');
-        // }).catch(error => {
-        //     console.error('Error submitting data to Firebase:', error);
-        // });
+        update({
+            name: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            days: mapDaysToArr(state.days),
+            sport: state.sport,
+            gym: Number(state.gym),
+            funFact: state.funFact,
+            preferredName: state.preferredName,
+            gender: state.gender,
+            expertise: Number(state.expertise)
+        });
+        firstTimeUserCallBack(false);
     };
 
     return (
-        <form onSubmit={handleSubmit} noValidate>
-            <FormField label="Preferred Name" type="text" name="preferredName" state={state} setState={setState} />
-            <br />
-            <SelectField
-                label="Gender"
-                name="gender"
-                options={[
-                    { value: 'male', label: 'Male' },
-                    { value: 'female', label: 'Female' },
-                    { value: 'nonBinary', label: 'Non-Binary' },
-                    { value: 'preferNotToSay', label: 'Prefer Not to Say' },
-                    // ... add more options as needed
-                ]}
-                state={state}
-                setState={setState}
-            />
-            <br />
-            <SelectField
-                label="Sport"
-                name="sport"
-                options={[
-                    { value: 'cardio', label: 'Cardio (e.g., running, cycling)' },
-                    { value: 'strengthTraining', label: 'Strength training (e.g., weightlifting)' },
-                    { value: 'groupSports', label: 'Group sports (e.g., basketball, soccer)' },
-                    { value: 'yogaPilates', label: 'Yoga/Pilates' },
-                    { value: 'outdoorActivities', label: 'Outdoor activities (e.g., hiking, rock climbing)' },
-                ]}
-                state={state}
-                setState={setState}
-            />
-            <br />
-            <SelectField
-                label="Preferred Gym"
-                name="gym"
-                options={[
-                    { value: 0, label: 'SPAC' },
-                    { value: 1, label: 'Blom' },
-                ]}
-                state={state}
-                setState={setState}
-            />
-            <br />
-            <SelectField
-                label="Expertise"
-                name="expertise"
-                options={[
-                    { value: 0, label: 'Beginner' },
-                    { value: 1, label: 'Beg / Int' },
-                    { value: 2, label: 'Int' },
-                    { value: 3, label: 'Int / Adv' },
-                    { value: 4, label: 'Adv' },
-                ]}
-                state={state}
-                setState={setState}
-            />
-            <br />
-            <CheckboxGroup
-                label="Days"
-                name="days"
-                options={[
-                    { value: 0, label: 'Monday' },
-                    { value: 1, label: 'Tuesday' },
-                    { value: 2, label: 'Wednesday' },
-                    { value: 3, label: 'Thursday' },
-                    { value: 4, label: 'Friday' },
-                    { value: 5, label: 'Saturday' },
-                    { value: 6, label: 'Sunday' },
-                ]}
-                state={state}
-                setState={setState}
-            />
-            <br />
-            <FormField label="Fun Fact" type="text" name="funFact" state={state} setState={setState} />
-            <br />
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        <div className='form-container'>
+            <form className='profile-form' onSubmit={handleSubmit} noValidate>
+                <FormField label="Preferred Name" type="text" name="preferredName" state={state} setState={setState} />
+                <br />
+                <SelectField
+                    label="Gender"
+                    name="gender"
+                    options={[
+                        { value: 'male', label: 'Male' },
+                        { value: 'female', label: 'Female' },
+                        { value: 'nonBinary', label: 'Non-Binary' },
+                        { value: 'preferNotToSay', label: 'Prefer Not to Say' },
+                        // ... add more options as needed
+                    ]}
+                    state={state}
+                    setState={setState}
+                />
+                <br />
+                <SelectField
+                    label="Sport"
+                    name="sport"
+                    options={[
+                        { value: 'cardio', label: 'Cardio (e.g., running, cycling)' },
+                        { value: 'strengthTraining', label: 'Strength training (e.g., weightlifting)' },
+                        { value: 'groupSports', label: 'Group sports (e.g., basketball, soccer)' },
+                        { value: 'yogaPilates', label: 'Yoga/Pilates' },
+                        { value: 'outdoorActivities', label: 'Outdoor activities (e.g., hiking, rock climbing)' },
+                    ]}
+                    state={state}
+                    setState={setState}
+                />
+                <br />
+                <SelectField
+                    label="Preferred Gym"
+                    name="gym"
+                    options={[
+                        { value: 0, label: 'SPAC' },
+                        { value: 1, label: 'Blom' },
+                    ]}
+                    state={state}
+                    setState={setState}
+                />
+                <br />
+                <SelectField
+                    label="Expertise"
+                    name="expertise"
+                    options={[
+                        { value: 0, label: 'Beginner' },
+                        { value: 1, label: 'Beg / Int' },
+                        { value: 2, label: 'Int' },
+                        { value: 3, label: 'Int / Adv' },
+                        { value: 4, label: 'Adv' },
+                    ]}
+                    state={state}
+                    setState={setState}
+                />
+                <br />
+                <CheckboxGroup
+                    label="Days"
+                    name="days"
+                    options={[
+                        { value: 0, label: 'Monday' },
+                        { value: 1, label: 'Tuesday' },
+                        { value: 2, label: 'Wednesday' },
+                        { value: 3, label: 'Thursday' },
+                        { value: 4, label: 'Friday' },
+                        { value: 5, label: 'Saturday' },
+                        { value: 6, label: 'Sunday' },
+                    ]}
+                    state={state}
+                    setState={setState}
+                />
+                <br />
+                <FormField label="Fun Fact" type="text" name="funFact" state={state} setState={setState} />
+                <br />
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+        </div>
     );
 }
 
