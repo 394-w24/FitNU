@@ -12,26 +12,29 @@ let seenProfiles = [];
 
 function setUID(id) {
     my_id = id;
+    // console.log(my_id)
 }
 
 // quick fix
 // nextProfile();
 
 function generateArrayOfDicts() {
-    var a = useDbData('/users/')
-    console.log(DATAFILE)
-    console.log(a[0])
-    if (DATAFILE) {
-        const arrayOfDicts = DATAFILE.users.map(user => {
+    // my_id = "0"; //this is for testing purposes
+    const [users] = useDbData('/users/')
+    const keyValPairsArr = users && Object.entries(users)
+    // console.log(keyValPairsArr)
+
+    if (keyValPairsArr) {
+        const arrayOfDicts = keyValPairsArr.map(([key, user]) => {
             return {
-                id: user.id.toString(),
-                name: user.name.toString(),
-                gender: user.gender.toString(),
-                days: user.days,
-                location: user.location,
-                expertise: user.expertise,
-                sport: user.sport,
-                funFact: user.funFact
+                id: key,
+                name: user?.name === undefined ? 'Null' : user.name.toString(),
+                gender: user?.gender === undefined ? 'Null' : user.gender.toString(),
+                days: user?.days === undefined ? [] : user.days,
+                location: user?.location === undefined ? -1 : user.location,
+                expertise: user?.expertise === undefined ? -1 : user.expertise,
+                sport: user?.sport === undefined ? 'Null' : user.sport,
+                funFact: user?.funFact === undefined ? 'Null' : user.funFact
             };
         });
 
@@ -51,24 +54,29 @@ function calculateMatchingAll(origin) {
 
     generateArrayOfDicts()
     // console.log(userDB)
-    me = userDB.find(user => user.id == my_id.toString());
-    let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
-    usersWithSameSport.forEach(user => {
-        matchablesDict[user.id] = user.id.toString();
-    });
+    if (userDB) {
+        me = userDB.find(user => user.id.toString() == my_id.toString());
+        let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
+        usersWithSameSport.forEach(user => {
+            matchablesDict[user.id] = user.id.toString();
+        });
 
-    matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
+        matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
 
-    matchables = matchables.filter(value => value !== my_id.toString());
-
+        matchables = matchables.filter(value => value !== my_id.toString());
+        console.log(matchables)
+        return 0
+    }
+    return 1
     // console.log(matchables[0])
-    console.log("matchables", matchables, "origin", origin)
 };
 
 
 function showCard(id) {
     // Fetch user data based on the provided ID
     const user = userDB.find((user) => user.id == id);
+
+    console.log("showcard", user)
 
     if (user) {
         // Update the user profile in the zustand store
@@ -130,7 +138,6 @@ function nextProfile() {
         seenProfiles.push(uid);
         showCard(uid);
     }
-
 
 };
 

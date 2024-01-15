@@ -10,7 +10,7 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
     const usersRef = child(ref(database), "users");
 
     // commented out for now as to not cause crashes, but this is how we load user info via the uid
-    // setUID(uid);
+    setUID(uid);
 
     get(usersRef)
         .then((snapshot) => {
