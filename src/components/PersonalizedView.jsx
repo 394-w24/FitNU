@@ -5,6 +5,7 @@ import Cross from "./Cross";
 import Profile from "./Profile";
 
 const PersonalizedView = () => {
+  calculateMatchingAll()
   return (
     <div className="personalized-view">
       <Cross />
