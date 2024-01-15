@@ -7,6 +7,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .app-content {

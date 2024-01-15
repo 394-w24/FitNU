@@ -1,10 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getDatabase, onValue, ref, update} from "firebase/database";
+import { getDatabase, onValue, ref, update } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import {
   getAuth,
@@ -27,18 +26,13 @@ const firebaseConfig = {
   measurementId: "G-FV5B15CE6C",
 };
 
-
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
-
 
 export const auth = getAuth(firebase);
 
 // Initialize Realtime Database and get a reference to the service
 export const database = getDatabase(firebase);
-
-
-
 
 export const signInWithGoogle = () =>
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
@@ -74,6 +68,13 @@ export const useDbData = (path) => {
   );
 
   return [data, error];
+};
+
+const makeResult = (error) => {
+  const timestamp = Date.now();
+  const message =
+    error?.message || `Updated: ${new Date(timestamp).toLocaleString()}`;
+  return { timestamp, error, message };
 };
 
 export const useDbUpdate = (path) => {

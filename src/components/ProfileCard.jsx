@@ -24,7 +24,6 @@ const getExpertiseLevel = (expertiseNumber) => {
     return expertiseLevels[expertiseNumber] || "Unknown Expertise Level";
 };
 
-
 const Card = ({ profile }) => (
     <div className="card m-1 p-2">
         {/* <img src={profile.thumbnail} className="card-img-top" alt={profile.description} /> */}
