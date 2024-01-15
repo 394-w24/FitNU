@@ -4,7 +4,7 @@ import { useDbData, useDbUpdate } from "../utilities/firebase";
 
 
 let my_id = "0";
-let me = {};
+let mySelf = {};
 let userDB = [];
 let matchablesDict = {};
 let matchables = [];
@@ -59,9 +59,27 @@ function calculateMatchingAll(origin) {
     generateArrayOfDicts()
     // console.log(userDB)
     if (userDB) {
-        me = userDB.find(user => user.id.toString() == my_id.toString());
-        let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
-        usersWithSameSport.forEach(user => {
+        mySelf = userDB.find(user => user.id.toString() == my_id.toString());
+        let matchingUsers = userDB.filter(user => user.sport === mySelf.sport && user.id !== mySelf.id);
+        // Sort matchingUsers by the number of matching fields
+        matchingUsers.sort((userA, userB) => {
+            const matchingFieldsA = Object.values(userA).filter(valueA => {
+                if (Array.isArray(valueA) && valueA.length > 0) {
+                    return valueA.some(day => mySelf.days.includes(day));
+                }
+                return Object.values(mySelf).includes(valueA);
+            }).length;
+
+            const matchingFieldsB = Object.values(userB).filter(valueB => {
+                if (Array.isArray(valueB) && valueB.length > 0) {
+                    return valueB.some(day => mySelf.days.includes(day));
+                }
+                return Object.values(mySelf).includes(valueB);
+            }).length;
+
+            return matchingFieldsB - matchingFieldsA;
+        });
+        matchingUsers.forEach(user => {
             matchablesDict[user.id] = user.id.toString();
         });
 
@@ -98,7 +116,7 @@ function showEmpty() {
     // the following is a temp solution more will need to be done!!!
 
 
-    // alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
+    alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
 
     seenProfiles = [];
     nextProfile();
