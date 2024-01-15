@@ -7,7 +7,7 @@
   justify-content: space-evenly;
   position: fixed;
   top: 0;
-  z-index: 1500;
+  /* z-index: 1500; */
 }
 
 .header > img {

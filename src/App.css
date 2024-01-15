@@ -12,6 +12,7 @@
 
 .app-content {
   width: 100%;
+  margin-top: 80px;
   flex-grow: 1; /*Takes up all available space */
   display: flex;
   align-items: center;

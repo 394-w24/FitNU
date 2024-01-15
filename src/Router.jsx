@@ -3,10 +3,9 @@ import PersonalizedView from "./components/PersonalizedView";
 import GeneralView from "./components/GeneralView";
 import Chat from "./components/Chat";
 import PageNotFound from "./components/PageNotFound";
-import LoginPage from "./components/LoginPage";
+import CreateProfile from "./components/CreateProfile";
 
-
-const Router = () => {
+const Router = ({ user, firstTimeUserCallBack }) => {
   return (
     <Routes>
       <Route path="*" element={<PageNotFound />} />
@@ -14,6 +13,7 @@ const Router = () => {
       <Route path="/PersonalizedView" element={<PersonalizedView />} />
       <Route path="/GeneralView" element={<GeneralView />} />
       <Route path="/Chat" element={<Chat />} />
+      <Route path="/EditProfile" element={<CreateProfile user={user} firstTimeUserCallBack={firstTimeUserCallBack} />} />
     </Routes>
   );
 };

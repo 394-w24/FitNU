@@ -37,7 +37,9 @@ export const database = getDatabase(firebase);
 export const signInWithGoogle = () =>
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
 
-const firebaseSignOut = () => signOut(getAuth(firebase));
+const firebaseSignOut = () => {
+  signOut(getAuth(firebase));
+};
 
 export { firebaseSignOut as signOut };
 

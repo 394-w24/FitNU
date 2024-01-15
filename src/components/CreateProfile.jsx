@@ -376,7 +376,7 @@
 
 // export default CreateProfile;
 
-
+import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase';
 import "./CreateProfile.css";
@@ -471,6 +471,10 @@ const mapDaysToArr = (days) => {
 function CreateProfile({ user, firstTimeUserCallBack }) {
     //console.log(user.uid);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
+    const navigate = useNavigate()
+    // const location = useLocation();
+    // if(location === "EditProfile")
+
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState({
@@ -499,10 +503,13 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
             expertise: Number(state.expertise)
         });
         firstTimeUserCallBack(false);
+        navigate("/");
     };
 
     return (
-        <div className='form-container'>
+        <div className='form-container' style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "250px" } : {
+            overflow: "auto"
+        }}>
             <form className='profile-form' onSubmit={handleSubmit} noValidate>
                 <FormField label="Preferred Name" type="text" name="preferredName" state={state} setState={setState} />
                 <br />
