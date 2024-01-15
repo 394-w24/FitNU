@@ -376,7 +376,7 @@
 
 // export default CreateProfile;
 
-
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase';
 import "./CreateProfile.css";
@@ -471,6 +471,7 @@ const mapDaysToArr = (days) => {
 function CreateProfile({ user, firstTimeUserCallBack }) {
     //console.log(user.uid);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
+    const navigate = useNavigate()
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState({
@@ -499,6 +500,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
             expertise: Number(state.expertise)
         });
         firstTimeUserCallBack(false);
+        navigate("/");
     };
 
     return (

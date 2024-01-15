@@ -22,7 +22,7 @@ const App = () => {
           <BrowserRouter>
             <Header user={user} />
             <div className="app-content">
-              <Router />
+              <Router user={user} firstTimeUserCallBack={setFirstTimeUser} />
             </div>
             <Navbar />
           </BrowserRouter>
