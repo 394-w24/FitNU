@@ -36,7 +36,7 @@ function generateArrayOfDicts() {
         });
 
         // Print or use the generated array of dictionaries
-        return (arrayOfDicts);
+        userDB = arrayOfDicts;
     }
 }
 
@@ -45,11 +45,11 @@ function findUsersBySport(userData, sport) {
     return userData.filter(user => user.sport === sport);
 };
 
-function calculateMatchingAll() {
+function calculateMatchingAll(origin) {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
 
 
-    userDB = generateArrayOfDicts()
+    generateArrayOfDicts()
     // console.log(userDB)
     me = userDB.find(user => user.id == my_id.toString());
     let usersWithSameSport = me ? findUsersBySport(userDB, me.sport) : [];
@@ -62,7 +62,7 @@ function calculateMatchingAll() {
     matchables = matchables.filter(value => value !== my_id.toString());
 
     // console.log(matchables[0])
-    // console.log(matchables)
+    console.log("matchables", matchables, "origin", origin)
 };
 
 
@@ -86,7 +86,7 @@ function showEmpty() {
     // the following is a temp solution more will need to be done!!!
 
 
-    alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
+    // alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
 
     seenProfiles = [];
     nextProfile();
@@ -118,9 +118,6 @@ function getUserName() {
 
 
 function nextProfile() {
-    // console.log("next profile initated");
-    // something else to calcualte next user
-    calculateMatchingAll();
 
     // let uid = matchables.shift()
     let uid = matchables.find(id => !seenProfiles.includes(id));
