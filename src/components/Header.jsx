@@ -6,7 +6,10 @@ const Header = ({ user }) => {
   const navigate = useNavigate();
   return (
     <div className="header">
-      <button style={{ width: "50px", height: "50px" }} onClick={() => signOut()} >Sign Out</button>
+      <button style={{ width: "50px", height: "50px" }} onClick={() => {
+        signOut();
+        navigate("/");
+      }} >Sign Out</button>
       <h1>FitNU</h1>
       <img src={user.photoURL} onClick={() => navigate('/EditProfile')} style={{ cursor: 'pointer' }} />
     </div>

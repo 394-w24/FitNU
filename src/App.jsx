@@ -17,15 +17,17 @@ const App = () => {
   return (
     <div className="app">
       {user ?
-        firstTimeUser ?
-          <CreateProfile user={user} firstTimeUserCallBack={setFirstTimeUser} /> :
-          <BrowserRouter>
-            <Header user={user} />
-            <div className="app-content">
-              <Router user={user} firstTimeUserCallBack={setFirstTimeUser} />
-            </div>
-            <Navbar />
-          </BrowserRouter>
+        <BrowserRouter>
+          {firstTimeUser ?
+            <CreateProfile user={user} firstTimeUserCallBack={setFirstTimeUser} /> :
+            <>
+              <Header user={user} />
+              <div className="app-content">
+                <Router user={user} firstTimeUserCallBack={setFirstTimeUser} />
+              </div>
+              <Navbar />
+            </>}
+        </BrowserRouter>
         : <LoginPage firstTimeUserCallBack={setFirstTimeUser} />}
     </div>
   );
