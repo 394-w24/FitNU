@@ -9,11 +9,15 @@ import { useAuthState } from "./utilities/firebase";
 import LoginPage from "./components/LoginPage";
 import { useState } from "react";
 import CreateProfile from "./components/CreateProfile";
+import { setUID } from "./components/ProfileHandler";
 
 const App = () => {
   const [user] = useAuthState();
   const [firstTimeUser, setFirstTimeUser] = useState(false);
 
+  if (user) {
+    setUID(user.uid);
+  }
   return (
     <div className="app">
       {user ?

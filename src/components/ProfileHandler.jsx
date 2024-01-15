@@ -15,6 +15,10 @@ function setUID(id) {
     // console.log(my_id)
 }
 
+function matchableCount(id) {
+    return matchables.length
+}
+
 // quick fix
 // nextProfile();
 
@@ -64,7 +68,7 @@ function calculateMatchingAll(origin) {
         matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
 
         matchables = matchables.filter(value => value !== my_id.toString());
-        console.log(matchables)
+        console.log("self:", my_id, "matches:", matchables)
         return 0
     }
     return 1
@@ -143,4 +147,4 @@ function nextProfile() {
 
 
 
-export { setUID, calculateMatchingAll, getUserName, nextProfile };
+export { setUID, matchableCount, calculateMatchingAll, getUserName, nextProfile };
