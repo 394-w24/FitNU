@@ -1,8 +1,10 @@
 import "./Check.css";
-import { nextProfile } from "./ProfileHandler";
+import {calculateMatchingAll, nextProfile } from "./ProfileHandler";
 
 
 const Cross = () => {
+  calculateMatchingAll('cross')
+
   return (
     <div className="matchButton">
       <button onClick={handleRejectClick} class="reject-button">
@@ -16,6 +18,7 @@ function handleRejectClick() {
   alert("You rejected this match!");
 
 
+  calculateMatchingAll()
 
   nextProfile();
 };

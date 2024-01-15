@@ -1,7 +1,8 @@
 import "./Check.css";
-import { getUserName, nextProfile } from "./ProfileHandler";
+import { calculateMatchingAll, getUserName, nextProfile } from "./ProfileHandler";
 
 const Check = () => {
+  calculateMatchingAll()
   return (
     <div className="matchButton">
       <button onClick={handleMatchClick} class="match-button">
