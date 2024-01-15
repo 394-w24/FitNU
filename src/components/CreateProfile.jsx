@@ -466,7 +466,6 @@ const mapDaysToArr = (days) => {
     return (
         Object.entries(days).map(([key, val]) => val ? Number(key) : -1).filter(day => day !== -1)
     );
-
 }
 
 function CreateProfile({ user, firstTimeUserCallBack }) {
