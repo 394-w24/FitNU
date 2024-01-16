@@ -471,10 +471,8 @@ const mapDaysToArr = (days) => {
 function CreateProfile({ user, firstTimeUserCallBack }) {
     //console.log(user.uid);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
-    const navigate = useNavigate()
-    // const location = useLocation();
-    // if(location === "EditProfile")
-
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState({
