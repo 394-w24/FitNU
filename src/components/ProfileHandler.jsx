@@ -15,6 +15,10 @@ function setUID(id) {
     // console.log(my_id)
 }
 
+function matchableClear(id) {
+    matchables = []
+}
+
 function matchableCount(id) {
     return matchables.length
 }

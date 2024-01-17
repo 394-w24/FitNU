@@ -9,7 +9,7 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
     const usersRef = child(ref(database), "users");
 
     // commented out for now as to not cause crashes, but this is how we load user info via the uid
-    
+
 
     get(usersRef)
         .then((snapshot) => {
@@ -21,7 +21,6 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
                 console.log(`User with user_id ${uid} does not exist in /users.`);
 
                 const userData = {
-                    email: user.email,
                     name: user.displayName,
                     photoURL: user.photoURL,
                 };
