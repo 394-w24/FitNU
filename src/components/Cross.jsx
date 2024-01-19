@@ -6,8 +6,8 @@ const Cross = () => {
   calculateMatchingAll('cross')
   return (
     <div className="matchButton">
-      <button onClick={handleRejectClick} class="reject-button">
-        <img src="/xmark.png" alt="X Mark" class="icon" />
+      <button onClick={handleRejectClick} className="reject-button">
+        <img src="/xmark.png" alt="X Mark" className="icon" />
       </button>
     </div>
   );

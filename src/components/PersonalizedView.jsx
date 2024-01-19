@@ -22,8 +22,8 @@ const PersonalizedView = () => {
         :
         <div className="refresh">
           <p>Please press the refresh button to start from the beginning of the list</p>
-          <button onClick={nextProfile} class="ref-button">
-            <p class="ref-ico">🔄</p>
+          <button onClick={nextProfile} className="ref-button">
+            <p className="ref-ico">🔄</p>
           </button>
         </div>
       }
