@@ -24,11 +24,22 @@ const getExpertiseLevel = (expertiseNumber) => {
     return expertiseLevels[expertiseNumber] || "Unknown Expertise Level";
 };
 
+const getBetterName = (profile) => {
+
+    if (profile.preferredName !== '') {
+        console.log("prefered", profile.preferredName)
+        return profile.preferredName;
+    }
+    console.log("nopreferred")
+    return profile.name;
+};
+
+
 const Card = ({ profile }) => (
     <div className="card m-1 p-2">
         {/* <img src={profile.thumbnail} className="card-img-top" alt={profile.description} /> */}
         <div className="card-body">
-            <h5 className="card-title">{profile.name}</h5>
+            <h5 className="card-title">{getBetterName(profile)}</h5>
             <p className="card-text"><strong>Gender:</strong> {profile.gender}</p>
             <p className="card-text"><strong>Days:</strong> {mapDayNumberToName(profile.days)}</p>
             <p className="card-text"><strong>Location:</strong> {getLocationName(profile.location)}</p>
