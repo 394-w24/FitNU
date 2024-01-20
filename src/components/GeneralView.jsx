@@ -8,7 +8,19 @@ const dummyData = {
       "description": "go gym",
       "location": "spac",
       "meets": "01/20/2024"
-    }
+    },
+    "1": {
+      "title": "Hello",
+      "description": "go jim",
+      "location": "blom",
+      "meets": "01/20/2024"
+    },
+    // "2": {
+    //   "title": "Hello",
+    //   "description": "go jim",
+    //   "location": "blom",
+    //   "meets": "01/20/2024"
+    // }
   }
 };
 
