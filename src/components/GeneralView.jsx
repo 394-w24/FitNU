@@ -1,4 +1,7 @@
+import { Button } from "@mui/material";
 import EventList from "./EventList";
+//import Link from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const dummyData = {
   // "title": "CS Courses for 2018-2019",
@@ -35,6 +38,8 @@ const GeneralView = () => {
     marginTop: '-100px'
   };
 
+  const navigate = useNavigate();
+
   const textStyle = {
     textAlign: 'center', // Corrected styling for text alignment
   };
@@ -51,6 +56,13 @@ const GeneralView = () => {
       </h2>
 
       <EventList events={dummyData.events} />
+      <Button
+        variant="contained"
+        color={"purple"}
+        onClick={() => navigate("/EditEvent")}
+      >
+        New Event
+      </Button>
     </div>
   );
 };

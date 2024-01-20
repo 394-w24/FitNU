@@ -4,6 +4,7 @@ import GeneralView from "./components/GeneralView";
 import Chat from "./components/Chat";
 import PageNotFound from "./components/PageNotFound";
 import CreateProfile from "./components/CreateProfile";
+import CreateEvent from "./components/CreateEvent";
 
 const Router = ({ user, firstTimeUserCallBack }) => {
   return (
@@ -14,6 +15,7 @@ const Router = ({ user, firstTimeUserCallBack }) => {
       <Route path="/GeneralView" element={<GeneralView />} />
       <Route path="/Chat" element={<Chat />} />
       <Route path="/EditProfile" element={<CreateProfile user={user} firstTimeUserCallBack={firstTimeUserCallBack} />} />
+      <Route path="/EditEvent" element={<CreateEvent />} />
     </Routes>
   );
 };
