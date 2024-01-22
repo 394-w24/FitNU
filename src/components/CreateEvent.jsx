@@ -1,120 +1,72 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase';
-import "./CreateProfile.css";
-//import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { useFormData } from '../utilities/useFormData';
+import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import "./CreateEvent.css";
 
-function validateField(key, value) {
-    const validators = {
-        preferredName: val => val.length >= 2 ? '' : 'Must be at least two characters',
-        // Other fields can have their validators here
-    };
-    return validators[key] ? validators[key](value) : '';
-}
+const validateUserData = (key, val) => {
+    // Add validation logic as needed
+    console.log('Validating', key, val);
+    return '';
+};
 
-function FormField({ label, type, name, state, setState }) {
-    const onChange = (e) => {
-        const { name, value } = e.target;
-        setState(prevState => ({
-            ...prevState,
-            [name]: value,
-            errors: { ...prevState.errors, [name]: validateField(name, value) }
-        }));
-    };
-
+const InputField = ({ name, text, state, change }) => {
+    console.log('Rendering InputField', name, state);
     return (
-        <div className="form-group">
-            <label htmlFor={name}>{label}</label>
-            <input
-                type={type}
-                className="form-control"
-                id={name}
-                name={name}
-                value={state[name]}
-                onChange={onChange}
-            />
-            {state.errors[name] && <div className="text-danger">{state.errors[name]}</div>}
+        <div className="mb-3">
+            <label htmlFor={name} className="form-label">{text}</label>
+            <input className="form-control" id={name} name={name}
+                defaultValue={state.values?.[name]} onChange={change} />
+            <div className="invalid-feedback">{state.errors?.[name]}</div>
         </div>
     );
-}
+};
 
-function SelectField({ label, name, options, state, setState }) {
-    const onChange = (e) => {
-        setState({ ...state, [name]: e.target.value });
-    };
-
+const ButtonBar = ({ message, disabled }) => {
+    const navigate = useNavigate();
+    console.log('Rendering ButtonBar', message);
     return (
-        <div className="form-group">
-            <label htmlFor={name}>{label}</label>
-            <select className="form-control" id={name} value={state[name]} onChange={onChange}>
-                {options.map(option => (
-                    <option key={option.value} value={option.value}>{option.label}</option>
-                ))}
-            </select>
+        <div className="d-flex">
+            <button type="button" className="btn btn-outline-dark me-2" onClick={() => navigate(-1)}>Cancel</button>
+            <button type="submit" className="btn btn-primary me-auto" disabled={disabled}>Submit</button>
+            <span className="p-2">{message}</span>
         </div>
     );
-}
+};
 
+const CreateEvent = ({ user }) => {
+    const [update, result] = useDbUpdate(`/events/${user.id}`);
+    const [state, change] = useFormData(validateUserData, user);
 
-const mapDaysToArr = (days) => {
-    return (
-        Object.entries(days).map(([key, val]) => val ? Number(key) : -1).filter(day => day !== -1)
-    );
-}
-
-function CreateEvent({ user }) {
-    //console.log(user.uid);
-    const [update] = useDbUpdate(`/users/${user.uid}/`);
-    const navigate = useNavigate()
-    // const location = useLocation();
-    // if(location === "EditProfile")
-
-
-    // TO-DO: ADD IMAGE INPUT FIELD
-    const [state, setState] = useState({
-        preferredName: '',
-        sport: 'cardio',
-        gym: '0',
-        expertise: '0',
-        gender: 'male',
-        funFact: '',
-        days: {},
-        errors: {}
-    });
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        update({
-            name: user.displayName,
-            email: user.email,
-            photoURL: user.photoURL,
-            days: mapDaysToArr(state.days),
-            sport: state.sport,
-            gym: Number(state.gym),
-            funFact: state.funFact,
-            preferredName: state.preferredName,
-            gender: state.gender,
-            expertise: Number(state.expertise)
-        });
-        firstTimeUserCallBack(false);
-        navigate("/");
+    const submit = (evt) => {
+        evt.preventDefault();
+        console.log('Submitting form', state);
+        if (!state.errors) {
+            console.log('No errors, updating database with:', state.values);
+            update(state.values).then(() => {
+                console.log('Data successfully updated to Firebase');
+            }).catch(error => {
+                console.error('Error updating data to Firebase:', error);
+            });
+        } else {
+            console.log('Form has errors, not submitting', state.errors);
+        }
     };
 
+
+    console.log('Rendering CreateEvent', state, result);
+
     return (
-        <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto", marginTop: "250px" } : {
-            overflow: "auto"
-        }}>
-            {/* // <div className='form-container'> */}
-            <form className='profile-form' onSubmit={handleSubmit} noValidate>
-                <FormField label="Title of Event" type="text" name="title" state={state} setState={setState} />
-                <FormField label="Event Description" type="text" name="desc" state={state} setState={setState} />
-                <FormField label="Location" type="text" name="location" state={state} setState={setState} />
-                <FormField label="Date" type="text" name="location" state={state} setState={setState} />
-                <br />
-                <button type="submit" className="btn btn-primary">Submit</button>
+        <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto", marginTop: "250px" } : { overflow: "auto" }}>
+            <form onSubmit={submit} noValidate className={state.errors ? 'was-validated' : null}>
+                <InputField name="title" text="Title of Event" state={state} change={change} />
+                <InputField name="desc" text="Event Description" state={state} change={change} />
+                <InputField name="location" text="Location" state={state} change={change} />
+                <InputField name="date" text="Date" state={state} change={change} />
+                <ButtonBar message={result?.message} />
             </form>
         </div>
     );
-}
+};
 
 export default CreateEvent;
