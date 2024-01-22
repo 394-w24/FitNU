@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 import EventList from "./EventList";
 //import Link from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -56,13 +56,13 @@ const GeneralView = () => {
       </h2>
 
       <EventList events={dummyData.events} />
-      <Button
+      <button
         variant="contained"
         color={"purple"}
         onClick={() => navigate("/EditEvent")}
       >
         New Event
-      </Button>
+      </button>
     </div>
   );
 };

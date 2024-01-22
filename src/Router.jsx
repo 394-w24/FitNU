@@ -15,7 +15,7 @@ const Router = ({ user, firstTimeUserCallBack }) => {
       <Route path="/GeneralView" element={<GeneralView />} />
       <Route path="/Chat" element={<Chat />} />
       <Route path="/EditProfile" element={<CreateProfile user={user} firstTimeUserCallBack={firstTimeUserCallBack} />} />
-      <Route path="/EditEvent" element={<CreateEvent />} />
+      <Route path="/EditEvent" element={<CreateEvent user={user} />} />
     </Routes>
   );
 };

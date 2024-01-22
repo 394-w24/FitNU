@@ -55,35 +55,6 @@ function SelectField({ label, name, options, state, setState }) {
     );
 }
 
-function CheckboxGroup({ label, name, options, state, setState }) {
-    const onChange = (e) => {
-        const { value, checked } = e.target;
-        setState(prevState => ({
-            ...prevState,
-            [name]: { ...prevState[name], [value]: checked }
-        }));
-    };
-
-    return (
-        <div className="form-group">
-            <label>{label}</label>
-            {options.map(option => (
-                <div key={option.value} className="form-check">
-                    <input
-                        className="form-check-input"
-                        type="checkbox"
-                        value={option.value}
-                        checked={state[name][option.value] || false}
-                        onChange={onChange}
-                    />
-                    <label className="form-check-label">
-                        {option.label}
-                    </label>
-                </div>
-            ))}
-        </div>
-    );
-}
 
 const mapDaysToArr = (days) => {
     return (
@@ -91,7 +62,7 @@ const mapDaysToArr = (days) => {
     );
 }
 
-function CreateEvent({ }) {
+function CreateEvent({ user }) {
     //console.log(user.uid);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
     const navigate = useNavigate()
@@ -133,6 +104,7 @@ function CreateEvent({ }) {
         <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto", marginTop: "250px" } : {
             overflow: "auto"
         }}>
+            {/* // <div className='form-container'> */}
             <form className='profile-form' onSubmit={handleSubmit} noValidate>
                 <FormField label="Title of Event" type="text" name="title" state={state} setState={setState} />
                 <FormField label="Event Description" type="text" name="desc" state={state} setState={setState} />
