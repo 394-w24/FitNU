@@ -10,6 +10,9 @@ const mapDayNumberToName = (dayNumbers) => {
 //convert location number to string
 const getLocationName = (locationNumber) => {
     const locations = { 0: "SPAC", 1: "Blom" };
+
+    console.log("spac?", locationNumber)
+
     return locations[locationNumber] || "Unknown Location";
 };
 
