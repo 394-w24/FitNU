@@ -16,10 +16,11 @@ const getLocationName = (locationNumber) => {
 //convert expertise number to string
 const getExpertiseLevel = (expertiseNumber) => {
     const expertiseLevels = {
-        1: "Beginner",
-        2: "Intermediate",
-        3: "Advanced",
-        4: "Expert"
+        0: 'No Experience',
+        1: 'Beginner',
+        2: 'Intermediate',
+        3: 'Advanced',
+        4: 'Expert'
     };
     return expertiseLevels[expertiseNumber] || "Unknown Expertise Level";
 };

@@ -556,11 +556,11 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
                     label="Expertise"
                     name="expertise"
                     options={[
-                        { value: 0, label: 'Beginner' },
-                        { value: 1, label: 'Beg / Int' },
+                        { value: 0, label: 'None' },
+                        { value: 1, label: 'Beg' },
                         { value: 2, label: 'Int' },
-                        { value: 3, label: 'Int / Adv' },
-                        { value: 4, label: 'Adv' },
+                        { value: 3, label: 'Adv' },
+                        { value: 4, label: 'Expert' },
                     ]}
                     state={state}
                     setState={setState}
