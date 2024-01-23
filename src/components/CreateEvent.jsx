@@ -1,17 +1,17 @@
 import { useDbUpdate } from '../utilities/firebase';
 import { useFormData } from '../utilities/useFormData';
 import { useLocation, useNavigate } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./CreateEvent.css";
 
 const validateUserData = (key, val) => {
     // Add validation logic as needed
-    console.log('Validating', key, val);
+    //console.log('Validating', key, val);
     return '';
 };
 
 const InputField = ({ name, text, state, change }) => {
-    console.log('Rendering InputField', name, state);
+    //console.log('Rendering InputField', name, state);
     return (
         <div className="mb-3">
             <label htmlFor={name} className="form-label">{text}</label>
@@ -24,7 +24,7 @@ const InputField = ({ name, text, state, change }) => {
 
 const ButtonBar = ({ message, disabled }) => {
     const navigate = useNavigate();
-    console.log('Rendering ButtonBar', message);
+    //console.log('Rendering ButtonBar', message);
     return (
         <div className="d-flex">
             <button type="button" className="btn btn-outline-dark me-2" onClick={() => navigate(-1)}>Cancel</button>
@@ -36,7 +36,8 @@ const ButtonBar = ({ message, disabled }) => {
 
 const CreateEvent = ({ user }) => {
     const navigate = useNavigate();
-    console.log('User ID:', user.uid);
+    //console.log('User ID:', user.uid);
+    //const [updateResult, setUpdateResult] = useState(null);
     const userData = { id: user.uid, /* other needed fields */ };
 
     const [update, result] = useDbUpdate(`/events/${userData.id}`);
@@ -44,25 +45,21 @@ const CreateEvent = ({ user }) => {
 
     const submit = (evt) => {
         evt.preventDefault();
-        console.log('Submitting form', state);
         if (!state.errors) {
-            // Destructure to exclude 'id' from the update data
             const { id, ...updateData } = state.values;
-            console.log('Updating database with:', updateData);
-            console.log('Update function is a Promise:', update instanceof Promise);
-            update(updateData).then(() => {
-                console.log('Data successfully updated to Firebase');
-                navigate('/GeneralView');
-            }).catch(error => {
-                console.error('Error updating data to Firebase:', error);
-            });
-        } else {
-            console.log('Form has errors, not submitting', state.errors);
+            update(updateData); // Call update but do not set result immediately
         }
     };
 
+    useEffect(() => {
+        if (result && !result.error) { // Check if result indicates success
+            navigate('/GeneralView');
+            console.log("Successfully updated and navigated");
+        }
+    }, [result, navigate]);
 
-    console.log('Rendering CreateEvent', state, result);
+
+    //console.log('Rendering CreateEvent', state, result);
 
     return (
         <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto", marginTop: "250px" } : { overflow: "auto" }}>
