@@ -35,16 +35,24 @@ const ButtonBar = ({ message, disabled }) => {
 };
 
 const CreateEvent = ({ user }) => {
-    const [update, result] = useDbUpdate(`/events/${user.id}`);
-    const [state, change] = useFormData(validateUserData, user);
+    const navigate = useNavigate();
+    console.log('User ID:', user.uid);
+    const userData = { id: user.uid, /* other needed fields */ };
+
+    const [update, result] = useDbUpdate(`/events/${userData.id}`);
+    const [state, change] = useFormData(validateUserData, userData);
 
     const submit = (evt) => {
         evt.preventDefault();
         console.log('Submitting form', state);
         if (!state.errors) {
-            console.log('No errors, updating database with:', state.values);
-            update(state.values).then(() => {
+            // Destructure to exclude 'id' from the update data
+            const { id, ...updateData } = state.values;
+            console.log('Updating database with:', updateData);
+            console.log('Update function is a Promise:', update instanceof Promise);
+            update(updateData).then(() => {
                 console.log('Data successfully updated to Firebase');
+                navigate('/GeneralView');
             }).catch(error => {
                 console.error('Error updating data to Firebase:', error);
             });
