@@ -478,7 +478,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
     const [state, setState] = useState({
         preferredName: '',
         sport: 'cardio',
-        gym: '0',
+        location: '0',
         expertise: '0',
         gender: 'male',
         funFact: '',
@@ -541,7 +541,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
                 <br />
                 <SelectField
                     label="Preferred Gym"
-                    name="gym"
+                    name="location"
                     options={[
                         { value: 0, label: 'SPAC' },
                         { value: 1, label: 'Blom' },
@@ -554,11 +554,11 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
                     label="Expertise"
                     name="expertise"
                     options={[
-                        { value: 0, label: 'Beginner' },
-                        { value: 1, label: 'Beg / Int' },
+                        { value: 0, label: 'None' },
+                        { value: 1, label: 'Beg' },
                         { value: 2, label: 'Int' },
-                        { value: 3, label: 'Int / Adv' },
-                        { value: 4, label: 'Adv' },
+                        { value: 3, label: 'Adv' },
+                        { value: 4, label: 'Expert' },
                     ]}
                     state={state}
                     setState={setState}

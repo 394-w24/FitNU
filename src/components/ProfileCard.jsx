@@ -10,16 +10,20 @@ const mapDayNumberToName = (dayNumbers) => {
 //convert location number to string
 const getLocationName = (locationNumber) => {
     const locations = { 0: "SPAC", 1: "Blom" };
+
+    console.log("spac?", locationNumber)
+
     return locations[locationNumber] || "Unknown Location";
 };
 
 //convert expertise number to string
 const getExpertiseLevel = (expertiseNumber) => {
     const expertiseLevels = {
-        1: "Beginner",
-        2: "Intermediate",
-        3: "Advanced",
-        4: "Expert"
+        0: 'No Experience',
+        1: 'Beginner',
+        2: 'Intermediate',
+        3: 'Advanced',
+        4: 'Expert'
     };
     return expertiseLevels[expertiseNumber] || "Unknown Expertise Level";
 };

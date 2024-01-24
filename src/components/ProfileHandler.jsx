@@ -6,7 +6,6 @@ import { useDbData, useDbUpdate } from "../utilities/firebase";
 let my_id = "0";
 let mySelf = {};
 let userDB = [];
-let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
 let savedProfiles = []
@@ -23,7 +22,6 @@ function getUID() {
 
 
 function matchableClear() {
-    matchablesDict = {}
     matchables = []
 }
 
