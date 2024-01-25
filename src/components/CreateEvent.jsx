@@ -62,7 +62,7 @@ const CreateEvent = ({ user }) => {
     //console.log('Rendering CreateEvent', state, result);
 
     return (
-        <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto", marginTop: "250px" } : { overflow: "auto" }}>
+        <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto" } : { overflow: "auto" }}>
             <form onSubmit={submit} noValidate className={state.errors ? 'was-validated' : null}>
                 <InputField name="title" text="Title of Event" state={state} change={change} />
                 <InputField name="desc" text="Event Description" state={state} change={change} />

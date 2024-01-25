@@ -2,6 +2,7 @@
 import EventList from "./EventList";
 //import Link from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./GeneralView.css";
 
 const dummyData = {
   // "title": "CS Courses for 2018-2019",
@@ -18,12 +19,12 @@ const dummyData = {
       "location": "blom",
       "meets": "01/20/2024"
     },
-    // "2": {
-    //   "title": "Hello",
-    //   "description": "go jim",
-    //   "location": "blom",
-    //   "meets": "01/20/2024"
-    // }
+    "2": {
+      "title": "Hello",
+      "description": "go jim",
+      "location": "blom",
+      "meets": "01/20/2024"
+    }
   }
 };
 
@@ -35,7 +36,8 @@ const GeneralView = () => {
     display: 'block', // Needed for margin auto to work
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '-100px'
+    // marginTop: '-100px'
+    marginTop: '500px'
   };
 
   const navigate = useNavigate();
@@ -55,14 +57,16 @@ const GeneralView = () => {
         Let's start Swiping!
       </h2>
 
-      <EventList events={dummyData.events} />
       <button
+        className="new"
         variant="contained"
         color={"purple"}
         onClick={() => navigate("/EditEvent")}
       >
         New Event
       </button>
+
+      <EventList events={dummyData.events} />
     </div>
   );
 };

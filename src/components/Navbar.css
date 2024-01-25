@@ -1,12 +1,12 @@
 .navbar {
-  position: fixed; /* changed from absolute to fixed to stick at the bottom */
+  position: fixed;
   bottom: 0;
-  left: 0; /* Add this to start from the far left */
+  left: 0;
   width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center the buttons */
+  justify-content: center;
   border-top: solid;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -17,4 +17,5 @@
   padding: 8px 12px; /* Adjust as needed */
   /* Add margin if you want some space between the buttons */
   margin: 0 4px;
+  /* position: fixed; */
 }
