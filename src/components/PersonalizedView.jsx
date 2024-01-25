@@ -8,11 +8,11 @@ import { matchableCount, calculateMatchingAll, nextProfile } from "./ProfileHand
 
 const PersonalizedView = () => {
 
-  const { profile } = useProfileStore();
-  calculateMatchingAll()
+  // const { profile } = useProfileStore();
+  // calculateMatchingAll()
   return (
     <div className="personalized-view">
-      {profile !== null ? (
+      {/* {profile !== null ? (
         <div className="personalized-core">
           <Cross />
           <Profile />
@@ -26,7 +26,7 @@ const PersonalizedView = () => {
             <p className="ref-ico">🔄</p>
           </button>
         </div>
-      }
+      } */}
     </div>
   );
 };

@@ -9,7 +9,6 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
-
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {
@@ -23,6 +22,7 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
 
                 const userData = {
                     name: user.displayName,
+                    email: user.email,
                     photoURL: user.photoURL,
                 };
 
