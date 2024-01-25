@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import ProfileCard from './ProfileCard';
 import useProfileStore from '../utilities/store';
 import "./Profile.css"
-import { getUID, matchableCount } from "./ProfileHandler";
+import { getUID, matchableCount, compareMatches, dayMatcher } from "./ProfileHandler";
+
+
 
 const Profile = () => {
 
     const { profile } = useProfileStore();
     const uid = getUID();
+    profile.keymatches = compareMatches(profile.id)
+    profile.daymatches = dayMatcher(profile.id)
     console.log("uid", uid)
-    console.log(matchableCount(uid))
     // if (matchableCount(uid) < 1) {
     //     console.log(1)
     // }

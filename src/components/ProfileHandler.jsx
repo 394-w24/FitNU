@@ -45,7 +45,7 @@ function generateArrayOfDicts() {
                 id: key,
                 name: user?.name === undefined ? 'Null' : user.name.toString(),
                 gender: user?.gender === undefined ? 'Null' : user.gender.toString(),
-                days: user?.days === undefined ? [] : user.days,
+                days: user?.days === undefined ? [-1, -2] : user.days,
                 location: user?.location === undefined ? -1 : user.location,
                 expertise: user?.expertise === undefined ? -1 : user.expertise,
                 sport: user?.sport === undefined ? 'Null' : user.sport,
@@ -66,11 +66,12 @@ function calculateMatchingAll(origin) {
     if (userDB) {
         matchableClear()
         mySelf = userDB.find(user => user.id.toString() == my_id.toString());
+
         let matchingUsers = userDB.filter(user =>
-            user.id !== my_id && // Exclude mySelf
+            user.id !== my_id &&
             (user.gender === mySelf.gender ||
-                user.days.some(day => mySelf.days.includes(day)) ||
                 user.location === mySelf.location ||
+                user.days.some(day => mySelf.days.includes(day)) ||
                 user.expertise === mySelf.expertise ||
                 user.sport === mySelf.sport)
         );
@@ -104,6 +105,32 @@ function calculateMatchingAll(origin) {
     return 1
     // console.log(matchables[0])
 };
+
+
+function compareMatches(id) {
+    var target = userDB.find((user) => user.id == id);
+
+    const sharedKeys = Object.keys(mySelf).filter(key => target.hasOwnProperty(key) && mySelf[key] === target[key]);
+
+    const keysWithEqualValues = sharedKeys.filter(key => mySelf[key] === target[key]);
+
+
+    return keysWithEqualValues;
+
+}
+
+function dayMatcher(id) {
+    var target = userDB.find((user) => user.id == id);
+
+    var daymatches = [];
+    for (var day in target.days) {
+        if (day in mySelf.days) {
+            daymatches.push(day);
+        }
+    }
+
+    return daymatches
+}
 
 
 function showCard(id) {
@@ -174,4 +201,4 @@ function saveLast() {
     savedProfiles.push(getLastUser())
 }
 
-export { getUID, setUID, matchableClear, matchableCount, calculateMatchingAll, getUserName, nextProfile, saveLast };
+export { getUID, setUID, matchableClear, matchableCount, calculateMatchingAll, getUserName, nextProfile, compareMatches, dayMatcher, saveLast };

@@ -9,11 +9,10 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
-
+    matchableClear();
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {
-                matchableClear()
                 console.log(`User with user_id ${uid} exists in /users.`);
 
             } else {
