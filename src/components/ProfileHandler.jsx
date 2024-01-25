@@ -122,13 +122,13 @@ function compareMatches(id) {
 function dayMatcher(id) {
     var target = userDB.find((user) => user.id == id);
 
+
     var daymatches = [];
     for (var day in target.days) {
         if (day in mySelf.days) {
-            daymatches.push(day);
+            daymatches.push(mySelf.days[day]);
         }
     }
-
     return daymatches
 }
 

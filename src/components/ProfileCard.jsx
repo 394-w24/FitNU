@@ -41,15 +41,13 @@ const getFieldColor = (key, keysWithEqualValues) => {
 }
 const isKeyEqual = (key, keysWithEqualValues) => {
 
-    console.log("keys", keysWithEqualValues)
     // return 1
     return keysWithEqualValues.includes(key);
 }
 
-const dayColorMatch = (days, matchedDays) => {
-    if (matchedDays) {
-        mapDayNumberToName(profile.days)
-    }
+const getDayColor = (day, daymatches) => {
+    console.log("days", daymatches, day);
+    return daymatches.includes(day) ? 'green' : 'red';
 }
 
 const Card = ({ profile }) => (
@@ -65,9 +63,13 @@ const Card = ({ profile }) => (
             </p>
             <p className="card-text">
                 <strong>Days: </strong>
-                {/* <span style={{ color: getFieldColor('days', profile.keymatches) }}> */}
-                {mapDayNumberToName(profile.days)}
-                {/* </span> */}
+
+                {profile.days.map(day => (
+                    <span key={day} style={{ color: getDayColor(day, profile.daymatches) }}>
+                        {mapDayNumberToName([day])}{' '}
+                    </span>
+                ))}
+
             </p>
             <p className="card-text">
                 <strong>Location: </strong>
