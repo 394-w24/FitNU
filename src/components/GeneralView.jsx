@@ -3,7 +3,7 @@ import EventList from "./EventList";
 //import Link from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./GeneralView.css";
-import { useDbData } from "../utilities/firebase";
+import { getEvents } from "./EventHandler.jsx";
 
 const dummyData = {
   // "title": "CS Courses for 2018-2019",
@@ -29,32 +29,6 @@ const dummyData = {
   }
 };
 
-function generateArrayOfDicts() {
-  // my_id = "0"; //this is for testing purposes
-  const [events] = useDbData('/events/')
-  const keyValPairsArr = users && Object.entries(users)
-  // console.log(keyValPairsArr)
-
-  if (keyValPairsArr) {
-    const arrayOfDicts = keyValPairsArr.map(([key, user]) => {
-      return {
-        id: key,
-        name: user?.name === undefined ? 'Null' : user.name.toString(),
-        gender: user?.gender === undefined ? 'Null' : user.gender.toString(),
-        days: user?.days === undefined ? [] : user.days,
-        location: user?.location === undefined ? -1 : user.location,
-        expertise: user?.expertise === undefined ? -1 : user.expertise,
-        sport: user?.sport === undefined ? 'Null' : user.sport,
-        funFact: user?.funFact === undefined ? 'Null' : user.funFact,
-        preferredName: user?.preferredName === undefined ? '' : user.preferredName
-      };
-    });
-
-    // Print or use the generated array of dictionaries
-    userDB = arrayOfDicts;
-  }
-}
-
 // export default GeneralView;
 const GeneralView = () => {
   const imageStyle = {
@@ -72,6 +46,9 @@ const GeneralView = () => {
   const textStyle = {
     textAlign: 'center', // Corrected styling for text alignment
   };
+
+  const events = getEvents();
+  console.log(events);
 
   return (
     <div className="general-view">
@@ -93,7 +70,7 @@ const GeneralView = () => {
         New Event
       </button>
 
-      <EventList events={dummyData.events} />
+      <EventList events={events} />
     </div>
   );
 };

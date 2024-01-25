@@ -14,10 +14,10 @@ const Event = ({ event, selected, toggleSelected }) => {
             ></i>
             <div className="card-body">
                 <h4 className="card-title">{event.title}</h4>
-                <p className="card-text">{event.description}</p>
+                <p className="card-text">{event.desc}</p>
                 <p className="card-text">{event.location}</p>
             </div>
-            <div className="card-footer bg-transparent">{event.meets}</div>
+            <div className="card-footer bg-transparent">{event.date}</div>
         </div>
     );
 };
