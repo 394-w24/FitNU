@@ -20,6 +20,10 @@ function getUID() {
     // console.log(my_id)
 }
 
+function seenProfilesClear() {
+    seenProfiles = []
+}
+
 
 function matchableClear() {
     matchables = []
@@ -97,7 +101,7 @@ function calculateMatchingAll(origin) {
             // console.log(user)
             matchables.push(user.id.toString());
         });
-        // console.log("matchingusers", matchables)
+        console.log("matchingusers", matchables)
 
         // console.log("self:", my_id, "matches:", matchables)
         return 0
@@ -154,7 +158,7 @@ function showEmpty() {
 
     // the following is a temp solution more will need to be done!!!
 
-
+    useProfileStore.setState({ profile: null });
     alert("You've reached the end of the personalized feed!")
 
 
@@ -179,7 +183,21 @@ function getUserName() {
     }
 }
 
+function startFromBeginning() {
 
+    seenProfilesClear();
+
+    let uid = matchables[0];
+
+    console.log(uid)
+    if (uid === undefined) {
+        showEmpty()
+    } else {
+
+        seenProfiles.push(uid);
+        showCard(uid);
+    }
+}
 
 function nextProfile() {
 
@@ -198,7 +216,13 @@ function nextProfile() {
 };
 
 function saveLast() {
-    savedProfiles.push(getLastUser())
+    savedProfiles.push(getLastUser());
 }
 
-export { getUID, setUID, matchableClear, matchableCount, calculateMatchingAll, getUserName, nextProfile, compareMatches, dayMatcher, saveLast };
+function getSaved() {
+    return savedProfiles;
+}
+
+
+
+export { getUID, setUID, startFromBeginning, seenProfilesClear, matchableClear, matchableCount, calculateMatchingAll, getUserName, nextProfile, compareMatches, dayMatcher, saveLast };

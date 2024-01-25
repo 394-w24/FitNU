@@ -2,13 +2,14 @@ import "./LoginPage.css";
 import { auth, database } from "../utilities/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ref, child, get, set } from "firebase/database";
-import { matchableClear } from "./ProfileHandler";
+import { matchableClear, seenProfilesClear } from "./ProfileHandler";
 
 const handleUserLogin = (user, firstTimeUserCallBack) => {
     // console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
+    seenProfilesClear();
     matchableClear();
     get(usersRef)
         .then((snapshot) => {

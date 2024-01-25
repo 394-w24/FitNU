@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase';
 import "./CreateProfile.css";
+import { seenProfilesClear, startFromBeginning } from "./ProfileHandler";
 
 function validateField(key, value) {
     const validators = {
@@ -124,6 +125,8 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
             gender: state.gender,
             expertise: Number(state.expertise)
         });
+        seenProfilesClear();
+        startFromBeginning();
         firstTimeUserCallBack(false);
         navigate("/");
     };
