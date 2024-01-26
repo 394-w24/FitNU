@@ -478,7 +478,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
     const [state, setState] = useState({
         preferredName: '',
         sport: 'cardio',
-        gym: '0',
+        location: '0',
         expertise: '0',
         gender: 'male',
         funFact: '',
@@ -494,7 +494,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
             photoURL: user.photoURL,
             days: mapDaysToArr(state.days),
             sport: state.sport,
-            gym: Number(state.gym),
+            location: Number(state.location),
             funFact: state.funFact,
             preferredName: state.preferredName,
             gender: state.gender,
