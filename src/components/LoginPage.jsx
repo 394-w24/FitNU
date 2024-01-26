@@ -2,17 +2,21 @@ import "./LoginPage.css";
 import { auth, database } from "../utilities/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ref, child, get, set } from "firebase/database";
-import { matchableClear } from "./ProfileHandler";
+import { matchableClear, seenProfilesClear } from "./ProfileHandler";
 
 const handleUserLogin = (user, firstTimeUserCallBack) => {
     // console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
+<<<<<<< HEAD
+=======
+    seenProfilesClear();
+    matchableClear();
+>>>>>>> 4def16bbeb48ecee6d548611a985d217a8953f5b
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {
-                matchableClear()
                 console.log(`User with user_id ${uid} exists in /users.`);
 
             } else {

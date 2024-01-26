@@ -11,8 +11,6 @@ const mapDayNumberToName = (dayNumbers) => {
 const getLocationName = (locationNumber) => {
     const locations = { 0: "SPAC", 1: "Blom" };
 
-    console.log("spac?", locationNumber)
-
     return locations[locationNumber] || "Unknown Location";
 };
 
@@ -38,17 +36,59 @@ const getBetterName = (profile) => {
     return profile.name;
 };
 
+const getFieldColor = (key, keysWithEqualValues) => {
+    return isKeyEqual(key, keysWithEqualValues) ? 'green' : 'red';
+}
+const isKeyEqual = (key, keysWithEqualValues) => {
+
+    // return 1
+    return keysWithEqualValues.includes(key);
+}
+
+const getDayColor = (day, daymatches) => {
+    console.log("days", daymatches, day);
+    return daymatches.includes(day) ? 'green' : 'red';
+}
 
 const Card = ({ profile }) => (
     <div className="card m-1 p-2">
         {/* <img src={profile.thumbnail} className="card-img-top" alt={profile.description} /> */}
         <div className="card-body">
             <h5 className="card-title">{getBetterName(profile)}</h5>
-            <p className="card-text"><strong>Gender:</strong> {profile.gender}</p>
-            <p className="card-text"><strong>Days:</strong> {mapDayNumberToName(profile.days)}</p>
-            <p className="card-text"><strong>Location:</strong> {getLocationName(profile.location)}</p>
-            <p className="card-text"><strong>Expertise:</strong> {getExpertiseLevel(profile.expertise)}</p>
-            <p className="card-text"><strong>Sport:</strong> {profile.sport}</p>
+            <p className="card-text">
+                <strong>Gender: </strong>
+                <span style={{ color: getFieldColor('gender', profile.keymatches) }}>
+                    {profile.gender}
+                </span>
+            </p>
+            <p className="card-text">
+                <strong>Days: </strong>
+
+                {profile.days.map(day => (
+                    <span key={day} style={{ color: getDayColor(day, profile.daymatches) }}>
+                        {mapDayNumberToName([day])}{' '}
+                    </span>
+                ))}
+
+            </p>
+            <p className="card-text">
+                <strong>Location: </strong>
+                <span style={{ color: getFieldColor('location', profile.keymatches) }}>
+                    {getLocationName(profile.location)}
+                </span>
+            </p>
+            <p className="card-text">
+                <strong>Expertise: </strong>
+                <span style={{ color: getFieldColor('expertise', profile.keymatches) }}>
+                    {getExpertiseLevel(profile.expertise)}
+                </span>
+            </p>
+            <p className="card-text">
+                <strong>Sport: </strong>
+                <span style={{ color: getFieldColor('sport', profile.keymatches) }}>
+                    {profile.sport}
+                </span>
+            </p>
             <p className="card-text"><strong>Fun Fact:</strong> {profile.funFact}</p>
         </div>
     </div>
