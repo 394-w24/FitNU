@@ -8,8 +8,9 @@ import { matchableCount, calculateMatchingAll, nextProfile } from "./ProfileHand
 
 const PersonalizedView = () => {
 
-  // const { profile } = useProfileStore();
-  // calculateMatchingAll()
+  const { profile } = useProfileStore();
+  calculateMatchingAll()
+  console.log(profile)
   return (
     <div className="personalized-view">
       {/* {profile !== null ? (
