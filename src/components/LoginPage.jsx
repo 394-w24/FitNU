@@ -9,11 +9,8 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
-<<<<<<< HEAD
-=======
     seenProfilesClear();
     matchableClear();
->>>>>>> 4def16bbeb48ecee6d548611a985d217a8953f5b
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {

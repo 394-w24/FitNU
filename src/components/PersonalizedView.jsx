@@ -6,18 +6,17 @@ import Profile from "./Profile";
 import useProfileStore from '../utilities/store';
 import { matchableCount, calculateMatchingAll, nextProfile } from "./ProfileHandler";
 
-const PersonalizedView = () => {
+const PersonalizedView = ({ user }) => {
 
   const { profile } = useProfileStore();
   calculateMatchingAll()
-  console.log(profile)
   return (
     <div className="personalized-view">
-      {/* {profile !== null ? (
+      {profile !== null ? (
         <div className="personalized-core">
           <Cross />
           <Profile />
-          <Check />
+          <Check user={user} />
         </div>
       )
         :
@@ -27,7 +26,7 @@ const PersonalizedView = () => {
             <p className="ref-ico">🔄</p>
           </button>
         </div>
-      } */}
+      }
     </div>
   );
 };

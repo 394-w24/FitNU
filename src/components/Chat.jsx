@@ -1,18 +1,13 @@
-
-// // const Chat = () => {
-// //   return <div className="chat">This is the chat component</div>;
-// // };
-
-// // export default Chat;
-
 import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, get } from "firebase/database";
 import { getUID } from "./ProfileHandler"; // Import getUID from your actual ProfileHandler
 import "./Chat.css"; // Make sure the CSS file is linked properly
+import { useNavigate } from 'react-router-dom';
 
-const Chat = () => {
+const Chat = ({ user }) => {
+    const navigate = useNavigate();
     const [chats, setChats] = useState([]);
-    const myUid = getUID(); // Retrieve the current user's UID
+    const myUid = user.uid;
 
     useEffect(() => {
         const db = getDatabase();
@@ -45,7 +40,8 @@ const Chat = () => {
 
     const handleChatClick = (chatId) => {
         // Navigation or other click handling logic goes here
-        console.log(`Chat with ID ${chatId} was clicked.`);
+        //console.log('chatId', chatId);
+        navigate(`/Chat/${chatId}`);
     };
 
     return (

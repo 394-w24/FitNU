@@ -29,10 +29,10 @@ const getExpertiseLevel = (expertiseNumber) => {
 const getBetterName = (profile) => {
 
     if (profile.preferredName !== '') {
-        console.log("prefered", profile.preferredName)
+        //console.log("prefered", profile.preferredName)
         return profile.preferredName;
     }
-    console.log("nopreferred")
+    //console.log("nopreferred")
     return profile.name;
 };
 
@@ -46,7 +46,7 @@ const isKeyEqual = (key, keysWithEqualValues) => {
 }
 
 const getDayColor = (day, daymatches) => {
-    console.log("days", daymatches, day);
+    //console.log("days", daymatches, day);
     return daymatches.includes(day) ? 'green' : 'red';
 }
 
