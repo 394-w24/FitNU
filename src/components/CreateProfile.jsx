@@ -133,7 +133,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
         <div className='form-container' style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "250px" } : {
             overflow: "auto"
         }}>
-            <form className='profile-form' onSubmit={handleSubmit} noValidate>
+            <form className='profile-form' onSubmit={handleSubmit} id="create-profile" name="create-profile" noValidate>
                 <FormField label="Preferred Name" type="text" name="preferredName" state={state} setState={setState} />
                 <br />
                 <SelectField

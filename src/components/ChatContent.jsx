@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./ChatContent.css";
 import { useParams } from "react-router-dom";
 import { database, useDbData, useDbUpdate } from "../utilities/firebase";
@@ -27,17 +27,38 @@ const ChatContent = ({ user }) => {
     const [updateMRM, updateMRMResult] = useDbUpdate(`/chats/${chatId}/mrm/`);
     const [chat, chatError] = useDbData(`/chats/${chatId}/`);
     const [otherUser, otherUserError] = useDbData(`/users/${getOtherUser(chat, user.uid)}/`);
-    const messagesReference = ref(database, `/chats/${chatId}/messages/`)
+    const messagesReference = ref(database, `/chats/${chatId}/messages/`);
+    const messageViewRef = useRef(null);
 
-    // if (chat)
-    //     console.log(Object.entries(chat.messages).sort((a, b) => a.timestamp - b.timestamp));
-
-    const handleSendMessage = (event) => {
-        console.log(message);
-        push(messagesReference, { textContent: message, senderId: user.uid, timestamp: Date.now() });
-        updateMRM({ textContent: message, senderId: user.uid, timestamp: Date.now() });
-        setMessage("");
+    const handleSendMessage = () => {
+        if (message !== "") {
+            push(messagesReference, { textContent: message, senderId: user.uid, timestamp: Date.now() });
+            updateMRM({ textContent: message, senderId: user.uid, timestamp: Date.now(), read: false });
+            setMessage("");
+        }
     }
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // disable the default property, starting a new line in this case
+            handleSendMessage();
+        }
+    }
+
+    const scrollToBottom = () => {
+        if (messageViewRef.current)
+            messageViewRef.current.scrollTop = messageViewRef.current.scrollHeight;
+    }
+
+    useEffect(() => {
+        const timer = setTimeout(
+            scrollToBottom,
+            100
+        );
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => scrollToBottom(), [chat?.messages]);
 
     return otherUser &&
         <div className="chat-content">
@@ -45,14 +66,15 @@ const ChatContent = ({ user }) => {
                 <img src={otherUser.photoURL} />
                 <h3>{otherUser.name}</h3>
             </div>
-            <div className="message-view">
-                {Object.entries(chat.messages).sort((a, b) => a.timestamp - b.timestamp).map(([key, value]) => value.senderId === user.uid ?
-                    <MessageRight textContent={value.textContent} key={key} /> :
-                    <MessageLeft textContent={value.textContent} key={key} />)}
+            <div className="message-view" ref={messageViewRef}>
+                {Object.entries(chat.messages).sort((a, b) => a.timestamp - b.timestamp)
+                    .map(([key, value]) => value.senderId === user.uid ?
+                        <MessageRight textContent={value.textContent} key={key} /> :
+                        <MessageLeft textContent={value.textContent} key={key} />)}
             </div>
             <div className="message-sender">
                 <textarea className="message-input" placeholder="Type your message here..."
-                    value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    value={message} onChange={(e) => setMessage(e.target.value)} onKeyDown={handleKeyPress} />
                 <button className="send-button" onClick={handleSendMessage}>Send</button>
             </div>
         </div>
