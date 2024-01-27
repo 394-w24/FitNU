@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getDatabase, ref, get } from "firebase/database";
-import { getUID } from "./ProfileHandler"; // Import getUID from your actual ProfileHandler
 import "./Chat.css"; // Make sure the CSS file is linked properly
 import { useNavigate } from 'react-router-dom';
 

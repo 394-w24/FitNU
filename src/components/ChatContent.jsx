@@ -35,6 +35,7 @@ const ChatContent = ({ user }) => {
     const handleSendMessage = (event) => {
         console.log(message);
         push(messagesReference, { textContent: message, senderId: user.uid, timestamp: Date.now() });
+        updateMRM({ textContent: message, senderId: user.uid, timestamp: Date.now() });
         setMessage("");
     }
 
