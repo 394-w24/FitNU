@@ -29,12 +29,15 @@
 /* Styling for the chat partner's name */
 .chat-partner-name {
     font-weight: bold;
+    
 }
 
 /* Styling for the latest message preview text */
 .chat-latest-message {
     color: #666;
     font-size: 0.9rem;
+    max-height: 200px;
+    overflow: auto;
 }
 
 /* Styling for the timestamp */
@@ -59,4 +62,10 @@ body, html {
     margin: 0;
     padding: 0;
     /* other global styles */
+}
+
+
+.chat-detials {
+    display: flex;
+    flex-direction: column;
 }

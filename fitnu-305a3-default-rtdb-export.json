@@ -1,0 +1,226 @@
+{
+  "chats": {
+    "759BwMjCxcYl9Hk4IhIWngnpHC43": {
+      "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
+        "messages": {
+          "0": [
+            "first message",
+            "timeStamp"
+          ],
+          "mrm": "timeStamp"
+        }
+      }
+    },
+    "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
+      "759BwMjCxcYl9Hk4IhIWngnpHC43": {
+        "messages": [
+          [
+            "first message",
+            "timeStamp"
+          ]
+        ],
+        "mrm": "timeStamp"
+      }
+    }
+  },
+  "events": {
+    "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
+      "date": "every day bro",
+      "desc": "Test description!",
+      "location": "no location lolz",
+      "name": "Claire Paré",
+      "title": "titular"
+    },
+    "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
+      "name": "Lili Zhao"
+    },
+    "TQgN3gqkU1QLjaY7MHYBEfDatay2": {
+      "name": "Joyce Zhao"
+    },
+    "VkSUTlL3qcUf67tUE9JNHCsxqMF3": {
+      "date": "d5",
+      "desc": "d5",
+      "location": "l5",
+      "name": "Claire Paré",
+      "title": "t5"
+    },
+    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
+      "date": "haha",
+      "desc": "yoga",
+      "location": "hehe",
+      "name": "Joyce Zhao",
+      "title": "fitnu"
+    }
+  },
+  "users": {
+    "759BwMjCxcYl9Hk4IhIWngnpHC43": {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "email": "qy624@nyu.edu",
+      "expertise": 0,
+      "funFact": "666",
+      "gender": "male",
+      "gym": 0,
+      "name": "QingYuan Yao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIGMBsoCmn_ZaCvL0gv09yzQwMtbTKaA4zIXkGdBCv1=s96-c",
+      "preferredName": "Jason",
+      "sport": "cardio"
+    },
+    "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
+      "days": [
+        4
+      ],
+      "email": "clairempare@gmail.com",
+      "expertise": 4,
+      "funFact": "i don't do facts.",
+      "gender": "female",
+      "gym": 1,
+      "name": "Claire Paré",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJcXi22IAKmIjRUorT4oq74JDwPrwMLHnlr6jnMbTjy=s96-c",
+      "preferredName": "Clare's Alter Ego",
+      "sport": "outdoorActivities"
+    },
+    "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": {
+      "days": [
+        5,
+        6,
+        7
+      ],
+      "email": "keenelu2024@u.northwestern.edu",
+      "expertise": 0,
+      "funFact": "",
+      "gender": "male",
+      "location": 0,
+      "name": "Keene Lu",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJhWCjZNPf9Akj2C8-FzGixBTwk2wTmpRqUeOHT5bWtJys=s96-c",
+      "preferredName": "",
+      "sport": "cardio"
+    },
+    "OSqh3ozrpYRxYVByE8OSAxEKraC3": {
+      "days": [
+        1,
+        2
+      ],
+      "name": "Xuewei Jiang",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJRYKYbtEJ1Ngztnkw2qnc0EENEGXkP0iZ3FTGsRDHF=s96-c"
+    },
+    "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
+      "email": "lilizhao553@gmail.com",
+      "expertise": 0,
+      "funFact": "muscles",
+      "gender": "male",
+      "gym": 0,
+      "name": "Lili Zhao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocI4Hwt4iajx2biyc5B4PF-VYlSVZtdBI11BYTGIVX85yg=s96-c",
+      "preferredName": "",
+      "sport": "cardio"
+    },
+    "TQgN3gqkU1QLjaY7MHYBEfDatay2": {
+      "days": [
+        4,
+        6,
+        7
+      ],
+      "email": "joycezhao2024@u.northwestern.edu",
+      "expertise": 3,
+      "funFact": "hehe",
+      "gender": "female",
+      "location": 1,
+      "name": "Joyce Zhao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJrGsU4pjzGihCm8llUX_eBtOQI36xnqtuAl2tiBzvT=s96-c",
+      "preferredName": "Yoice",
+      "sport": "yogaPilates"
+    },
+    "VkSUTlL3qcUf67tUE9JNHCsxqMF3": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "email": "clairepare2024@u.northwestern.edu",
+      "expertise": 2,
+      "funFact": "facts aren't fun",
+      "gender": "female",
+      "location": 0,
+      "name": "Claire Paré",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKEkVV62K0ITW4ve5fswIzc_gIyN7-T2-7t2FMz3di3=s96-c",
+      "preferredName": "Claire",
+      "sport": "strengthTraining"
+    },
+    "X2DR2yS1VKNA0gcMBcU2Z715nMG3": {
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "email": "qingyuanyao2025@u.northwestern.edu",
+      "expertise": 0,
+      "funFact": "666",
+      "gender": "male",
+      "location": 0,
+      "name": "Qingyuan Yao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJYvTbtzUlYZ-Q6Mt0rlTcVttbnbG-RxMmNEez4coCy=s96-c",
+      "preferredName": "Cody",
+      "sport": "cardio"
+    },
+    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "email": "joycexzhao@gmail.com",
+      "expertise": 2,
+      "funFact": "muscles",
+      "gender": "female",
+      "location": 0,
+      "name": "Joyce Zhao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIXfzqrZwRZHDbUeWHp5czdkxMclYlQAg4Ev4HWMHdRNT7Y=s96-c",
+      "preferredName": "Joyce",
+      "sport": "strengthTraining"
+    },
+    "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
+      "days": [
+        1,
+        2,
+        3
+      ],
+      "email": "muratsankaya2025@u.northwestern.edu",
+      "expertise": 0,
+      "funFact": "",
+      "gender": "male",
+      "location": 0,
+      "name": "Murat Sankaya",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKzNjXCuxFsJW96Qmj76DC-kuPCjTpLhjKRb0ithCA6=s96-c",
+      "preferredName": "Ironman",
+      "sport": "groupSports"
+    },
+    "xnExkVqjqLcjVIUNxPTPmAiDLgF2": {
+      "days": [
+        5,
+        6,
+        7
+      ],
+      "email": "keene.ruiyang.lu@gmail.com",
+      "expertise": 1,
+      "funFact": "",
+      "gender": "male",
+      "location": 0,
+      "name": "Keene Lu",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKMqE_mVDtJtgQbmgxAt30EsCwGQrtXHc4VKwiMo53saQ=s96-c",
+      "preferredName": "Klu",
+      "sport": "cardio"
+    }
+  }
+}
