@@ -58,7 +58,11 @@ const ChatContent = ({ user }) => {
         return () => clearTimeout(timer);
     }, []);
 
-    useEffect(() => scrollToBottom(), [chat?.messages]);
+    useEffect(() => {
+        if (chat?.mrm.senderId === user.uid)
+            scrollToBottom();
+
+    }, [chat?.messages]);
 
     return otherUser &&
         <div className="chat-content">

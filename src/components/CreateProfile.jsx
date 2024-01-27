@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import { useDbUpdate, useDbData } from '../utilities/firebase';
+import React, { useState } from 'react';
+import { useDbUpdate } from '../utilities/firebase';
 import "./CreateProfile.css";
 import { seenProfilesClear, startFromBeginning } from "./ProfileHandler";
 
