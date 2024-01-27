@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import { useDbUpdate } from '../utilities/firebase';
+import React, { useEffect, useState } from 'react';
+import { useDbUpdate, useDbData } from '../utilities/firebase';
 import "./CreateProfile.css";
 import { seenProfilesClear, startFromBeginning } from "./ProfileHandler";
 
@@ -91,18 +91,35 @@ const mapDaysToArr = (days) => {
     );
 }
 
-function CreateProfile({ user, firstTimeUserCallBack }) {
-    //console.log(user.uid);
+const arrayToDaysObject = (daysArray) => {
+    const daysObject = {};
+    daysArray.forEach(day => daysObject[day] = true);
+    return daysObject;
+};
+
+function CreateProfile({ user, userData, firstTimeUserCallBack }) {
+    // const [userData, userDataError] = useDbData(`/users/${user.uid}/`);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
     const navigate = useNavigate();
     const location = useLocation();
 
+    // console.log('userData', userData?.preferredName);
+
     // TO-DO: ADD IMAGE INPUT FIELD
-    const [state, setState] = useState({
+    const [state, setState] = useState(userData ? {
+        preferredName: userData.preferredName,
+        sport: userData.sport,
+        location: userData.location,
+        expertise: userData.expertise,
+        gender: userData.gender,
+        funFact: userData.funFact,
+        days: arrayToDaysObject(userData.days),
+        errors: {}
+    } : {
         preferredName: '',
         sport: 'cardio',
-        location: '0',
-        expertise: '0',
+        location: 0,
+        expertise: 0,
         gender: 'male',
         funFact: '',
         days: {},
