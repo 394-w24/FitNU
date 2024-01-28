@@ -7,7 +7,6 @@ import useProfileStore from '../utilities/store';
 import { matchableCount, calculateMatchingAll, nextProfile } from "./ProfileHandler";
 
 const PersonalizedView = ({ user }) => {
-
   const { profile } = useProfileStore();
   calculateMatchingAll()
   return (

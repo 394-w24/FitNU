@@ -59,9 +59,13 @@ const ChatContent = ({ user }) => {
     }, []);
 
     useEffect(() => {
+        if (!chat?.mrm.read && chat?.mrm.senderId !== user.uid)
+            updateMRM({ read: true });
+    }, [chat?.mrm]);
+
+    useEffect(() => {
         if (chat?.mrm.senderId === user.uid)
             scrollToBottom();
-
     }, [chat?.messages]);
 
     return otherUser &&

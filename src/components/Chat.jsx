@@ -82,17 +82,15 @@ import { useDbData } from '../utilities/firebase';
 const updateData = (path, data) => {
     const db = getDatabase();
     const dataRef = ref(db, path);
-  
-    update(dataRef, data)
-      .then(() => {
-        console.log('Data updated successfully');
-      })
-      .catch((error) => {
-        console.error('Failed to update data', error);
-      });
-  };
-  
 
+    update(dataRef, data)
+        .then(() => {
+            console.log('Data updated successfully');
+        })
+        .catch((error) => {
+            console.error('Failed to update data', error);
+        });
+};
 
 const Chat = ({ user }) => {
     const navigate = useNavigate();
@@ -138,13 +136,11 @@ const Chat = ({ user }) => {
 
     const handleChatClick = (chatId, senderId) => {
         if (senderId !== user.uid) {
-            updateData(`/chats/${chatId}/mrm/`, {read: true});
+            updateData(`/chats/${chatId}/mrm/`, { read: true });
         }
         navigate(`/Chat/${chatId}`);
     };
 
-    console.log(chats);
-    // console.log(chats[0]["otherUserId"], myUid);
     return (
         <div className="chat-container">
             <h2 className="chat-title">Your Chats</h2>
@@ -152,7 +148,7 @@ const Chat = ({ user }) => {
                 {chats.map(({ chatId, otherUserName, latestMessage, read, senderId }) => (
                     <div
                         key={chatId}
-                        className={!read && user.uid !== senderId ? "chat-conversation unread": "chat-conversation"}
+                        className={!read && user.uid !== senderId ? "chat-conversation unread" : "chat-conversation"}
                         onClick={() => handleChatClick(chatId, senderId)}
                         role="button"
                         tabIndex={0}
