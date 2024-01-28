@@ -2,7 +2,6 @@ import DATAFILE from '../data/dummyData.json';
 import useProfileStore from '../utilities/store';
 import { useDbData, useDbUpdate } from "../utilities/firebase";
 
-
 let my_id = "0";
 let mySelf = {};
 let userDB = [];
@@ -54,6 +53,7 @@ function generateArrayOfDicts() {
                 expertise: user?.expertise === undefined ? -1 : user.expertise,
                 sport: user?.sport === undefined ? 'Null' : user.sport,
                 funFact: user?.funFact === undefined ? 'Null' : user.funFact,
+                photoURL: user?.photoURL === undefined ? 'Null' : user.photoURL,
                 preferredName: user?.preferredName === undefined ? '' : user.preferredName
             };
         });

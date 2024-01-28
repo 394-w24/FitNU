@@ -1,6 +1,14 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import { useDbUpdate } from '../utilities/firebase';
+import React, { useState, useEffect } from 'react';
+import { useDbUpdate, useDbRead } from '../utilities/firebase';
+import Button from "@mui/material/Button";
+
+
+
+// for image uploads
+import { storage } from '../utilities/firebase'; // Import Firebase storage
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import necessary methods
+
 import "./CreateProfile.css";
 import { seenProfilesClear, startFromBeginning } from "./ProfileHandler";
 
@@ -73,7 +81,9 @@ function CheckboxGroup({ label, name, options, state, setState }) {
                         className="form-check-input"
                         type="checkbox"
                         value={option.value}
-                        checked={state[name][option.value] || false}
+                        checked={Array.isArray(state.days) ? state.days.includes(option.value) : (state[name][option.value] || false)}
+                        // checked={state[name][option.value] || false} 
+                        // checked={state.days.includes(option.value)}
                         onChange={onChange}
                     />
                     <label className="form-check-label">
@@ -86,10 +96,157 @@ function CheckboxGroup({ label, name, options, state, setState }) {
 }
 
 const mapDaysToArr = (days) => {
+    console.log(days)
     return (
         Object.entries(days).map(([key, val]) => val ? Number(key) : -1).filter(day => day !== -1)
     );
 }
+
+// for image uploads
+// function ImageUploadField({ state, setState }) {
+//     const handleImageChange = (e) => {
+//         if (e.target.files[0]) {
+//             const image = e.target.files[0];
+//             setState({ ...state, image });
+//         }
+//     };
+
+//     return (
+//         <div className="form-group">
+//             <label htmlFor="image">Profile Image</label>
+//             <input
+//                 type="file"
+//                 className="form-control"
+//                 id="image"
+//                 onChange={handleImageChange}
+//             />
+//         </div>
+//     );
+// }
+
+// for image uploads, seperately
+// ImageUploadForm Component
+// function ImageUploadForm({ user, setState, updateDb }) {
+//     const [image, setImage] = useState(null);
+
+//     const handleImageChange = (e) => {
+//         if (e.target.files[0]) {
+//             setImage(e.target.files[0]);
+//         }
+//     };
+
+//     const handleImageSubmit = (event) => {
+//         event.preventDefault();
+//         if (image) {
+//             const imageRef = ref(storage, `profile_images/${user.uid}/${image.name}`);
+//             uploadBytes(imageRef, image).then((snapshot) => {
+//                 getDownloadURL(snapshot.ref).then((url) => {
+//                     // Update the parent component's state
+//                     setState(prevState => ({ ...prevState, photoURL: url }));
+
+//                     // Update the Firebase Realtime Database
+//                     updateDb(url);
+//                 });
+//             });
+//         }
+//     };
+
+//     return (
+//         <form onSubmit={handleImageSubmit} className="image-upload-form">
+//             <div className="form-group">
+//                 <label htmlFor="image">Profile Image</label>
+//                 <input
+//                     type="file"
+//                     className="form-control"
+//                     id="image"
+//                     onChange={handleImageChange}
+//                 />
+//             </div>
+//             <Button type="submit" variant="contained" color="primary">Upload Image</Button>
+
+//         </form>
+//     );
+// }
+
+
+
+
+
+
+
+
+// for image uploads
+// function ImageUploadField({ state, setState }) {
+//     const handleImageChange = (e) => {
+//         if (e.target.files[0]) {
+//             const image = e.target.files[0];
+//             setState({ ...state, image });
+//         }
+//     };
+
+//     return (
+//         <div className="form-group">
+//             <label htmlFor="image">Profile Image</label>
+//             <input
+//                 type="file"
+//                 className="form-control"
+//                 id="image"
+//                 onChange={handleImageChange}
+//             />
+//         </div>
+//     );
+// }
+
+// for image uploads, seperately
+// ImageUploadForm Component
+function ImageUploadForm({ user, setState, updateDb }) {
+    const [image, setImage] = useState(null);
+
+    const handleImageChange = (e) => {
+        if (e.target.files[0]) {
+            setImage(e.target.files[0]);
+        }
+    };
+
+    const handleImageSubmit = (event) => {
+        event.preventDefault();
+        if (image) {
+            const imageRef = ref(storage, `profile_images/${user.uid}/${image.name}`);
+            uploadBytes(imageRef, image).then((snapshot) => {
+                getDownloadURL(snapshot.ref).then((url) => {
+                    // Update the parent component's state
+                    setState(prevState => ({ ...prevState, photoURL: url }));
+
+                    // Update the Firebase Realtime Database
+                    updateDb(url);
+                });
+            });
+        }
+    };
+
+    return (
+        <form onSubmit={handleImageSubmit} className="image-upload-form">
+            <div className="form-group">
+                <label htmlFor="image">Profile Image</label>
+                <input
+                    type="file"
+                    className="form-control"
+                    id="image"
+                    onChange={handleImageChange}
+                />
+            </div>
+            <Button type="submit" variant="contained" color="primary">Upload Image</Button>
+
+        </form>
+    );
+}
+
+
+
+
+
+
+
 
 const arrayToDaysObject = (daysArray) => {
     const daysObject = {};
@@ -99,10 +256,11 @@ const arrayToDaysObject = (daysArray) => {
 
 function CreateProfile({ user, userData, firstTimeUserCallBack }) {
     const [update] = useDbUpdate(`/users/${user.uid}/`);
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const location = useLocation();
+    // if(location === "EditProfile")
 
-    // console.log('userData', userData?.preferredName);
+
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState(userData ? {
@@ -112,6 +270,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
         expertise: userData.expertise,
         gender: userData.gender,
         funFact: userData.funFact,
+        photoURL: userData.photoURL,
         days: arrayToDaysObject(userData.days),
         errors: {}
     } : {
@@ -121,16 +280,45 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
         expertise: 0,
         gender: 'male',
         funFact: '',
-        days: {},
+        days: [],
+        photoURL: user.photoURL,
         errors: {}
     });
+
+    // for populate the edit profile form
+    // Fetch user data when component mounts
+    // useEffect(() => {
+    //     if (!loading && userData && !error) {
+    //         setState(prevState => ({
+    //             ...prevState,
+    //             ...userData,
+    //             days: Array.isArray(userData.days) ? userData.days : [],
+    //             errors: {}
+    //         }));
+    //     }
+
+    //     console.log(userData);
+    // }, [userData, loading, error]);
+
+    // useEffect(() => {
+    //     if (!loading && userData && !error) {
+    //         setState({
+    //             ...state,
+    //             ...userData,
+    //             errors: {}
+    //         });
+    //     }
+
+    //     console.log(userData)
+    //     // console.log(userData.days)
+    // }, [userData, loading, error]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         update({
             name: user.displayName,
             email: user.email,
-            photoURL: user.photoURL,
+            photoURL: state.photoURL, // Use photoURL from state
             days: mapDaysToArr(state.days),
             sport: state.sport,
             location: Number(state.location),
@@ -143,13 +331,87 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
         startFromBeginning();
         firstTimeUserCallBack(false);
         navigate("/");
+
+        // for image uploads
+        // if (state.image) {
+        //     const imageRef = ref(storage, `profile_images/${user.uid}/${state.image.name}`);
+        //     uploadBytes(imageRef, state.image).then((snapshot) => {
+        //         getDownloadURL(snapshot.ref).then((url) => {
+        //             updateProfile(url);
+        //         });
+        //     });
+        // } else {
+        //     updateProfile(user.photoURL);
+        // }
+
+        // return (
+        //     <div className='form-container' style={{
+        //         display: 'flex',
+        //         flexDirection: 'column',
+        //         alignItems: 'center',
+        //         justifyContent: 'center',
+        //         padding: '20px',
+        //         margin: '20px auto',
+        //         maxWidth: '500px',
+        //         backgroundColor: '#f7f7f7',
+        //         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        //         borderRadius: '10px',
+        //     }}>
+        //         <ImageUploadForm user={user} setState={setState} />
+        //         <form className='profile-form' onSubmit={handleSubmit} noValidate>
+        //             {/* Other form fields */}
+        //             <button type="submit" className="btn btn-primary">Submit Profile</button>
+        //         </form>
+        //     </div>
+        // );
+
+
     };
 
+    // // for image uploads
+    // const updateProfile = (photoURL) => {
+    //     update({ photoURL }).then(() => {
+    //         firstTimeUserCallBack(false);
+    //         navigate("/");
+    //     });
+    // };
+
+    // for image uploads
+    const updateProfile = (photoURL) => {
+        update({
+            photoURL
+        });
+        firstTimeUserCallBack(false);
+        // navigate("/");
+    };
+
+
     return (
-        <div className='form-container' style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "250px" } : {
+        <div className="form-and-image-container" style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "600px" } : {
             overflow: "auto"
         }}>
+
+
+
+            {/* Image Display Section with Circular Frame */}
+            {state.photoURL && (
+                <div className="image-circle-frame">
+                    <img src={state.photoURL} alt="Uploaded Profile" />
+                </div>
+            )}
+
+
+            {/* <ImageUploadForm user={user} setState={setState} /> */}
+            <ImageUploadForm user={user} setState={setState} updateDb={updateProfile} />
+
+
+
             <form className='profile-form' onSubmit={handleSubmit} id="create-profile" name="create-profile" noValidate>
+                {/* for image uploads
+                <ImageUploadField state={state} setState={setState} /> */}
+
+
+
                 <FormField label="Preferred Name" type="text" name="preferredName" state={state} setState={setState} />
                 <br />
                 <SelectField

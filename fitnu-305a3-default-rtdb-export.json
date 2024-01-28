@@ -23,6 +23,140 @@
       }
     }
   },
+<<<<<<< HEAD
+  "users": {
+    "0": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "expertise": 4,
+      "funFact": "I am an admin account",
+      "gender": "none",
+      "id": "0",
+      "location": 1,
+      "name": "admin",
+      "sport": "strengthTraining"
+    },
+    "1": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "expertise": 4,
+      "funFact": "my favorite day is leg day",
+      "gender": "male",
+      "id": 1,
+      "location": 1,
+      "name": "Chris",
+      "sport": "strengthTraining"
+    },
+    "2": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "expertise": 2,
+      "funFact": "bench: 225",
+      "gender": "female",
+      "id": 2,
+      "location": 1,
+      "name": "Claire",
+      "sport": "strengthTraining"
+    },
+    "3": {
+      "days": [
+        2,
+        4,
+        5
+      ],
+      "expertise": 3,
+      "funFact": "i love to crochet",
+      "gender": "female",
+      "id": 3,
+      "location": 0,
+      "name": "Amy",
+      "profileImg": "gif.png",
+      "sport": "pickleball"
+    },
+    "4": {
+      "days": [
+        1,
+        2,
+        4
+      ],
+      "expertise": 3,
+      "funFact": "I grow potatoes",
+      "gender": "male",
+      "id": 4,
+      "location": 0,
+      "name": "Maximus",
+      "sport": "basketball"
+    },
+    "5": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "expertise": 3,
+      "funFact": "ball is life",
+      "gender": "male",
+      "id": 5,
+      "location": 1,
+      "name": "Joe",
+      "sport": "basketball"
+    },
+    "6": {
+      "days": [
+        6,
+        7
+      ],
+      "expertise": 5,
+      "funFact": "",
+      "gender": "female",
+      "id": 6,
+      "location": 1,
+      "name": "Jill",
+      "sport": "Yoga"
+    },
+    "7": {
+      "days": [
+        3,
+        5
+      ],
+      "expertise": 1,
+      "funFact": "I love dogs and work at a dog shelter!",
+      "gender": "male",
+      "id": 7,
+      "location": 0,
+      "name": "Patrick",
+      "sport": "running"
+    },
+    "66jpArnbkjasuQ2NBQkQIUg1N5D3": {
+      "days": [
+        3,
+        4,
+        6
+      ],
+      "email": "patelsaloni2001@gmail.com",
+      "expertise": 2,
+      "funFact": "I love to workout on peppy songs",
+      "gender": "female",
+      "gym": 0,
+      "name": "Saloni Patel",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKH3xV-GWbBAjLCaxlq3RUC8-l2GuA31lkrwJXsly6k=s96-c",
+      "preferredName": "Saloni",
+      "sport": "strengthTraining"
+    },
+    "759BwMjCxcYl9Hk4IhIWngnpHC43": {
+      "email": "qy624@nyu.edu",
+      "expertise": 0,
+      "funFact": "",
+=======
   "events": {
     "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
       "date": "every day bro",
@@ -66,26 +200,63 @@
       "email": "qy624@nyu.edu",
       "expertise": 0,
       "funFact": "666",
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "gender": "male",
       "gym": 0,
       "name": "QingYuan Yao",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIGMBsoCmn_ZaCvL0gv09yzQwMtbTKaA4zIXkGdBCv1=s96-c",
+<<<<<<< HEAD
+      "preferredName": "",
+=======
       "preferredName": "Jason",
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "sport": "cardio"
     },
     "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
       "days": [
+<<<<<<< HEAD
+        1,
+        3,
+        5
+      ],
+      "email": "clairempare@gmail.com",
+      "expertise": 0,
+      "funFact": "fact2",
+=======
         4
       ],
       "email": "clairempare@gmail.com",
       "expertise": 4,
       "funFact": "i don't do facts.",
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "gender": "female",
       "gym": 1,
       "name": "Claire Paré",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJcXi22IAKmIjRUorT4oq74JDwPrwMLHnlr6jnMbTjy=s96-c",
+<<<<<<< HEAD
+      "preferredName": "Clarie",
+      "sport": "yogaPilates"
+    },
+    "H2GBrgCzJlT1vMZZ05kctjB1bA13": {
+      "days": [
+        1,
+        3,
+        6,
+        7
+      ],
+      "email": "dongshu2024@u.northwestern.edu",
+      "expertise": 1,
+      "funFact": "",
+      "gender": "male",
+      "gym": 1,
+      "name": "Dong Shu",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKNMqihZp0rluYG2U1agFrP64Hahsj5m5tAPOWRVto0=s96-c",
+      "preferredName": "dong",
+      "sport": "groupSports"
+=======
       "preferredName": "Clare's Alter Ego",
       "sport": "outdoorActivities"
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
     },
     "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": {
       "days": [
@@ -97,15 +268,53 @@
       "expertise": 0,
       "funFact": "",
       "gender": "male",
+<<<<<<< HEAD
+      "gym": 0,
+      "name": "Keene Lu",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJhWCjZNPf9Akj2C8-FzGixBTwk2wTmpRqUeOHT5bWtJys=s96-c",
+      "preferredName": "Keene",
+=======
       "location": 0,
       "name": "Keene Lu",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJhWCjZNPf9Akj2C8-FzGixBTwk2wTmpRqUeOHT5bWtJys=s96-c",
       "preferredName": "",
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "sport": "cardio"
     },
     "OSqh3ozrpYRxYVByE8OSAxEKraC3": {
       "days": [
         1,
+<<<<<<< HEAD
+        3,
+        5
+      ],
+      "email": "jiangxuewei159@gmail.com",
+      "expertise": 2,
+      "funFact": "",
+      "gender": "male",
+      "gym": 0,
+      "name": "Xuewei Jiang",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJRYKYbtEJ1Ngztnkw2qnc0EENEGXkP0iZ3FTGsRDHF=s96-c",
+      "preferredName": "Marvin",
+      "sport": "groupSports"
+    },
+    "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
+      "days": [
+        1,
+        5
+      ],
+      "email": "lilizhao553@gmail.com",
+      "expertise": 0,
+      "funFact": "hehe",
+      "gender": "female",
+      "gym": 0,
+      "name": "Lili Zhao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocI4Hwt4iajx2biyc5B4PF-VYlSVZtdBI11BYTGIVX85yg=s96-c",
+      "preferredName": "lili",
+      "sport": "groupSports"
+    },
+    "TtNjutYaVZPSaFAfnTUJXbTsB1U2": {
+=======
         2
       ],
       "name": "Xuewei Jiang",
@@ -155,6 +364,7 @@
       "sport": "strengthTraining"
     },
     "X2DR2yS1VKNA0gcMBcU2Z715nMG3": {
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "days": [
         1,
         2,
@@ -164,6 +374,52 @@
         6,
         7
       ],
+<<<<<<< HEAD
+      "email": "patrick.jiang.2020@gmail.com",
+      "expertise": 1,
+      "funFact": "I'm an Eagle Scout!",
+      "gender": "male",
+      "gym": 1,
+      "name": "Patrick Jiang",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIhPmKt34sDFSjwWtFjGIynOJ76sxHTsOGcXeEWjvLFmqw=s96-c",
+      "preferredName": "Carson",
+      "sport": "outdoorActivities"
+    },
+    "VkSUTlL3qcUf67tUE9JNHCsxqMF3": {
+      "days": [
+        0,
+        2,
+        4
+      ],
+      "email": "clairepare2024@u.northwestern.edu",
+      "expertise": 2,
+      "funFact": "fact!",
+      "gender": "female",
+      "gym": 0,
+      "name": "Claire Paré",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKEkVV62K0ITW4ve5fswIzc_gIyN7-T2-7t2FMz3di3=s96-c",
+      "preferredName": "Claire",
+      "sport": "strengthTraining"
+    },
+    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
+      "days": [
+        0,
+        3,
+        6
+      ],
+      "email": "joycexzhao@gmail.com",
+      "expertise": 0,
+      "funFact": "haha",
+      "gender": "female",
+      "gym": 1,
+      "name": "Joyce Zhao",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIXfzqrZwRZHDbUeWHp5czdkxMclYlQAg4Ev4HWMHdRNT7Y=s96-c",
+      "preferredName": "joyce",
+      "sport": "strengthTraining"
+    },
+    "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
+      "days": [
+=======
       "email": "qingyuanyao2025@u.northwestern.edu",
       "expertise": 0,
       "funFact": "666",
@@ -176,10 +432,22 @@
     },
     "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
       "days": [
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
         1,
         3,
         5
       ],
+<<<<<<< HEAD
+      "email": "muratsankaya2025@u.northwestern.edu",
+      "expertise": 2,
+      "funFact": "",
+      "gender": "male",
+      "gym": 0,
+      "name": "Murat Sankaya",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKzNjXCuxFsJW96Qmj76DC-kuPCjTpLhjKRb0ithCA6=s96-c",
+      "preferredName": "perry",
+      "sport": "cardio"
+=======
       "email": "joycexzhao@gmail.com",
       "expertise": 2,
       "funFact": "muscles",
@@ -205,6 +473,7 @@
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKzNjXCuxFsJW96Qmj76DC-kuPCjTpLhjKRb0ithCA6=s96-c",
       "preferredName": "Ironman",
       "sport": "groupSports"
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
     },
     "xnExkVqjqLcjVIUNxPTPmAiDLgF2": {
       "days": [
@@ -213,10 +482,17 @@
         7
       ],
       "email": "keene.ruiyang.lu@gmail.com",
+<<<<<<< HEAD
+      "expertise": 0,
+      "funFact": "testing123",
+      "gender": "male",
+      "gym": 0,
+=======
       "expertise": 1,
       "funFact": "",
       "gender": "male",
       "location": 0,
+>>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "name": "Keene Lu",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKMqE_mVDtJtgQbmgxAt30EsCwGQrtXHc4VKwiMo53saQ=s96-c",
       "preferredName": "Klu",
