@@ -128,11 +128,14 @@ function dayMatcher(id) {
 
 
     var daymatches = [];
+    console.log("my days", myVals)
     for (var day in target.days) {
-        if (day in mySelf.days) {
-            daymatches.push(mySelf.days[day]);
+        console.log('targ', target.days[day])
+        if (mySelf.days.includes(target.days[day])) {
+            daymatches.push(target.days[day]);
         }
     }
+    console.log("matched days", daymatches)
     return daymatches
 }
 
