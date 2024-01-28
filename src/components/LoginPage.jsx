@@ -23,6 +23,7 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
 
                 const userData = {
                     name: user.displayName,
+                    email: user.email,
                     photoURL: user.photoURL,
                 };
 

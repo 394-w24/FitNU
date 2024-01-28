@@ -12,7 +12,7 @@ const Profile = () => {
     const uid = getUID();
     profile.keymatches = compareMatches(profile.id)
     profile.daymatches = dayMatcher(profile.id)
-    console.log("uid", uid)
+    //console.log("uid", uid)
     // if (matchableCount(uid) < 1) {
     //     console.log(1)
     // }

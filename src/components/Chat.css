@@ -1,0 +1,79 @@
+/* If there's a container wrapping the whole chat section, you could add this */
+.chat-container {
+    padding-top: 10px; 
+    margin-top: 110;
+    /* Other styles */
+}
+
+/* This styles the main title of the chat section, adjust the margin as needed */
+.chat-title {
+    margin-top: 0px; /* Reduce the margin to bring the title higher up */
+    margin-bottom: 20px; /* Adjust as needed for spacing between title and chat boxes */
+    text-align: center; /* If you want to center the title */
+    /* Other styling as needed */
+}
+
+/* Existing styles for chat conversation boxes */
+.chat-conversation {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: start; /* Align content to the start to avoid extra space */
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 10px; /* Adjust padding as needed */
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 720px;
+    width: 100%; /* Ensure it takes full width */
+}
+
+/* Styling for the chat partner's name */
+.chat-partner-name {
+    font-weight: bold;
+    
+}
+
+/* Styling for the latest message preview text */
+.chat-latest-message {
+    color: #666;
+    font-size: 0.9rem;
+    max-height: 200px;
+    overflow: auto;
+}
+
+/* Styling for the timestamp */
+.chat-timestamp {
+    color: #999;
+    font-size: 0.8rem;
+    margin-left: 20px;
+}
+
+/* Styling for the avatar within chat */
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Additional global styles, if needed */
+body, html {
+    margin: 0;
+    padding: 0;
+    /* other global styles */
+}
+
+
+.chat-detials {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.unread {
+    background-color: #e0e0f5; 
+}
+
+

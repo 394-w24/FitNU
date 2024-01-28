@@ -126,6 +126,79 @@ const mapDaysToArr = (days) => {
 
 // for image uploads, seperately
 // ImageUploadForm Component
+// function ImageUploadForm({ user, setState, updateDb }) {
+//     const [image, setImage] = useState(null);
+
+//     const handleImageChange = (e) => {
+//         if (e.target.files[0]) {
+//             setImage(e.target.files[0]);
+//         }
+//     };
+
+//     const handleImageSubmit = (event) => {
+//         event.preventDefault();
+//         if (image) {
+//             const imageRef = ref(storage, `profile_images/${user.uid}/${image.name}`);
+//             uploadBytes(imageRef, image).then((snapshot) => {
+//                 getDownloadURL(snapshot.ref).then((url) => {
+//                     // Update the parent component's state
+//                     setState(prevState => ({ ...prevState, photoURL: url }));
+
+//                     // Update the Firebase Realtime Database
+//                     updateDb(url);
+//                 });
+//             });
+//         }
+//     };
+
+//     return (
+//         <form onSubmit={handleImageSubmit} className="image-upload-form">
+//             <div className="form-group">
+//                 <label htmlFor="image">Profile Image</label>
+//                 <input
+//                     type="file"
+//                     className="form-control"
+//                     id="image"
+//                     onChange={handleImageChange}
+//                 />
+//             </div>
+//             <Button type="submit" variant="contained" color="primary">Upload Image</Button>
+
+//         </form>
+//     );
+// }
+
+
+
+
+
+
+
+
+// for image uploads
+// function ImageUploadField({ state, setState }) {
+//     const handleImageChange = (e) => {
+//         if (e.target.files[0]) {
+//             const image = e.target.files[0];
+//             setState({ ...state, image });
+//         }
+//     };
+
+//     return (
+//         <div className="form-group">
+//             <label htmlFor="image">Profile Image</label>
+//             <input
+//                 type="file"
+//                 className="form-control"
+//                 id="image"
+//                 onChange={handleImageChange}
+//             />
+//         </div>
+//     );
+// }
+
+// for image uploads, seperately
+// ImageUploadForm Component
 function ImageUploadForm({ user, setState, updateDb }) {
     const [image, setImage] = useState(null);
 
@@ -175,26 +248,37 @@ function ImageUploadForm({ user, setState, updateDb }) {
 
 
 
-function CreateProfile({ user, firstTimeUserCallBack }) {
-    //console.log(user.uid);
+const arrayToDaysObject = (daysArray) => {
+    const daysObject = {};
+    daysArray.forEach(day => daysObject[day] = true);
+    return daysObject;
+};
+
+function CreateProfile({ user, userData, firstTimeUserCallBack }) {
+    // const [userData, userDataError] = useDbData(`/users/${user.uid}/`);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
     const navigate = useNavigate()
-    // const location = useLocation();
-    // if(location === "EditProfile")
-
-
-    // for populate the edit profile form
-    const [userData, loading, error] = useDbRead(`/users/${user.uid}/`);
     const location = useLocation();
+    // if(location === "EditProfile")
 
 
 
     // TO-DO: ADD IMAGE INPUT FIELD
-    const [state, setState] = useState({
+    const [state, setState] = useState(userData ? {
+        preferredName: userData.preferredName,
+        sport: userData.sport,
+        location: userData.location,
+        expertise: userData.expertise,
+        gender: userData.gender,
+        funFact: userData.funFact,
+        photoURL: userData.photoURL,
+        days: arrayToDaysObject(userData.days),
+        errors: {}
+    } : {
         preferredName: '',
         sport: 'cardio',
-        location: '0',
-        expertise: '0',
+        location: 0,
+        expertise: 0,
         gender: 'male',
         funFact: '',
         days: [],
@@ -204,18 +288,18 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
 
     // for populate the edit profile form
     // Fetch user data when component mounts
-    useEffect(() => {
-        if (!loading && userData && !error) {
-            setState(prevState => ({
-                ...prevState,
-                ...userData,
-                days: Array.isArray(userData.days) ? userData.days : [],
-                errors: {}
-            }));
-        }
+    // useEffect(() => {
+    //     if (!loading && userData && !error) {
+    //         setState(prevState => ({
+    //             ...prevState,
+    //             ...userData,
+    //             days: Array.isArray(userData.days) ? userData.days : [],
+    //             errors: {}
+    //         }));
+    //     }
 
-        console.log(userData);
-    }, [userData, loading, error]);
+    //     console.log(userData);
+    // }, [userData, loading, error]);
 
     // useEffect(() => {
     //     if (!loading && userData && !error) {
@@ -323,7 +407,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
 
 
 
-            <form className='profile-form' onSubmit={handleSubmit} noValidate>
+            <form className='profile-form' onSubmit={handleSubmit} id="create-profile" name="create-profile" noValidate>
                 {/* for image uploads
                 <ImageUploadField state={state} setState={setState} /> */}
 

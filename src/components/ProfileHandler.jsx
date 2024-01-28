@@ -102,7 +102,7 @@ function calculateMatchingAll(origin) {
             // console.log(user)
             matchables.push(user.id.toString());
         });
-        console.log("matchingusers", matchables)
+        //console.log("matchingusers", matchables)
 
         // console.log("self:", my_id, "matches:", matchables)
         return 0
@@ -129,11 +129,14 @@ function dayMatcher(id) {
 
 
     var daymatches = [];
+    // console.log("my days", myVals)
     for (var day in target.days) {
-        if (day in mySelf.days) {
-            daymatches.push(mySelf.days[day]);
+        console.log('targ', target.days[day])
+        if (mySelf.days.includes(target.days[day])) {
+            daymatches.push(target.days[day]);
         }
     }
+    console.log("matched days", daymatches)
     return daymatches
 }
 
@@ -142,7 +145,7 @@ function showCard(id) {
     // Fetch user data based on the provided ID
     const user = userDB.find((user) => user.id == id);
 
-    console.log("showcard", user)
+    //console.log("showcard", user)
 
     if (user) {
         // Update the user profile in the zustand store
@@ -205,7 +208,7 @@ function nextProfile() {
     // let uid = matchables.shift()
     let uid = matchables.find(id => !seenProfiles.includes(id));
 
-    console.log(uid)
+    //console.log(uid)
     if (uid === undefined) {
         showEmpty()
     } else {

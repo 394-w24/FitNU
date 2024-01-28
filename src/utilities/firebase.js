@@ -64,19 +64,18 @@ export const useDbData = (path) => {
   const [data, setData] = useState();
   const [error, setError] = useState(null);
 
-  useEffect(
-    () =>
-      onValue(
-        ref(database, path),
-        (snapshot) => {
-          setData(snapshot.val());
-        },
-        (error) => {
-          setError(error);
-        }
-      ),
-    [path]
-  );
+  useEffect(() => {
+    const removeListener = onValue(
+      ref(database, path),
+      (snapshot) => {
+        setData(snapshot.val());
+      },
+      (error) => {
+        setError(error);
+      }
+    );
+    return () => removeListener();
+  }, [path]);
 
   return [data, error];
 };
