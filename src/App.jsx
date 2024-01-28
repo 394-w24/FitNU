@@ -18,6 +18,7 @@ const App = () => {
   if (user) {
     setUID(user.uid);
   }
+
   return (
     <div className="app">
       {user ?

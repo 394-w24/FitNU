@@ -98,7 +98,6 @@ const arrayToDaysObject = (daysArray) => {
 };
 
 function CreateProfile({ user, userData, firstTimeUserCallBack }) {
-    // const [userData, userDataError] = useDbData(`/users/${user.uid}/`);
     const [update] = useDbUpdate(`/users/${user.uid}/`);
     const navigate = useNavigate();
     const location = useLocation();

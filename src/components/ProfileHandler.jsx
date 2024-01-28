@@ -128,7 +128,7 @@ function dayMatcher(id) {
 
 
     var daymatches = [];
-    console.log("my days", myVals)
+    //console.log("my days", myVals)
     for (var day in target.days) {
         console.log('targ', target.days[day])
         if (mySelf.days.includes(target.days[day])) {
