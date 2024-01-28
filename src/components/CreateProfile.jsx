@@ -251,10 +251,10 @@ function ImageUploadForm({ user, setState, updateDb }) {
 const arrayToDaysObject = (daysArray) => {
     const daysObject = {};
 
-    //TODO: Murat mentioned something here got deleted, so add that back later.
+    // TODO: Murat mentioned something here got deleted, so add that back later.
     // the below filler is just to get it temproarily back to working
-    var filler = 1;
-    filler += 1;
+    // var filler = 1;
+    // filler += 1;
     daysArray.forEach(day => daysObject[day] = true);
     return daysObject;
 };
