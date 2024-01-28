@@ -241,13 +241,6 @@ function ImageUploadForm({ user, setState, updateDb }) {
     );
 }
 
-
-
-
-
-
-
-
 const arrayToDaysObject = (daysArray) => {
     const daysObject = {};
 
@@ -264,8 +257,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
     const navigate = useNavigate()
     const location = useLocation();
     // if(location === "EditProfile")
-
-
+    //console.log(userData);
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState(userData ? {
@@ -276,7 +268,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
         gender: userData.gender,
         funFact: userData.funFact,
         photoURL: userData.photoURL,
-        days: arrayToDaysObject(userData.days),
+        days: "days" in userData ? arrayToDaysObject(userData.days) : {},
         errors: {}
     } : {
         preferredName: '',
