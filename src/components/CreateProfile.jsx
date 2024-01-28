@@ -81,7 +81,9 @@ function CheckboxGroup({ label, name, options, state, setState }) {
                         className="form-check-input"
                         type="checkbox"
                         value={option.value}
-                        checked={state[name][option.value] || false}
+                        checked={Array.isArray(state.days) ? state.days.includes(option.value) : (state[name][option.value] || false)}
+                        // checked={state[name][option.value] || false} 
+                        // checked={state.days.includes(option.value)}
                         onChange={onChange}
                     />
                     <label className="form-check-label">
@@ -94,6 +96,7 @@ function CheckboxGroup({ label, name, options, state, setState }) {
 }
 
 const mapDaysToArr = (days) => {
+    console.log(days)
     return (
         Object.entries(days).map(([key, val]) => val ? Number(key) : -1).filter(day => day !== -1)
     );
@@ -194,7 +197,7 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
         expertise: '0',
         gender: 'male',
         funFact: '',
-        days: {},
+        days: [],
         photoURL: user.photoURL,
         errors: {}
     });
@@ -203,15 +206,29 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
     // Fetch user data when component mounts
     useEffect(() => {
         if (!loading && userData && !error) {
-            setState({
-                ...state,
+            setState(prevState => ({
+                ...prevState,
                 ...userData,
+                days: Array.isArray(userData.days) ? userData.days : [],
                 errors: {}
-            });
+            }));
         }
 
-        console.log(userData)
+        console.log(userData);
     }, [userData, loading, error]);
+
+    // useEffect(() => {
+    //     if (!loading && userData && !error) {
+    //         setState({
+    //             ...state,
+    //             ...userData,
+    //             errors: {}
+    //         });
+    //     }
+
+    //     console.log(userData)
+    //     // console.log(userData.days)
+    // }, [userData, loading, error]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
