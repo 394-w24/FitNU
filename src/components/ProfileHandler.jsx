@@ -54,6 +54,7 @@ function generateArrayOfDicts() {
                 expertise: user?.expertise === undefined ? -1 : user.expertise,
                 sport: user?.sport === undefined ? 'Null' : user.sport,
                 funFact: user?.funFact === undefined ? 'Null' : user.funFact,
+                photoURL: user?.photoURL === undefined ? 'Null' : user.photoURL,
                 preferredName: user?.preferredName === undefined ? '' : user.preferredName
             };
         });
@@ -128,7 +129,7 @@ function dayMatcher(id) {
 
 
     var daymatches = [];
-    console.log("my days", myVals)
+    // console.log("my days", myVals)
     for (var day in target.days) {
         console.log('targ', target.days[day])
         if (mySelf.days.includes(target.days[day])) {

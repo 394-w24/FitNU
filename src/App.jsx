@@ -10,10 +10,16 @@ import LoginPage from "./components/LoginPage";
 import { useState } from "react";
 import CreateProfile from "./components/CreateProfile";
 import { setUID } from "./components/ProfileHandler";
+// for image uploads
+import useProfileStore from './utilities/store';
 
 const App = () => {
   const [user] = useAuthState();
   const [firstTimeUser, setFirstTimeUser] = useState(false);
+
+  // for image uploads
+  const { profile } = useProfileStore();
+
 
   if (user) {
     setUID(user.uid);
@@ -25,7 +31,7 @@ const App = () => {
           {firstTimeUser ?
             <CreateProfile user={user} firstTimeUserCallBack={setFirstTimeUser} /> :
             <>
-              <Header user={user} />
+              <Header user={user} profile={profile} />
               <div className="app-content">
                 <Router user={user} firstTimeUserCallBack={setFirstTimeUser} />
               </div>

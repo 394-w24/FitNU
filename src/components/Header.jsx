@@ -1,15 +1,17 @@
 import "./Header.css";
 import { signOut } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
-const Header = ({ user }) => {
+
+const Header = ({ user, profile }) => {
   const navigate = useNavigate();
   return (
     <div className="header">
-      <button style={{ width: "50px", height: "50px" }} onClick={() => {
+      <Button color='error' variant="contained" style={{ width: "50px", height: "50px" }} onClick={() => {
         signOut();
         navigate("/");
-      }} >Sign Out</button>
+      }} >Sign Out</Button>
       <h1>FitNU</h1>
       <img src={user.photoURL} onClick={() => navigate('/EditProfile')} style={{ cursor: 'pointer' }} />
     </div>
