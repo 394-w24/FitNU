@@ -42,7 +42,8 @@ function generateArrayOfDicts() {
                 location: user?.location === undefined ? -1 : user.location,
                 expertise: user?.expertise === undefined ? -1 : user.expertise,
                 sport: user?.sport === undefined ? 'Null' : user.sport,
-                funFact: user?.funFact === undefined ? 'Null' : user.funFact
+                funFact: user?.funFact === undefined ? 'Null' : user.funFact,
+                photoURL: user?.photoURL === undefined ? 'Null' : user.photoURL
             };
         });
 
