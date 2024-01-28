@@ -6,21 +6,32 @@ import { useDbData, useDbUpdate } from "../utilities/firebase";
 let my_id = "0";
 let mySelf = {};
 let userDB = [];
-let matchablesDict = {};
 let matchables = [];
 let seenProfiles = [];
+let savedProfiles = []
 
 function setUID(id) {
     my_id = id;
     // console.log(my_id)
 }
 
-function matchableClear(id) {
+function getUID() {
+    return my_id
+    // console.log(my_id)
+}
+
+function seenProfilesClear() {
+    seenProfiles = []
+}
+
+
+function matchableClear() {
     matchables = []
 }
 
 function matchableCount(id) {
-    return matchables.length
+    let diff = matchables.length - seenProfiles.length
+    return diff > 0 ? diff : 0
 }
 
 // quick fix
@@ -38,12 +49,13 @@ function generateArrayOfDicts() {
                 id: key,
                 name: user?.name === undefined ? 'Null' : user.name.toString(),
                 gender: user?.gender === undefined ? 'Null' : user.gender.toString(),
-                days: user?.days === undefined ? [] : user.days,
+                days: user?.days === undefined ? [-1, -2] : user.days,
                 location: user?.location === undefined ? -1 : user.location,
                 expertise: user?.expertise === undefined ? -1 : user.expertise,
                 sport: user?.sport === undefined ? 'Null' : user.sport,
                 funFact: user?.funFact === undefined ? 'Null' : user.funFact,
-                photoURL: user?.photoURL === undefined ? 'Null' : user.photoURL
+                photoURL: user?.photoURL === undefined ? 'Null' : user.photoURL,
+                preferredName: user?.preferredName === undefined ? '' : user.preferredName
             };
         });
 
@@ -52,20 +64,22 @@ function generateArrayOfDicts() {
     }
 }
 
-
-function findUsersBySport(userData, sport) {
-    return userData.filter(user => user.sport === sport);
-};
-
 function calculateMatchingAll(origin) {
     // TODO: calculate a matching score for the various users. For now we are just finding all same-sport users
-
-
     generateArrayOfDicts()
     // console.log(userDB)
     if (userDB) {
+        matchableClear()
         mySelf = userDB.find(user => user.id.toString() == my_id.toString());
-        let matchingUsers = userDB.filter(user => user.sport === mySelf.sport && user.id !== mySelf.id);
+
+        let matchingUsers = userDB.filter(user =>
+            user.id !== my_id &&
+            (user.gender === mySelf.gender ||
+                user.location === mySelf.location ||
+                user.days.some(day => mySelf.days.includes(day)) ||
+                user.expertise === mySelf.expertise ||
+                user.sport === mySelf.sport)
+        );
         // Sort matchingUsers by the number of matching fields
         matchingUsers.sort((userA, userB) => {
             const matchingFieldsA = Object.values(userA).filter(valueA => {
@@ -85,18 +99,43 @@ function calculateMatchingAll(origin) {
             return matchingFieldsB - matchingFieldsA;
         });
         matchingUsers.forEach(user => {
-            matchablesDict[user.id] = user.id.toString();
+            // console.log(user)
+            matchables.push(user.id.toString());
         });
+        console.log("matchingusers", matchables)
 
-        matchables = Object.keys(matchablesDict).sort((a, b) => matchablesDict[b] - matchablesDict[a]);
-
-        matchables = matchables.filter(value => value !== my_id.toString());
-        console.log("self:", my_id, "matches:", matchables)
+        // console.log("self:", my_id, "matches:", matchables)
         return 0
     }
     return 1
     // console.log(matchables[0])
 };
+
+
+function compareMatches(id) {
+    var target = userDB.find((user) => user.id == id);
+
+    const sharedKeys = Object.keys(mySelf).filter(key => target.hasOwnProperty(key) && mySelf[key] === target[key]);
+
+    const keysWithEqualValues = sharedKeys.filter(key => mySelf[key] === target[key]);
+
+
+    return keysWithEqualValues;
+
+}
+
+function dayMatcher(id) {
+    var target = userDB.find((user) => user.id == id);
+
+
+    var daymatches = [];
+    for (var day in target.days) {
+        if (day in mySelf.days) {
+            daymatches.push(mySelf.days[day]);
+        }
+    }
+    return daymatches
+}
 
 
 function showCard(id) {
@@ -120,16 +159,14 @@ function showEmpty() {
 
     // the following is a temp solution more will need to be done!!!
 
+    useProfileStore.setState({ profile: null });
+    alert("You've reached the end of the personalized feed!")
 
-    alert("You've reached the end of the personalized feed! \nThe feed will now start back from the top.")
-
-    seenProfiles = [];
-    nextProfile();
 
 }
 
 
-function getUser() {
+function getLastUser() {
     return seenProfiles[-1];
 }
 
@@ -145,12 +182,23 @@ function getUserName() {
 
         return target.name
     }
-
-
-
 }
 
+function startFromBeginning() {
 
+    seenProfilesClear();
+
+    let uid = matchables[0];
+
+    console.log(uid)
+    if (uid === undefined) {
+        showEmpty()
+    } else {
+
+        seenProfiles.push(uid);
+        showCard(uid);
+    }
+}
 
 function nextProfile() {
 
@@ -168,6 +216,14 @@ function nextProfile() {
 
 };
 
+function saveLast() {
+    savedProfiles.push(getLastUser());
+}
+
+function getSaved() {
+    return savedProfiles;
+}
 
 
-export { setUID, matchableCount, calculateMatchingAll, getUserName, nextProfile };
+
+export { getUID, setUID, startFromBeginning, seenProfilesClear, matchableClear, matchableCount, calculateMatchingAll, getUserName, nextProfile, compareMatches, dayMatcher, saveLast };

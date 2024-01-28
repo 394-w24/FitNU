@@ -2,19 +2,20 @@ import "./LoginPage.css";
 import { auth, database } from "../utilities/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ref, child, get, set } from "firebase/database";
+import { matchableClear, seenProfilesClear } from "./ProfileHandler";
 
 const handleUserLogin = (user, firstTimeUserCallBack) => {
     // console.log(user);
     const uid = user.uid;
     const usersRef = child(ref(database), "users");
 
-    // commented out for now as to not cause crashes, but this is how we load user info via the uid
-
-
+    seenProfilesClear();
+    matchableClear();
     get(usersRef)
         .then((snapshot) => {
             if (snapshot.exists() && snapshot.hasChild(uid)) {
                 console.log(`User with user_id ${uid} exists in /users.`);
+
             } else {
                 // new user login
                 firstTimeUserCallBack(true);

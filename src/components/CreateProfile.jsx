@@ -10,6 +10,7 @@ import { storage } from '../utilities/firebase'; // Import Firebase storage
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import necessary methods
 
 import "./CreateProfile.css";
+import { seenProfilesClear, startFromBeginning } from "./ProfileHandler";
 
 function validateField(key, value) {
     const validators = {
@@ -226,6 +227,8 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
             gender: state.gender,
             expertise: Number(state.expertise)
         });
+        seenProfilesClear();
+        startFromBeginning();
         firstTimeUserCallBack(false);
         navigate("/");
 
@@ -354,11 +357,11 @@ function CreateProfile({ user, firstTimeUserCallBack }) {
                     label="Expertise"
                     name="expertise"
                     options={[
-                        { value: 0, label: 'Beginner' },
-                        { value: 1, label: 'Beg / Int' },
+                        { value: 0, label: 'None' },
+                        { value: 1, label: 'Beg' },
                         { value: 2, label: 'Int' },
-                        { value: 3, label: 'Int / Adv' },
-                        { value: 4, label: 'Adv' },
+                        { value: 3, label: 'Adv' },
+                        { value: 4, label: 'Expert' },
                     ]}
                     state={state}
                     setState={setState}
