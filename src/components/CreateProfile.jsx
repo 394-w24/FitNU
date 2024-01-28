@@ -241,20 +241,13 @@ function ImageUploadForm({ user, setState, updateDb }) {
     );
 }
 
-
-
-
-
-
-
-
 const arrayToDaysObject = (daysArray) => {
     const daysObject = {};
 
-    //TODO: Murat mentioned something here got deleted, so add that back later.
-    // the below filler is just to get it temproarily back to working
-    var filler = 1;
-    filler += 1;
+    // //TODO: Murat mentioned something here got deleted, so add that back later.
+    // // the below filler is just to get it temproarily back to working
+    // var filler = 1;
+    // filler += 1;
     daysArray.forEach(day => daysObject[day] = true);
     return daysObject;
 };
@@ -264,8 +257,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
     const navigate = useNavigate()
     const location = useLocation();
     // if(location === "EditProfile")
-
-
+    //console.log(userData);
 
     // TO-DO: ADD IMAGE INPUT FIELD
     const [state, setState] = useState(userData ? {
@@ -276,7 +268,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
         gender: userData.gender,
         funFact: userData.funFact,
         photoURL: userData.photoURL,
-        days: arrayToDaysObject(userData.days),
+        days: "days" in userData ? arrayToDaysObject(userData.days) : {},
         errors: {}
     } : {
         preferredName: '',
