@@ -1,16 +1,8 @@
 import Event from './Event';
 import './EventList.css';
-import { useState } from 'react';
 
 
-const EventList = ({ events }) => {
-    const [selected, setSelected] = useState([]);
-
-    const toggleSelected = (item) => setSelected(
-        selected.includes(item)
-            ? selected.filter(x => x !== item)
-            : [...selected, item]
-    );
+const EventList = ({ events, selected, toggleSelected }) => {
 
     return (
         <div className="event-list">
