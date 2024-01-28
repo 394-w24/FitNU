@@ -3,7 +3,8 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  max-height: 520px;
+  max-height: 500px;
+  margin-top: 60px;
 }
 
 .chat-content-header {

@@ -17,8 +17,10 @@ const Router = ({ user, firstTimeUserCallBack }) => {
       <Route path="/" element={<PersonalizedView user={user} />} />
       <Route path="/PersonalizedView" element={<PersonalizedView user={user} />} />
       <Route path="/GeneralView" element={<GeneralView />} />
-      <Route path="/Chat" element={<Chat />} />
-      <Route path="/EditProfile" element={<CreateProfile user={user} firstTimeUserCallBack={firstTimeUserCallBack} />} />
+      <Route path="/Chat" element={<Chat user={user} />} />
+      <Route path="/EditProfile" element={<CreateProfile user={user} userData={userData} firstTimeUserCallBack={firstTimeUserCallBack} />} />
+      <Route path="/Chat/:chatId" element={<ChatContent user={user} />} />
+      <Route path="/EditEvent" element={<CreateEvent user={user} />} />
     </Routes>
   );
 };
