@@ -73,10 +73,9 @@
 // export default Chat;
 
 import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, get, update } from "firebase/database";
+import { getDatabase, ref, get, update, onValue } from "firebase/database";
 import "./Chat.css";
 import { useNavigate } from 'react-router-dom';
-import { useDbData } from '../utilities/firebase';
 
 // Function to update data at a specific path
 const updateData = (path, data) => {
@@ -132,7 +131,7 @@ const Chat = ({ user }) => {
                 });
             }
         });
-    }, [myUid]);
+    }, [chats]);
 
     const handleChatClick = (chatId, senderId) => {
         if (senderId !== user.uid) {
