@@ -10,7 +10,6 @@ import CreateEvent from "./components/CreateEvent";
 
 const Router = ({ user, firstTimeUserCallBack }) => {
   const [userData, userDataError] = useDbData(`/users/${user.uid}`);
-
   return (
     <Routes>
       <Route path="*" element={<PageNotFound />} />
