@@ -178,6 +178,10 @@ import { useNavigate } from 'react-router-dom';
 import "./Chat.css";
 
 const ChatItemOtherUserData = ({ latestMessage, otherUserId }) => {
+    // We can provide other users data to the child component => ChatContent. 
+    // There is no need to make 2 seperate calls to the same location 
+    // in a parent, child component structure
+
     const [otherUserData, otherUserDataError] = useDbData(`/users/${otherUserId}`);
     return (otherUserData && <>
         <div className="chat-avatar">
@@ -233,13 +237,13 @@ const Chat = ({ user }) => {
         navigate(`/Chat/${chatId}`);
     };
 
-    console.log('counting renders');
+    // console.log('counting renders', new Date(Date.now()).toLocaleTimeString());
 
     return (
         <div className="chat-container">
             <h2 className="chat-title">Your Chats</h2>
             <div className="chat-list">
-                {Object.entries(chatData).sort((a, b) => b.timestamp - a.timestamp).map(([chatId, mrm]) => (
+                {Object.entries(chatData).sort((a, b) => b[1].timestamp - a[1].timestamp).map(([chatId, mrm]) => (
                     <div
                         key={chatId}
                         className={(!mrm.read && user.uid !== mrm.senderId) ? "chat-conversation unread" : "chat-conversation"}
