@@ -3,7 +3,6 @@ import { signOut } from "../utilities/firebase";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 
-
 const Header = ({ user, profile }) => {
   const navigate = useNavigate();
   return (

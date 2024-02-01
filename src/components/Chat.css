@@ -48,7 +48,6 @@
   margin-left: 20px;
 }
 
-/* Styling for the avatar within chat */
 .chat-avatar {
   width: 40px;
   height: 40px;
@@ -56,6 +55,14 @@
   background-color: #ccc;
   margin-right: 15px;
   flex-shrink: 0;
+  overflow: hidden; /* This ensures anything outside the border-radius is hidden */
+}
+
+.chat-avatar img {
+  width: 100%; /* Makes the image fill the container */
+  height: 100%; /* Makes the image fill the container */
+  object-fit: cover; /* Maintains the aspect ratio and covers the area. Use 'contain' if you don't want to crop the image */
+  border-radius: 50%; /* Optional, if you want the image itself to also be rounded */
 }
 
 /* Additional global styles, if needed */
