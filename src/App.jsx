@@ -20,6 +20,7 @@ const App = () => {
   // for image uploads
   const { profile } = useProfileStore();
 
+  console.log(user);
 
   if (user) {
     setUID(user.uid);

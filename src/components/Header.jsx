@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useDbData } from "../utilities/firebase";
 
-
 const Header = ({ user, profile }) => {
   const navigate = useNavigate();
 
