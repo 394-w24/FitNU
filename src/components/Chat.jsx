@@ -3,6 +3,13 @@ import { ref, update, onValue } from "firebase/database";
 import { database, useDbData } from "../utilities/firebase"
 import { useNavigate } from 'react-router-dom';
 import "./Chat.css";
+import ChatContent from './ChatContent';
+
+const ContextMenu = ({ children, style }) => {
+    return <div className='context-menu' style={style} >
+        {children}
+    </div>
+}
 
 const ChatItemOtherUserData = ({ latestMessage, otherUserId }) => {
     // We can provide other users data to the child component => ChatContent. 
@@ -36,6 +43,7 @@ const Chat = ({ user }) => {
     const navigate = useNavigate();
     const [chats, chatsError] = useDbData(`/users/${user.uid}/chat`);
     const [chatData, setChatData] = useState({});
+    const [contextMenu, setContextMenu] = useState({ visible: false, x: 0, y: 0 });
 
     useEffect(() => {
         if (chats) {
@@ -64,10 +72,27 @@ const Chat = ({ user }) => {
         navigate(`/Chat/${chatId}`);
     };
 
+    const handleContextMenu = (event) => {
+        event.preventDefault();
+        setContextMenu({
+            visible: true,
+            x: event.clientX - 700,
+            y: event.clientY - 40,
+        });
+    };
+    const handleClick = () => {
+        if (contextMenu.visible)
+            setContextMenu({ visible: false, ...contextMenu })
+    }
+
     // console.log('counting renders', new Date(Date.now()).toLocaleTimeString());
 
+    const handleItemClick = (item) => {
+        console.log('clicked on handle item click');
+    }
+
     return (
-        <div className="chat-container">
+        <div className="chat-container" onClick={handleClick}>
             <h2 className="chat-title">Your Chats</h2>
             <div className="chat-list">
                 {Object.entries(chatData).sort((a, b) => b[1].timestamp - a[1].timestamp).map(([chatId, mrm]) => (
@@ -77,10 +102,16 @@ const Chat = ({ user }) => {
                         onClick={() => handleChatClick(chatId, mrm.senderId)}
                         role="button"
                         tabIndex={0}
+                        onContextMenu={handleContextMenu}
                     >
                         <ChatItemOtherUserData latestMessage={mrm.textContent} otherUserId={mrm.otherUserId} />
-                    </div>
-                ))}
+                    </div>))}
+                {contextMenu.visible && <ContextMenu style={{ top: contextMenu.y, left: contextMenu.x }}>
+                    <ul>
+                        <li onClick={() => handleItemClick('Delete Chat')}>Delete Chat</li>
+                    </ul>
+                </ContextMenu>
+                }
             </div>
         </div>
     );
