@@ -13,7 +13,7 @@ const PersonalizedView = ({ user }) => {
     <div className="personalized-view">
       {profile !== null ? (
         <div className="personalized-core">
-          <Cross />
+          <Cross user={user}/>
           <Profile />
           <Check user={user} />
         </div>
