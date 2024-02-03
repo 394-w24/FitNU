@@ -239,7 +239,7 @@ const Chat = ({ user }) => {
         <div className="chat-container">
             <h2 className="chat-title">Your Chats</h2>
             <div className="chat-list">
-                {Object.entries(chatData).sort((a, b) => b.timestamp - a.timestamp).map(([chatId, mrm]) => (
+                {Object.entries(chatData).sort((a, b) => b[1].timestamp - a[1].timestamp).map(([chatId, mrm]) => (
                     <div
                         key={chatId}
                         className={(!mrm.read && user.uid !== mrm.senderId) ? "chat-conversation unread" : "chat-conversation"}
