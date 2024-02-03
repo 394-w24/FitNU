@@ -1,169 +1,1000 @@
 {
   "chats": {
-    "759BwMjCxcYl9Hk4IhIWngnpHC43": {
-      "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
-        "messages": {
-          "0": [
-            "first message",
-            "timeStamp"
-          ],
-          "mrm": "timeStamp"
+    "-NpC4ruWscy9fLBNwLS_": {
+      "messages": {
+        "-NpC4rua59wwsvG79wSX": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706395401897
+        },
+        "-NpC5E7ZuZoQVx50l7Js": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "manship",
+          "timestamp": 1706395497003
+        },
+        "-NpC6Q-dHQd5g5P-BJnW": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": ".chat-conversation {\n    display: flex;\n    align-items: center; /* Align items vertically in the center */\n    justify-content: start; /* Align content to the start to avoid extra space */\n    background-color: #f0f0f0;\n    border-radius: 20px;\n    padding: 10px; /* Adjust padding as needed */\n    margin: 10px 0;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);\n    max-width: 720px;\n    width: 100%; /* Ensure it takes full width */\n}",
+          "timestamp": 1706395807791
+        },
+        "-NpLKSfQ-BBNdwdRkESc": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "66",
+          "timestamp": 1706550483655
+        },
+        "-NpXPBqMA02uU7xkMPQ1": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "???",
+          "timestamp": 1706753052068
         }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "???",
+        "timestamp": 1706753052070
+      },
+      "users": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "QingYuan Yao",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao"
       }
     },
-    "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
-      "759BwMjCxcYl9Hk4IhIWngnpHC43": {
-        "messages": [
-          [
-            "first message",
-            "timeStamp"
-          ]
-        ],
-        "mrm": "timeStamp"
+    "-NpC59bZg8v5Fwv3T7QW": {
+      "messages": {
+        "-NpC59b_c22OPjPG--rQ": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706395478507
+        },
+        "-NpC5LHVfCJuhdVVawZO": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "6666",
+          "timestamp": 1706395526311
+        },
+        "-NpC79JVYV-paKSw2MlI": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "ggggg",
+          "timestamp": 1706396001574
+        },
+        "-NpLKRR2oUbkrBXFcGMQ": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "看得到我吗",
+          "timestamp": 1706550478575
+        },
+        "-NpXPE2oCLq69Nboo5NV": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "你好",
+          "timestamp": 1706753061121
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "你好",
+        "timestamp": 1706753061122
+      },
+      "users": {
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "Lili Zhao",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao"
+      }
+    },
+    "-NpCIh_uxicuF-VzWFcK": {
+      "messages": {
+        "-NpCIha-ekgbm8yMO5p9": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706399028994
+        },
+        "-NpCIpy63jj8zBWussOs": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Hey",
+          "timestamp": 1706399063310
+        },
+        "-NpCIqD1WFUfzfG9iyxh": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "fdsg",
+          "timestamp": 1706399064332
+        },
+        "-NpCIqJarEhT72PJai99": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "fds",
+          "timestamp": 1706399064752
+        },
+        "-NpCIqNS7pF6KsxSjFc9": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "gds",
+          "timestamp": 1706399064999
+        },
+        "-NpCIqQYniVasj8CMuNH": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "g",
+          "timestamp": 1706399065197
+        },
+        "-NpCIqTmx1dxSSYkmbUv": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "ds",
+          "timestamp": 1706399065404
+        },
+        "-NpCIqWGPnFu7RIWc_7i": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "gds",
+          "timestamp": 1706399065563
+        },
+        "-NpCIqYpjLVEd7D2yEtZ": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "g",
+          "timestamp": 1706399065727
+        },
+        "-NpCIqqbeMdFO2iGQJ5i": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "fds",
+          "timestamp": 1706399066929
+        },
+        "-NpCIr1ilf17niJUb4sp": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "gsdf",
+          "timestamp": 1706399067704
+        },
+        "-NpCIs6eSOml74h1b8LL": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Hey",
+          "timestamp": 1706399072116
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+        "textContent": "Hey",
+        "timestamp": 1706399072117
+      },
+      "users": {
+        "8dsk1uTJohbeIwt1n9wzKCvLnxy2": "Xuewei Jiang",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
+      }
+    },
+    "-NpCKZm8SRlUlLnbZ9r-": {
+      "messages": {
+        "-NpCKZmDX_kEuR-xMhmC": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706399517201
+        },
+        "-NpGfcITXifNmwMuDDU_": {
+          "senderId": "OSqh3ozrpYRxYVByE8OSAxEKraC3",
+          "textContent": "hahah ",
+          "timestamp": 1706472408274
+        },
+        "-NpGfcrwqIYCYYtQHq_b": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "hahaha",
+          "timestamp": 1706472410648
+        },
+        "-NpGfdIvzcpagQEMRtkw": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "cool !",
+          "timestamp": 1706472412439
+        },
+        "-NpGfenSQDRfL0v_nkpT": {
+          "senderId": "OSqh3ozrpYRxYVByE8OSAxEKraC3",
+          "textContent": "dope!",
+          "timestamp": 1706472418513
+        },
+        "-NpGfsrN1iVpMuCqVdQz": {
+          "senderId": "OSqh3ozrpYRxYVByE8OSAxEKraC3",
+          "textContent": "hi what's up",
+          "timestamp": 1706472476107
+        },
+        "-NpGfzaJvfqZoCczzQJi": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "this should be real time",
+          "timestamp": 1706472503728
+        },
+        "-NpGg2c7mRg_STR3bLU0": {
+          "senderId": "OSqh3ozrpYRxYVByE8OSAxEKraC3",
+          "textContent": "yayyy",
+          "timestamp": 1706472520188
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "OSqh3ozrpYRxYVByE8OSAxEKraC3",
+        "textContent": "yayyy",
+        "timestamp": 1706472520189
+      },
+      "users": {
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "Xuewei Jiang",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
+      }
+    },
+    "-NpCK_PyRwKlBynfqiOu": {
+      "messages": {
+        "-NpCK_PzVyHI8bur0XIC": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706399519814
+        },
+        "-NpGfa0lkxRRhteGrya9": {
+          "senderId": "xnExkVqjqLcjVIUNxPTPmAiDLgF2",
+          "textContent": "Hi",
+          "timestamp": 1706472399123
+        },
+        "-NpGfg7IxWQadmJLKkvF": {
+          "senderId": "xnExkVqjqLcjVIUNxPTPmAiDLgF2",
+          "textContent": "Wazzap",
+          "timestamp": 1706472424116
+        },
+        "-NpGfrba06MsIYlosRF5": {
+          "senderId": "xnExkVqjqLcjVIUNxPTPmAiDLgF2",
+          "textContent": "yo",
+          "timestamp": 1706472471176
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "xnExkVqjqLcjVIUNxPTPmAiDLgF2",
+        "textContent": "yo",
+        "timestamp": 1706472471176
+      },
+      "users": {
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "Keene Lu"
+      }
+    },
+    "-NpCKaVG_sLEENQQehjz": {
+      "messages": {
+        "-NpCKaVIxsyODH_0SCaP": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706399524249
+        },
+        "-NpCKjH-EcTpMTmoJlaA": {
+          "senderId": "759BwMjCxcYl9Hk4IhIWngnpHC43",
+          "textContent": "@",
+          "timestamp": 1706399560839
+        },
+        "-NpCLShsPPyb1hp_XL7a": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Hey",
+          "timestamp": 1706399750400
+        },
+        "-NpCLT64G6wTFlQ0cTUR": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "gfdhg",
+          "timestamp": 1706399752013
+        },
+        "-NpCLTRmaomFoO_QfkIb": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "gfhgf",
+          "timestamp": 1706399753402
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+        "textContent": "gfhgf",
+        "timestamp": 1706399753403
+      },
+      "users": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "QingYuan Yao",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
+      }
+    },
+    "-NpGhfPkfbs5vE7uw34M": {
+      "messages": {
+        "-NpGhfPmBEY_4mCTUCB3": {
+          "senderId": "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706472945234
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706472945234
+      },
+      "users": {
+        "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": "Keene Lu",
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "Lili Zhao"
+      }
+    },
+    "-NpGht4cT8CA6aAI90SW": {
+      "messages": {
+        "-NpGht4dHMG21NtlhTgW": {
+          "senderId": "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706473001230
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706473001230
+      },
+      "users": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "QingYuan Yao",
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "Lili Zhao"
+      }
+    },
+    "-NpGxxLrodpURvuhiEYc": {
+      "messages": {
+        "-NpGxxLtqspcvd8ih_W7": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706477213156
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706477213156
+      },
+      "users": {
+        "WpQIaKZKxgOs2pj8RQvzxJTDNqj2": "Patrick Jiang",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpGxyFeTmKp6k6PUD88": {
+      "messages": {
+        "-NpGxyFfraGzBLrVPyrX": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706477216855
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706477216855
+      },
+      "users": {
+        "jxyQTqGhfWZ66Z8R24boPizWlUh2": "Jenna Lee",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpGxz9W15enH-lrZt4t": {
+      "messages": {
+        "-NpGxz9W15enH-lrZt4u": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706477220558
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706477220558
+      },
+      "users": {
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "Lili Zhao",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpGyl6KoTnvZyklIC2b": {
+      "messages": {
+        "-NpGyl6MvhHQKuNTt58L": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706477425126
+        },
+        "-NpGyp6DkF8X_ofriDls": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "bink bonk",
+          "timestamp": 1706477441503
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+        "textContent": "bink bonk",
+        "timestamp": 1706477441504
+      },
+      "users": {
+        "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": "Claire Paré",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpHDIaZ0-XbwzyuymUv": {
+      "messages": {
+        "-NpHDIabuhJ2HJnoxTCK": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706481498549
+        },
+        "-NpHh436upxcfmxNBEzf": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Cool !",
+          "timestamp": 1706489564801
+        },
+        "-NpLInpSmtaOEcP16dXA": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "hey",
+          "timestamp": 1706550050150
+        },
+        "-NpLOgMmkYgAW1JB-JYU": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "Ok",
+          "timestamp": 1706551592449
+        },
+        "-NpMXgYDlkwWSQYiLoe7": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "iii",
+          "timestamp": 1706570729331
+        },
+        "-NpMYUzwAHY7nlwKNvWI": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "ii",
+          "timestamp": 1706570940067
+        },
+        "-NpMYXaMFWvPDJgancgI": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "Hey",
+          "timestamp": 1706570950718
+        },
+        "-NpMYa7qXULuJ2rrNthT": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "Ok",
+          "timestamp": 1706570965213
+        },
+        "-NpMZD2FeaqVPLsxnBSs": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Ok",
+          "timestamp": 1706571129096
+        },
+        "-NpM_-mJy1rVRfdNm3F2": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "dsaff",
+          "timestamp": 1706571336908
+        },
+        "-NpMaAIYeL-aiBMlXHcZ": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Ok",
+          "timestamp": 1706571642139
+        },
+        "-NpMaPSXf7s28U9Z4xxe": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "j",
+          "timestamp": 1706571704218
+        },
+        "-NpXJXhpAuGUYlNgi96z": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "Hey",
+          "timestamp": 1706751568773
+        },
+        "-NpXJaiO61Ni8jepoJLS": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "sffsdg",
+          "timestamp": 1706751585193
+        },
+        "-NpXKc9Kn2PULhvXERa7": {
+          "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+          "textContent": "dfdg",
+          "timestamp": 1706751853220
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "2RtA8uztgKR8JioCrfWTimJ35n02",
+        "textContent": "dfdg",
+        "timestamp": 1706751853223
+      },
+      "users": {
+        "2RtA8uztgKR8JioCrfWTimJ35n02": "Murat Sankaya",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
+      }
+    },
+    "-NpHWJKeyPwvDL_O6eQT": {
+      "messages": {
+        "-NpHWJKeyPwvDL_O6eQU": {
+          "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486483012
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706486483012
+      },
+      "users": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "K Lu",
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "Xuewei Jiang"
+      }
+    },
+    "-NpHWKBozDRUUyEjf_y3": {
+      "messages": {
+        "-NpHWKBpXIUVstiO1jbo": {
+          "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486486542
+        },
+        "-NpHWODQluP7nadJQXva": {
+          "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+          "textContent": "Test",
+          "timestamp": 1706486503029
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+        "textContent": "Test",
+        "timestamp": 1706486503030
+      },
+      "users": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "K Lu",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "Keene Lu"
+      }
+    },
+    "-NpHWQ5neAmJpVXWLrjb": {
+      "messages": {
+        "-NpHWQ5ogJL65Uzbjs4p": {
+          "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486510733
+        },
+        "-NpHWRqec-qkhBjIwkaA": {
+          "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+          "textContent": "Hi",
+          "timestamp": 1706486517892
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "20S8SN78M0Y3q9qQmcC34H590RB3",
+        "textContent": "Hi",
+        "timestamp": 1706486517892
+      },
+      "users": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "K Lu",
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "QingYuan Yao"
+      }
+    },
+    "-NpHXw1k6ZsDmrRjJjtc": {
+      "messages": {
+        "-NpHXw1lK1ErbnS44HWa": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486907041
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706486907041
+      },
+      "users": {
+        "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": "Keene Lu",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni"
+      }
+    },
+    "-NpHXywaZc16JQyg6nFj": {
+      "messages": {
+        "-NpHXywbwM6roQurUnjq": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486918935
+        },
+        "-NpLKXzBKvQz5DooXl6c": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "Man",
+          "timestamp": 1706550505400
+        },
+        "-NpLKZRBU5IqxPaqdgBb": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "see you on Sunday",
+          "timestamp": 1706550511352
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "see you on Sunday",
+        "timestamp": 1706550511353
+      },
+      "users": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni"
+      }
+    },
+    "-NpHY3DEC-A7CqAVAB6X": {
+      "messages": {
+        "-NpHY3DEC-A7CqAVAB6Y": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486940544
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706486940544
+      },
+      "users": {
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "Keene Lu"
+      }
+    },
+    "-NpHYHZ7OVUcAHuquemR": {
+      "messages": {
+        "-NpHYHZ8lTbMzxhfXMXV": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706486999289
+        },
+        "-NpHYhzmCuNqmQAm2TPb": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "please",
+          "timestamp": 1706487111651
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+        "textContent": "please",
+        "timestamp": 1706487111652
+      },
+      "users": {
+        "VkSUTlL3qcUf67tUE9JNHCsxqMF3": "Claire Paré",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni"
+      }
+    },
+    "-NpHYKOJFwADmPWIYqWm": {
+      "messages": {
+        "-NpHYKOKA6VPtqHXcqYp": {
+          "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706487010885
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "az5KHx867AfQK3N5x3C3QwOuzu22",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706487010885
+      },
+      "users": {
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
+      }
+    },
+    "-NpHaSuGDn5t3mgJ2kYd": {
+      "messages": {
+        "-NpHaSuHtnxBgV4BduIB": {
+          "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706487832205
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706487832205
+      },
+      "users": {
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "Hannah Ma",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpHaZPMWxAyFx2rIm5p": {
+      "messages": {
+        "-NpHaZPNwFZjWbJMlJs1": {
+          "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706487858835
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706487858835
+      },
+      "users": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "QingYuan Yao",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "Hannah Ma"
+      }
+    },
+    "-NpHa_EEsbhuT7pwDjhT": {
+      "messages": {
+        "-NpHa_EFtd0h9Z_yeBP-": {
+          "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706487862219
+        },
+        "-NpHadeutVwS6V2ZVXmg": {
+          "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+          "textContent": "omg hi bestie",
+          "timestamp": 1706487880374
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2",
+        "textContent": "omg hi bestie",
+        "timestamp": 1706487880374
+      },
+      "users": {
+        "TQgN3gqkU1QLjaY7MHYBEfDatay2": "Joyce Zhao",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "Hannah Ma"
+      }
+    },
+    "-NpI-1m3ELB_Mzkthfwj": {
+      "messages": {
+        "-NpI-1m4MibCp6LkoCcv": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494536827
+        },
+        "-NpLKLi-xlLKuulx4vem": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "你谁啊",
+          "timestamp": 1706550455148
+        },
+        "-NpLKN76BeCdDJ4kBH7p": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "啊啊",
+          "timestamp": 1706550460914
+        },
+        "-NpLKNUDMnxrUQTB_0Jg": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "不好意思",
+          "timestamp": 1706550462394
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "不好意思",
+        "timestamp": 1706550462394
+      },
+      "users": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen"
+      }
+    },
+    "-NpI-3atz7hwIyyoA3tH": {
+      "messages": {
+        "-NpI-3atz7hwIyyoA3tI": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494544304
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706494544304
+      },
+      "users": {
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "Kyle Soni",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen"
+      }
+    },
+    "-NpI-5DpaEIXLpgO7b1q": {
+      "messages": {
+        "-NpI-5DpaEIXLpgO7b1r": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494550956
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706494550956
+      },
+      "users": {
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "Hannah Ma"
+      }
+    },
+    "-NpI-OH13Gw1tIOirwWu": {
+      "messages": {
+        "-NpI-OH2XehhYn-ob-X7": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494628985
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706494628985
+      },
+      "users": {
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "Xuewei Jiang",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen"
+      }
+    },
+    "-NpI-POvpQ0ZO6dWyeIq": {
+      "messages": {
+        "-NpI-POw76ailT6S7bVi": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494633586
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+        "textContent": "I would like to work out with you",
+        "timestamp": 1706494633586
+      },
+      "users": {
+        "TQgN3gqkU1QLjaY7MHYBEfDatay2": "Joyce Zhao",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen"
+      }
+    },
+    "-NpI-QM8hSPTIVTnPy6q": {
+      "messages": {
+        "-NpI-QM8hSPTIVTnPy6r": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706494637504
+        },
+        "-NpI-WDktdxL_dJRrCUo": {
+          "senderId": "nx0DBt871bRbwl0qAV6IiL1ebrk2",
+          "textContent": "you like moosclays? i like moosclays. we go on date to ymca and say hi to racist man!",
+          "timestamp": 1706494661543
+        },
+        "-NpI-l_Qp3LcBxnTvdHr": {
+          "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+          "textContent": "hi joelle you are very funny let us go",
+          "timestamp": 1706494728530
+        }
+      },
+      "mrm": {
+        "read": false,
+        "senderId": "sU7DDbWxXuVc0mHL4pfe44JmUWC2",
+        "textContent": "hi joelle you are very funny let us go",
+        "timestamp": 1706494728531
+      },
+      "users": {
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "Joelle Chen",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpXPSnUnDQxox_0H--0": {
+      "messages": {
+        "-NpXPSnWa1L_uhtEJksQ": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706753121517
+        },
+        "-NpXPbZnbB7eFn6HMOl-": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "你好",
+          "timestamp": 1706753161536
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "你好",
+        "timestamp": 1706753161540
+      },
+      "users": {
+        "2RtA8uztgKR8JioCrfWTimJ35n02": "Murat Sankaya",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao"
+      }
+    },
+    "-NpXPVsXK6RWZC1-LlMJ": {
+      "messages": {
+        "-NpXPVsYayUXW7PI-3WL": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706753134127
+        },
+        "-NpXP_6udDAtFyV89vkg": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "你好！！！",
+          "timestamp": 1706753151495
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "你好！！！",
+        "timestamp": 1706753151496
+      },
+      "users": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "Joyce Zhao"
+      }
+    },
+    "-NpXPWrUmd2EUBymaNOv": {
+      "messages": {
+        "-NpXPWrVHsjgiTTGxId7": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "I would like to work out with you",
+          "timestamp": 1706753138156
+        },
+        "-NpXPjjV5hyqX6H-1mU3": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "你好",
+          "timestamp": 1706753194989
+        },
+        "-NpXPpZR23FQcajJrepp": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "welcome",
+          "timestamp": 1706753218860
+        },
+        "-NpXQNOSm9meCN8qhRkI": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "Hey",
+          "timestamp": 1706753361499
+        },
+        "-NpXQmav3DPOnqF1eFl6": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "??",
+          "timestamp": 1706753468890
+        },
+        "-NpXQrzl55ktWOt8kisC": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "How does it seem ? ",
+          "timestamp": 1706753490927
+        },
+        "-NpXQuy7AdiYS2UsiSjg": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "real time",
+          "timestamp": 1706753503142
+        },
+        "-NpXQwMXap2q-vsyKiw6": {
+          "senderId": "wHdpBMIaU3RHBxzfbGyR7y0UqN02",
+          "textContent": "It works right ? ",
+          "timestamp": 1706753508832
+        },
+        "-NpXQxXpqGzdM6xdF6oa": {
+          "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+          "textContent": "yes",
+          "timestamp": 1706753513684
+        }
+      },
+      "mrm": {
+        "read": true,
+        "senderId": "X2DR2yS1VKNA0gcMBcU2Z715nMG3",
+        "textContent": "yes",
+        "timestamp": 1706753513685
+      },
+      "users": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "Qingyuan Yao",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "Murat Sankaya"
       }
     }
   },
-<<<<<<< HEAD
-  "users": {
-    "0": {
-      "days": [
-        1,
-        3,
-        5
-      ],
-      "expertise": 4,
-      "funFact": "I am an admin account",
-      "gender": "none",
-      "id": "0",
-      "location": 1,
-      "name": "admin",
-      "sport": "strengthTraining"
-    },
-    "1": {
-      "days": [
-        1,
-        3,
-        5
-      ],
-      "expertise": 4,
-      "funFact": "my favorite day is leg day",
-      "gender": "male",
-      "id": 1,
-      "location": 1,
-      "name": "Chris",
-      "sport": "strengthTraining"
-    },
-    "2": {
-      "days": [
-        1,
-        3,
-        5
-      ],
-      "expertise": 2,
-      "funFact": "bench: 225",
-      "gender": "female",
-      "id": 2,
-      "location": 1,
-      "name": "Claire",
-      "sport": "strengthTraining"
-    },
-    "3": {
-      "days": [
-        2,
-        4,
-        5
-      ],
-      "expertise": 3,
-      "funFact": "i love to crochet",
-      "gender": "female",
-      "id": 3,
-      "location": 0,
-      "name": "Amy",
-      "profileImg": "gif.png",
-      "sport": "pickleball"
-    },
-    "4": {
-      "days": [
-        1,
-        2,
-        4
-      ],
-      "expertise": 3,
-      "funFact": "I grow potatoes",
-      "gender": "male",
-      "id": 4,
-      "location": 0,
-      "name": "Maximus",
-      "sport": "basketball"
-    },
-    "5": {
-      "days": [
-        1,
-        3,
-        5
-      ],
-      "expertise": 3,
-      "funFact": "ball is life",
-      "gender": "male",
-      "id": 5,
-      "location": 1,
-      "name": "Joe",
-      "sport": "basketball"
-    },
-    "6": {
-      "days": [
-        6,
-        7
-      ],
-      "expertise": 5,
-      "funFact": "",
-      "gender": "female",
-      "id": 6,
-      "location": 1,
-      "name": "Jill",
-      "sport": "Yoga"
-    },
-    "7": {
-      "days": [
-        3,
-        5
-      ],
-      "expertise": 1,
-      "funFact": "I love dogs and work at a dog shelter!",
-      "gender": "male",
-      "id": 7,
-      "location": 0,
-      "name": "Patrick",
-      "sport": "running"
-    },
-    "66jpArnbkjasuQ2NBQkQIUg1N5D3": {
-      "days": [
-        3,
-        4,
-        6
-      ],
-      "email": "patelsaloni2001@gmail.com",
-      "expertise": 2,
-      "funFact": "I love to workout on peppy songs",
-      "gender": "female",
-      "gym": 0,
-      "name": "Saloni Patel",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKH3xV-GWbBAjLCaxlq3RUC8-l2GuA31lkrwJXsly6k=s96-c",
-      "preferredName": "Saloni",
-      "sport": "strengthTraining"
-    },
-    "759BwMjCxcYl9Hk4IhIWngnpHC43": {
-      "email": "qy624@nyu.edu",
-      "expertise": 0,
-      "funFact": "",
-=======
   "events": {
+    "20S8SN78M0Y3q9qQmcC34H590RB3": {
+      "name": "K Lu"
+    },
+    "2RtA8uztgKR8JioCrfWTimJ35n02": {
+      "name": "Murat Sankaya"
+    },
     "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
       "date": "every day bro",
       "desc": "Test description!",
       "location": "no location lolz",
       "name": "Claire Paré",
       "title": "titular"
+    },
+    "8dsk1uTJohbeIwt1n9wzKCvLnxy2": {
+      "name": "Xuewei Jiang"
+    },
+    "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": {
+      "name": "Keene Lu"
+    },
+    "OSqh3ozrpYRxYVByE8OSAxEKraC3": {
+      "name": "Xuewei Jiang"
     },
     "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
       "name": "Lili Zhao"
@@ -178,6 +1009,35 @@
       "name": "Claire Paré",
       "title": "t5"
     },
+    "WpQIaKZKxgOs2pj8RQvzxJTDNqj2": {
+      "date": "01/28/2024",
+      "desc": "teste",
+      "location": "testes",
+      "name": "Patrick Jiang",
+      "title": "test4"
+    },
+    "X2DR2yS1VKNA0gcMBcU2Z715nMG3": {
+      "date": "TBD",
+      "desc": "跑",
+      "location": "Tech",
+      "title": "跑步"
+    },
+    "az5KHx867AfQK3N5x3C3QwOuzu22": {
+      "name": "Kyle Soni"
+    },
+    "jxyQTqGhfWZ66Z8R24boPizWlUh2": {
+      "name": "Jenna Lee"
+    },
+    "nx0DBt871bRbwl0qAV6IiL1ebrk2": {
+      "name": "Joelle Chen"
+    },
+    "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": {
+      "date": "1/31/24",
+      "desc": "we go hard",
+      "location": "SPAC",
+      "name": "Hannah Ma",
+      "title": "heeheehawhaw"
+    },
     "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
       "date": "haha",
       "desc": "yoga",
@@ -187,7 +1047,53 @@
     }
   },
   "users": {
+    "20S8SN78M0Y3q9qQmcC34H590RB3": {
+      "chat": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "-NpHWQ5neAmJpVXWLrjb",
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "-NpHWJKeyPwvDL_O6eQT",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "-NpHWKBozDRUUyEjf_y3"
+      },
+      "days": [
+        2,
+        6,
+        7
+      ],
+      "email": "ny.rugai@gmail.com",
+      "expertise": 3,
+      "funFact": "qwert",
+      "gender": "male",
+      "location": 1,
+      "name": "K Lu",
+      "photoURL": "https://firebasestorage.googleapis.com/v0/b/fitnu-305a3.appspot.com/o/profile_images%2F20S8SN78M0Y3q9qQmcC34H590RB3%2FIMG_20191011_155917.jpg?alt=media&token=622f5085-c148-4dfd-8dc3-28f765cbc6a4",
+      "preferredName": "Sam",
+      "sport": "cardio"
+    },
+    "2RtA8uztgKR8JioCrfWTimJ35n02": {
+      "chat": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpXPSnUnDQxox_0H--0",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpHDIaZ0-XbwzyuymUv"
+      },
+      "days": [
+        1
+      ],
+      "email": "ms12080@nyu.edu",
+      "expertise": 4,
+      "funFact": "metric === norm ? ",
+      "gender": "male",
+      "location": 1,
+      "name": "Murat Sankaya",
+      "photoURL": "https://firebasestorage.googleapis.com/v0/b/fitnu-305a3.appspot.com/o/profile_images%2F2RtA8uztgKR8JioCrfWTimJ35n02%2FScreenshot%20from%202024-01-27%2013-24-09.png?alt=media&token=d35095fc-4f95-47ec-9247-b3516a2ea0fc",
+      "preferredName": "Norm",
+      "sport": "groupSports"
+    },
     "759BwMjCxcYl9Hk4IhIWngnpHC43": {
+      "chat": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "-NpHWQ5neAmJpVXWLrjb",
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "-NpGht4cT8CA6aAI90SW",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpC4ruWscy9fLBNwLS_",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "-NpHaZPMWxAyFx2rIm5p",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpCKaVG_sLEENQQehjz"
+      },
       "days": [
         1,
         2,
@@ -200,66 +1106,53 @@
       "email": "qy624@nyu.edu",
       "expertise": 0,
       "funFact": "666",
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "gender": "male",
       "gym": 0,
       "name": "QingYuan Yao",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIGMBsoCmn_ZaCvL0gv09yzQwMtbTKaA4zIXkGdBCv1=s96-c",
-<<<<<<< HEAD
-      "preferredName": "",
-=======
       "preferredName": "Jason",
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "sport": "cardio"
     },
     "7EwdbFQJkRUOj6OnnrKrxsPqdBG2": {
+      "chat": {
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpGyl6KoTnvZyklIC2b"
+      },
       "days": [
-<<<<<<< HEAD
-        1,
-        3,
-        5
-      ],
-      "email": "clairempare@gmail.com",
-      "expertise": 0,
-      "funFact": "fact2",
-=======
         4
       ],
       "email": "clairempare@gmail.com",
       "expertise": 4,
       "funFact": "i don't do facts.",
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "gender": "female",
       "gym": 1,
       "name": "Claire Paré",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJcXi22IAKmIjRUorT4oq74JDwPrwMLHnlr6jnMbTjy=s96-c",
-<<<<<<< HEAD
-      "preferredName": "Clarie",
-      "sport": "yogaPilates"
-    },
-    "H2GBrgCzJlT1vMZZ05kctjB1bA13": {
-      "days": [
-        1,
-        3,
-        6,
-        7
-      ],
-      "email": "dongshu2024@u.northwestern.edu",
-      "expertise": 1,
-      "funFact": "",
-      "gender": "male",
-      "gym": 1,
-      "name": "Dong Shu",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKNMqihZp0rluYG2U1agFrP64Hahsj5m5tAPOWRVto0=s96-c",
-      "preferredName": "dong",
-      "sport": "groupSports"
-=======
       "preferredName": "Clare's Alter Ego",
       "sport": "outdoorActivities"
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
+    },
+    "8dsk1uTJohbeIwt1n9wzKCvLnxy2": {
+      "days": [
+        1,
+        3
+      ],
+      "email": "xueweijiang2024@u.northwestern.edu",
+      "expertise": 0,
+      "funFact": "dwadw",
+      "gender": "male",
+      "location": 0,
+      "name": "Xuewei Jiang",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocI7JE2WqXbLS2pWzb7rfCf4N9AkIQTwaOUT1N8Dxzlj=s96-c",
+      "preferredName": "xuewei",
+      "sport": "cardio"
     },
     "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": {
+      "chat": {
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "-NpGhfPkfbs5vE7uw34M",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpHXw1k6ZsDmrRjJjtc"
+      },
       "days": [
+        1,
+        2,
         5,
         6,
         7
@@ -268,59 +1161,40 @@
       "expertise": 0,
       "funFact": "",
       "gender": "male",
-<<<<<<< HEAD
-      "gym": 0,
-      "name": "Keene Lu",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJhWCjZNPf9Akj2C8-FzGixBTwk2wTmpRqUeOHT5bWtJys=s96-c",
-      "preferredName": "Keene",
-=======
       "location": 0,
       "name": "Keene Lu",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJhWCjZNPf9Akj2C8-FzGixBTwk2wTmpRqUeOHT5bWtJys=s96-c",
       "preferredName": "",
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "sport": "cardio"
     },
     "OSqh3ozrpYRxYVByE8OSAxEKraC3": {
+      "chat": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "-NpHWJKeyPwvDL_O6eQT",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-OH13Gw1tIOirwWu",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpCKZm8SRlUlLnbZ9r-"
+      },
       "days": [
         1,
-<<<<<<< HEAD
-        3,
-        5
+        2,
+        3
       ],
       "email": "jiangxuewei159@gmail.com",
-      "expertise": 2,
-      "funFact": "",
+      "expertise": 4,
+      "funFact": "ahahha",
       "gender": "male",
-      "gym": 0,
+      "location": 0,
       "name": "Xuewei Jiang",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJRYKYbtEJ1Ngztnkw2qnc0EENEGXkP0iZ3FTGsRDHF=s96-c",
+      "photoURL": "https://firebasestorage.googleapis.com/v0/b/fitnu-305a3.appspot.com/o/profile_images%2FOSqh3ozrpYRxYVByE8OSAxEKraC3%2Fwhite-rabbit-grass-1747425.jpg?alt=media&token=002c9c69-280f-4cf6-9923-ac234a424ce3",
       "preferredName": "Marvin",
       "sport": "groupSports"
     },
     "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
-      "days": [
-        1,
-        5
-      ],
-      "email": "lilizhao553@gmail.com",
-      "expertise": 0,
-      "funFact": "hehe",
-      "gender": "female",
-      "gym": 0,
-      "name": "Lili Zhao",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocI4Hwt4iajx2biyc5B4PF-VYlSVZtdBI11BYTGIVX85yg=s96-c",
-      "preferredName": "lili",
-      "sport": "groupSports"
-    },
-    "TtNjutYaVZPSaFAfnTUJXbTsB1U2": {
-=======
-        2
-      ],
-      "name": "Xuewei Jiang",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJRYKYbtEJ1Ngztnkw2qnc0EENEGXkP0iZ3FTGsRDHF=s96-c"
-    },
-    "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": {
+      "chat": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "-NpGht4cT8CA6aAI90SW",
+        "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": "-NpGhfPkfbs5vE7uw34M",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpC59bZg8v5Fwv3T7QW",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpGxz9W15enH-lrZt4t"
+      },
       "email": "lilizhao553@gmail.com",
       "expertise": 0,
       "funFact": "muscles",
@@ -332,6 +1206,10 @@
       "sport": "cardio"
     },
     "TQgN3gqkU1QLjaY7MHYBEfDatay2": {
+      "chat": {
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-POvpQ0ZO6dWyeIq",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "-NpHa_EEsbhuT7pwDjhT"
+      },
       "days": [
         4,
         6,
@@ -348,6 +1226,9 @@
       "sport": "yogaPilates"
     },
     "VkSUTlL3qcUf67tUE9JNHCsxqMF3": {
+      "chat": {
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpHYHZ7OVUcAHuquemR"
+      },
       "days": [
         1,
         3,
@@ -363,8 +1244,26 @@
       "preferredName": "Claire",
       "sport": "strengthTraining"
     },
+    "WpQIaKZKxgOs2pj8RQvzxJTDNqj2": {
+      "chat": {
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpGxxLrodpURvuhiEYc"
+      },
+      "days": [
+        6
+      ],
+      "name": "Patrick Jiang",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIhPmKt34sDFSjwWtFjGIynOJ76sxHTsOGcXeEWjvLFmqw=s96-c"
+    },
     "X2DR2yS1VKNA0gcMBcU2Z715nMG3": {
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
+      "chat": {
+        "2RtA8uztgKR8JioCrfWTimJ35n02": "-NpXPSnUnDQxox_0H--0",
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "-NpC4ruWscy9fLBNwLS_",
+        "QIOj4sWTwzYwSZ9Bis7iKrMWjjA2": "-NpC59bZg8v5Fwv3T7QW",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpHXywaZc16JQyg6nFj",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-1m3ELB_Mzkthfwj",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpXPVsXK6RWZC1-LlMJ",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpXPWrUmd2EUBymaNOv"
+      },
       "days": [
         1,
         2,
@@ -374,52 +1273,6 @@
         6,
         7
       ],
-<<<<<<< HEAD
-      "email": "patrick.jiang.2020@gmail.com",
-      "expertise": 1,
-      "funFact": "I'm an Eagle Scout!",
-      "gender": "male",
-      "gym": 1,
-      "name": "Patrick Jiang",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIhPmKt34sDFSjwWtFjGIynOJ76sxHTsOGcXeEWjvLFmqw=s96-c",
-      "preferredName": "Carson",
-      "sport": "outdoorActivities"
-    },
-    "VkSUTlL3qcUf67tUE9JNHCsxqMF3": {
-      "days": [
-        0,
-        2,
-        4
-      ],
-      "email": "clairepare2024@u.northwestern.edu",
-      "expertise": 2,
-      "funFact": "fact!",
-      "gender": "female",
-      "gym": 0,
-      "name": "Claire Paré",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKEkVV62K0ITW4ve5fswIzc_gIyN7-T2-7t2FMz3di3=s96-c",
-      "preferredName": "Claire",
-      "sport": "strengthTraining"
-    },
-    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
-      "days": [
-        0,
-        3,
-        6
-      ],
-      "email": "joycexzhao@gmail.com",
-      "expertise": 0,
-      "funFact": "haha",
-      "gender": "female",
-      "gym": 1,
-      "name": "Joyce Zhao",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIXfzqrZwRZHDbUeWHp5czdkxMclYlQAg4Ev4HWMHdRNT7Y=s96-c",
-      "preferredName": "joyce",
-      "sport": "strengthTraining"
-    },
-    "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
-      "days": [
-=======
       "email": "qingyuanyao2025@u.northwestern.edu",
       "expertise": 0,
       "funFact": "666",
@@ -430,69 +1283,153 @@
       "preferredName": "Cody",
       "sport": "cardio"
     },
-    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
+    "az5KHx867AfQK3N5x3C3QwOuzu22": {
+      "chat": {
+        "NlwBwXYZkpc3qzFlv1LN6bJRKJC2": "-NpHXw1k6ZsDmrRjJjtc",
+        "VkSUTlL3qcUf67tUE9JNHCsxqMF3": "-NpHYHZ7OVUcAHuquemR",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpHXywaZc16JQyg6nFj",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-3atz7hwIyyoA3tH",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpHYKOJFwADmPWIYqWm",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "-NpHY3DEC-A7CqAVAB6X"
+      },
       "days": [
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
+        2,
+        4,
+        6
+      ],
+      "email": "kylesoni2024@u.northwestern.edu",
+      "expertise": 2,
+      "funFact": "I have cat",
+      "gender": "male",
+      "location": 0,
+      "name": "Kyle Soni",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJFbHzHeJD30K2kc9miN2ysLnNyAOdhtqmmxAMhgggY=s96-c",
+      "preferredName": "Kyle",
+      "sport": "cardio"
+    },
+    "jxyQTqGhfWZ66Z8R24boPizWlUh2": {
+      "chat": {
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpGxyFeTmKp6k6PUD88"
+      },
+      "email": "jennalee2024@u.northwestern.edu",
+      "name": "Jenna Lee",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKJQ-kEFLuwOy82PcJxj8q9ZVanNa4SEbtjVGvq6Y8L=s96-c"
+    },
+    "nx0DBt871bRbwl0qAV6IiL1ebrk2": {
+      "chat": {
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "-NpI-OH13Gw1tIOirwWu",
+        "TQgN3gqkU1QLjaY7MHYBEfDatay2": "-NpI-POvpQ0ZO6dWyeIq",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpI-1m3ELB_Mzkthfwj",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpI-3atz7hwIyyoA3tH",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "-NpI-5DpaEIXLpgO7b1q",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpI-QM8hSPTIVTnPy6q"
+      },
+      "days": [
+        2,
+        4,
+        6,
+        7
+      ],
+      "email": "joellechen2023@u.northwestern.edu",
+      "expertise": 2,
+      "funFact": "big",
+      "gender": "female",
+      "location": 0,
+      "name": "Joelle Chen",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocL3JMXXGhiBDsV7e3nn2XGNLQxHXGvMOizqmZHDOxj7=s96-c",
+      "preferredName": "Joelle",
+      "sport": "strengthTraining"
+    },
+    "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": {
+      "chat": {
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "-NpHaZPMWxAyFx2rIm5p",
+        "TQgN3gqkU1QLjaY7MHYBEfDatay2": "-NpHa_EEsbhuT7pwDjhT",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-5DpaEIXLpgO7b1q",
+        "sU7DDbWxXuVc0mHL4pfe44JmUWC2": "-NpHaSuGDn5t3mgJ2kYd"
+      },
+      "days": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "email": "hannahma2025@u.northwestern.edu",
+      "expertise": 1,
+      "funFact": "moosclays",
+      "gender": "female",
+      "location": 0,
+      "name": "Hannah Ma",
+      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJ4IbC8nhHPb4Ig4GlYs7AYfFrClQsyhoFxyQaxzhqrcg=s96-c",
+      "preferredName": "Hannah",
+      "sport": "cardio"
+    },
+    "sU7DDbWxXuVc0mHL4pfe44JmUWC2": {
+      "chat": {
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpXPVsXK6RWZC1-LlMJ",
+        "nx0DBt871bRbwl0qAV6IiL1ebrk2": "-NpI-QM8hSPTIVTnPy6q",
+        "pQfVn0h8mKRGQ9YYETM2yDnZ4qR2": "-NpHaSuGDn5t3mgJ2kYd"
+      },
+      "days": [
         1,
         3,
         5
       ],
-<<<<<<< HEAD
-      "email": "muratsankaya2025@u.northwestern.edu",
-      "expertise": 2,
-      "funFact": "",
-      "gender": "male",
-      "gym": 0,
-      "name": "Murat Sankaya",
-      "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKzNjXCuxFsJW96Qmj76DC-kuPCjTpLhjKRb0ithCA6=s96-c",
-      "preferredName": "perry",
-      "sport": "cardio"
-=======
       "email": "joycexzhao@gmail.com",
-      "expertise": 2,
-      "funFact": "muscles",
+      "expertise": 1,
+      "funFact": "moosclays",
       "gender": "female",
       "location": 0,
       "name": "Joyce Zhao",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocIXfzqrZwRZHDbUeWHp5czdkxMclYlQAg4Ev4HWMHdRNT7Y=s96-c",
       "preferredName": "Joyce",
-      "sport": "strengthTraining"
+      "sport": "yogaPilates"
     },
     "wHdpBMIaU3RHBxzfbGyR7y0UqN02": {
+      "chat": {
+        "2RtA8uztgKR8JioCrfWTimJ35n02": "-NpHDIaZ0-XbwzyuymUv",
+        "759BwMjCxcYl9Hk4IhIWngnpHC43": "-NpCKaVG_sLEENQQehjz",
+        "8dsk1uTJohbeIwt1n9wzKCvLnxy2": "-NpCIh_uxicuF-VzWFcK",
+        "OSqh3ozrpYRxYVByE8OSAxEKraC3": "-NpCKZm8SRlUlLnbZ9r-",
+        "X2DR2yS1VKNA0gcMBcU2Z715nMG3": "-NpXPWrUmd2EUBymaNOv",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpHYKOJFwADmPWIYqWm",
+        "xnExkVqjqLcjVIUNxPTPmAiDLgF2": "-NpCK_PyRwKlBynfqiOu"
+      },
       "days": [
         1,
-        2,
-        3
+        3,
+        5,
+        6,
+        7
       ],
       "email": "muratsankaya2025@u.northwestern.edu",
-      "expertise": 0,
-      "funFact": "",
+      "expertise": 4,
+      "funFact": "I'm made out of Iron",
       "gender": "male",
-      "location": 0,
+      "location": 1,
       "name": "Murat Sankaya",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKzNjXCuxFsJW96Qmj76DC-kuPCjTpLhjKRb0ithCA6=s96-c",
       "preferredName": "Ironman",
       "sport": "groupSports"
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
     },
     "xnExkVqjqLcjVIUNxPTPmAiDLgF2": {
+      "chat": {
+        "20S8SN78M0Y3q9qQmcC34H590RB3": "-NpHWKBozDRUUyEjf_y3",
+        "az5KHx867AfQK3N5x3C3QwOuzu22": "-NpHY3DEC-A7CqAVAB6X",
+        "wHdpBMIaU3RHBxzfbGyR7y0UqN02": "-NpCK_PyRwKlBynfqiOu"
+      },
       "days": [
         5,
         6,
         7
       ],
       "email": "keene.ruiyang.lu@gmail.com",
-<<<<<<< HEAD
-      "expertise": 0,
-      "funFact": "testing123",
-      "gender": "male",
-      "gym": 0,
-=======
       "expertise": 1,
       "funFact": "",
       "gender": "male",
       "location": 0,
->>>>>>> f8b4b3118538e9226b810fb9ca26e7b7b6f11422
       "name": "Keene Lu",
       "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocKMqE_mVDtJtgQbmgxAt30EsCwGQrtXHc4VKwiMo53saQ=s96-c",
       "preferredName": "Klu",
