@@ -33,8 +33,8 @@ const updateData = (path, data) => {
         });
 };
 
-const deleteChat = async (userId, otherUserId, chatId) => {
-    console.log(userId, otherUserId, chatId);
+const deleteChat = async (userId, otherUserId, chatId, setChatData) => {
+    setChatData({}); // clear chat data
     await remove(ref(database, `/users/${userId}/chat/${otherUserId}`));
     await remove(ref(database, `/users/${otherUserId}/chat/${userId}`));
     await remove(ref(database, `/chats/${chatId}`));
@@ -44,12 +44,12 @@ const Chat = ({ user }) => {
     const navigate = useNavigate();
     const [chats, chatsError] = useDbData(`/users/${user.uid}/chat`);
     const [chatData, setChatData] = useState({});
-    const [contextMenu, setContextMenu] = useState({ visible: false, x: 0, y: 0 });
 
-    console.log('chats', chats);
+    console.log(chats);
 
     useEffect(() => {
         const unsubscribes = []; // Store unsubscribe functions
+        console.log('useffect triggered');
 
         if (chats) {
             Object.entries(chats).forEach(([otherUserId, chatId]) => {
@@ -81,8 +81,8 @@ const Chat = ({ user }) => {
 
     const handleCloseChat = (event, chatId, otherUserId) => {
         event.stopPropagation();
-        deleteChat(user.uid, otherUserId, chatId);
-        console.log('called close chat');
+        deleteChat(user.uid, otherUserId, chatId, setChatData);
+        console.log('called delete chat');
     };
 
     return (
@@ -101,8 +101,9 @@ const Chat = ({ user }) => {
                         <CloseButton className='close-button' onClick={(e) => handleCloseChat(e, chatId, data.otherUserId)} />
                     </div>))}
             </div>
-        </div>
-    );
+        </div>);
+
+
 };
 
 export default Chat;
