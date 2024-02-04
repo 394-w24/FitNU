@@ -2,9 +2,11 @@
 .chat-container {
   padding-top: 10px;
   margin-top: 70px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   max-height: 520px;
+  max-width: 350px;
 }
 
 /* This styles the main title of the chat section, adjust the margin as needed */

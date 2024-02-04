@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ref, update, onValue } from "firebase/database";
+import { ref, update, onValue, remove } from "firebase/database";
 import { database, useDbData } from "../utilities/firebase"
 import { useNavigate } from 'react-router-dom';
 import "./Chat.css";
@@ -37,6 +37,13 @@ const updateData = (path, data) => {
             console.error('Failed to update data', error);
         });
 };
+
+const deleteChat = async (userId, otherUserId, chatId) => {
+    await remove(ref(database, `/users/${userId}/chat/${otherUserId}`));
+    await remove(ref(database, `/users/${otherUserId}/chat/${userId}`));
+    await remove(ref(database, `/chats/${chatId}`));
+    window.location.reload();
+}
 
 const Chat = ({ user }) => {
     const navigate = useNavigate();
@@ -90,7 +97,7 @@ const Chat = ({ user }) => {
     // console.log('counting renders', new Date(Date.now()).toLocaleTimeString());
 
     const handleItemClick = (item) => {
-        console.log('clicked on handle item click');
+        deleteChat(user.uid, contextMenu.otherUserId, contextMenu.chatId);
     }
 
     return (
