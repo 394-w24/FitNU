@@ -3,8 +3,8 @@
   padding-top: 10px;
   margin-top: 70px;
   overflow: auto;
-  max-width: 400px;
   position: relative;
+  max-height: 520px;
 }
 
 /* This styles the main title of the chat section, adjust the margin as needed */
