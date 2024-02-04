@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ref, update, onValue, remove } from "firebase/database";
 import { database, useDbData } from "../utilities/firebase"
 import { useNavigate } from 'react-router-dom';
-import CloseButton from 'react-bootstrap/CloseButton';
 import "./Chat.css";
 
 const ContextMenu = ({ children, style }) => {
@@ -43,7 +42,7 @@ const deleteChat = async (userId, otherUserId, chatId) => {
     await remove(ref(database, `/users/${userId}/chat/${otherUserId}`));
     await remove(ref(database, `/users/${otherUserId}/chat/${userId}`));
     await remove(ref(database, `/chats/${chatId}`));
-    window.location.reload();
+
 }
 
 const Chat = ({ user }) => {
@@ -101,13 +100,6 @@ const Chat = ({ user }) => {
         deleteChat(user.uid, contextMenu.otherUserId, contextMenu.chatId);
     }
 
-    const handleCloseChat = (chatId, otherUserId) => {
-        console.log(`Close chat: ${chatId} with user: ${otherUserId}, was closed`);
-        // Here you can handle the closing of the chat,
-        // like removing it from the state or updating the database
-    };
-    
-
     return (
         <div className="chat-container" onClick={handleClick}>
             <h2 className="chat-title">Your Chats</h2>
@@ -122,7 +114,6 @@ const Chat = ({ user }) => {
                         onContextMenu={(e) => handleContextMenu(e, chatId, data.otherUserId)}
                     >
                         <ChatItemOtherUserData latestMessage={data.textContent} otherUserId={data.otherUserId} />
-                        <CloseButton className='close-button' onClick={() => handleCloseChat(chatId, data.otherUserId)} />
                     </div>))}
             </div>
             {contextMenu.visible && <ContextMenu style={{ top: contextMenu.y, left: contextMenu.x }}>
@@ -136,5 +127,3 @@ const Chat = ({ user }) => {
 };
 
 export default Chat;
-
-
