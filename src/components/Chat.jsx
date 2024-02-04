@@ -45,11 +45,8 @@ const Chat = ({ user }) => {
     const [chats, chatsError] = useDbData(`/users/${user.uid}/chat`);
     const [chatData, setChatData] = useState({});
 
-    console.log(chats);
-
     useEffect(() => {
         const unsubscribes = []; // Store unsubscribe functions
-        console.log('useffect triggered');
 
         if (chats) {
             Object.entries(chats).forEach(([otherUserId, chatId]) => {
@@ -82,7 +79,6 @@ const Chat = ({ user }) => {
     const handleCloseChat = (event, chatId, otherUserId) => {
         event.stopPropagation();
         deleteChat(user.uid, otherUserId, chatId, setChatData);
-        console.log('called delete chat');
     };
 
     return (
@@ -103,9 +99,6 @@ const Chat = ({ user }) => {
             </div>
         </div>);
 
-
 };
 
 export default Chat;
-
-
