@@ -71,7 +71,7 @@ function calculateMatchingAll(origin) {
         matchableClear()
         mySelf = userDB.find(user => user.id.toString() == my_id.toString());
         if (!mySelf) { return -1; }
-        console.log("myself:", mySelf, my_id, userDB)
+        //console.log("myself:", mySelf, my_id, userDB)
         let matchingUsers = userDB.filter(user =>
             user.id !== my_id &&
             (user.gender === mySelf.gender ||

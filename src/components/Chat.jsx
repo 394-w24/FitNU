@@ -5,12 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import CloseButton from 'react-bootstrap/CloseButton';
 import "./Chat.css";
 
-const ContextMenu = ({ children, style }) => {
-    return <div className='context-menu' style={style} >
-        {children}
-    </div>
-}
-
 const ChatItemOtherUserData = ({ latestMessage, otherUserId }) => {
     // We can provide other users data to the child component => ChatContent. 
     // There is no need to make 2 seperate calls to the same location 
@@ -40,10 +34,10 @@ const updateData = (path, data) => {
 };
 
 const deleteChat = async (userId, otherUserId, chatId) => {
+    console.log(userId, otherUserId, chatId);
     await remove(ref(database, `/users/${userId}/chat/${otherUserId}`));
     await remove(ref(database, `/users/${otherUserId}/chat/${userId}`));
     await remove(ref(database, `/chats/${chatId}`));
-
 }
 
 const Chat = ({ user }) => {
@@ -52,7 +46,11 @@ const Chat = ({ user }) => {
     const [chatData, setChatData] = useState({});
     const [contextMenu, setContextMenu] = useState({ visible: false, x: 0, y: 0 });
 
+    console.log('chats', chats);
+
     useEffect(() => {
+        const unsubscribes = []; // Store unsubscribe functions
+
         if (chats) {
             Object.entries(chats).forEach(([otherUserId, chatId]) => {
                 const chatRef = ref(database, `/chats/${chatId}/mrm`);
@@ -64,13 +62,15 @@ const Chat = ({ user }) => {
                     }));
                 });
 
-                // Clean up the listener when the component unmounts or chats changes
-                return () => {
-                    unsubscribe();
-                };
+                unsubscribes.push(unsubscribe);
             });
         }
-    }, [chats]);
+
+        // Clean up the listener when the component unmounts or chats changes
+        return () => {
+            unsubscribes.forEach(unsubscribe => unsubscribe());
+        };
+    }, [chats]); // Ensure chats is correctly tracked for changes
 
     const handleChatClick = (chatId, senderId) => {
         if (senderId !== user.uid) {
@@ -79,34 +79,14 @@ const Chat = ({ user }) => {
         navigate(`/Chat/${chatId}`);
     };
 
-    const handleContextMenu = (event, chatId, otherUserId) => {
-        event.preventDefault();
-        setContextMenu({
-            visible: true,
-            x: event.clientX - 700,
-            y: event.clientY - 40,
-            chatId: chatId,
-            otherUserId: otherUserId
-        });
-    };
-
-    const handleClick = () => {
-        if (contextMenu.visible)
-            setContextMenu({ visible: false, ...contextMenu })
-    }
-
-    // console.log('counting renders', new Date(Date.now()).toLocaleTimeString());
-
-    const handleItemClick = (item) => {
-        deleteChat(user.uid, contextMenu.otherUserId, contextMenu.chatId);
-    }
-
-    const handleCloseChat = (chatId, otherUserId) => {
-        console.log(`Close chat: ${chatId} with user: ${otherUserId}, was closed`);
+    const handleCloseChat = (event, chatId, otherUserId) => {
+        event.stopPropagation();
+        deleteChat(user.uid, otherUserId, chatId);
+        console.log('called close chat');
     };
 
     return (
-        <div className="chat-container" onClick={handleClick}>
+        <div className="chat-container">
             <h2 className="chat-title">Your Chats</h2>
             <div className="chat-list">
                 {Object.entries(chatData).sort((a, b) => b[1].timestamp - a[1].timestamp).map(([chatId, data]) => (
@@ -116,18 +96,11 @@ const Chat = ({ user }) => {
                         onClick={() => handleChatClick(chatId, data.senderId)}
                         role="button"
                         tabIndex={0}
-                        onContextMenu={(e) => handleContextMenu(e, chatId, data.otherUserId)}
                     >
                         <ChatItemOtherUserData latestMessage={data.textContent} otherUserId={data.otherUserId} />
-                        <CloseButton className='close-button' onClick={() => handleCloseChat(chatId, data.otherUserId)} />
+                        <CloseButton className='close-button' onClick={(e) => handleCloseChat(e, chatId, data.otherUserId)} />
                     </div>))}
             </div>
-            {contextMenu.visible && <ContextMenu style={{ top: contextMenu.y, left: contextMenu.x }}>
-                <ul>
-                    <li onClick={() => handleItemClick('Delete Chat')}>Delete Chat</li>
-                </ul>
-            </ContextMenu>
-            }
         </div>
     );
 };
