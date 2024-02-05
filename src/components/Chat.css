@@ -1,11 +1,11 @@
 /* If there's a container wrapping the whole chat section, you could add this */
 .chat-container {
   padding-top: 10px;
-  margin-top: 70px;
-  overflow-y: auto;
+  margin-top: 110px;
+  /* overflow-y: auto; */
   overflow-x: hidden;
   position: relative;
-  max-height: 520px;
+  /* max-height: 520px; */
   max-width: 350px;
 }
 
@@ -31,7 +31,6 @@
   width: 100%; /* Ensure it takes full width */
   position: relative;
 }
-
 
 /* Styling for the chat partner's name */
 .chat-partner-name {
