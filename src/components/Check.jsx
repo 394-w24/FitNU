@@ -25,8 +25,7 @@ const Check = ({ user }) => {
         get(userChatRef).then((snapshot) => {
             if (snapshot.exists()) {
                 console.log("Chat already exists");
-                alert("Looks like " + yourName + " also wants to work out with you!");
-            } else {
+                alert("It seems you already have a connection with " + yourName + "! Check your chat!");            } else {
                 // Chat does not exist, create a new chat
                 const newChatRef = push(chatsRef);
                 const chatID = newChatRef.key;
@@ -68,6 +67,8 @@ const Check = ({ user }) => {
                 // Set chat reference for both users
                 set(ref(db, `users/${myUid}/chat/${yourUid}`), chatID);
                 set(ref(db, `users/${yourUid}/chat/${myUid}`), chatID);
+                alert("You sent a message to " + yourName + "!");
+
             }
         }).catch((error) => {
             console.error(error);
@@ -75,7 +76,6 @@ const Check = ({ user }) => {
 
         // Existing functionality
         saveLast();
-        alert("You sent a message to " + yourName + "!");
         nextProfile();
     }
 

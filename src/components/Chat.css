@@ -1,9 +1,12 @@
 /* If there's a container wrapping the whole chat section, you could add this */
 .chat-container {
   padding-top: 10px;
-  margin-top: 70px;
-  overflow: auto;
-  max-width: 400px;
+  margin-top: 110px;
+  /* overflow-y: auto; */
+  overflow-x: hidden;
+  position: relative;
+  /* max-height: 520px; */
+  max-width: 350px;
 }
 
 /* This styles the main title of the chat section, adjust the margin as needed */
@@ -26,6 +29,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   max-width: 720px;
   width: 100%; /* Ensure it takes full width */
+  position: relative;
 }
 
 /* Styling for the chat partner's name */
@@ -80,4 +84,37 @@ html {
 
 .unread {
   background-color: #e0e0f5;
+}
+
+.context-menu {
+  position: absolute;
+  z-index: 1000; /* Ensure it appears above other content */
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px 0;
+  width: 100px; /* or any desired width */
+}
+
+.context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.context-menu ul li {
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: x-small;
+}
+
+.context-menu ul li:hover {
+  background-color: #f5f5f5;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

@@ -71,7 +71,7 @@ function calculateMatchingAll(origin) {
         matchableClear()
         mySelf = userDB.find(user => user.id.toString() == my_id.toString());
         if (!mySelf) { return -1; }
-        console.log("myself:", mySelf, my_id, userDB)
+        //console.log("myself:", mySelf, my_id, userDB)
         let matchingUsers = userDB.filter(user =>
             user.id !== my_id &&
             (user.gender === mySelf.gender ||
@@ -131,12 +131,12 @@ function dayMatcher(id) {
     var daymatches = [];
     //console.log("my days", myVals)
     for (var day in target.days) {
-        console.log('targ', target.days[day])
+        // console.log('targ', target.days[day])
         if (mySelf.days.includes(target.days[day])) {
             daymatches.push(target.days[day]);
         }
     }
-    console.log("matched days", daymatches)
+    //console.log("matched days", daymatches)
     return daymatches
 }
 

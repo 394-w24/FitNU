@@ -1,12 +1,12 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, onValue, ref, update, get} from "firebase/database";
+import { getDatabase, onValue, ref, update, get } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { useState, useEffect, useCallback } from "react";
 
 // for image uploads
-import { getStorage } from 'firebase/storage';
+import { getStorage } from "firebase/storage";
 
 import {
   getAuth,
@@ -54,8 +54,6 @@ export const auth = getAuth(firebase);
 
 // Initialize Realtime Database and get a reference to the service
 export const database = getDatabase(firebase);
-
-
 
 export const signInWithGoogle = () =>
   signInWithPopup(getAuth(firebase), new GoogleAuthProvider());
@@ -115,7 +113,6 @@ export const useDbUpdate = (path) => {
   return [updateData, result];
 };
 
-
 // for populate the edit profile form
 // useDbRead Hook
 export const useDbRead = (path) => {
@@ -125,17 +122,19 @@ export const useDbRead = (path) => {
 
   useEffect(() => {
     const dbRef = ref(database, path);
-    get(dbRef).then((snapshot) => {
-      if (snapshot.exists()) {
-        setData(snapshot.val());
-      } else {
-        setData(null);
-      }
-      setLoading(false);
-    }).catch((error) => {
-      setError(error);
-      setLoading(false);
-    });
+    get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setData(snapshot.val());
+        } else {
+          setData(null);
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, [path]);
 
   return [data, loading, error];

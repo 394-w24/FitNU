@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./ChatContent.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { database, useDbData, useDbUpdate } from "../utilities/firebase";
 import { push, ref } from "firebase/database";
 
@@ -29,6 +29,10 @@ const ChatContent = ({ user }) => {
     const [otherUser, otherUserError] = useDbData(`/users/${getOtherUser(chat, user.uid)}/`);
     const messagesReference = ref(database, `/chats/${chatId}/messages/`);
     const messageViewRef = useRef(null);
+    const navigate = useNavigate();
+
+    if (chat === null)
+        navigate('/Chat');
 
     const handleSendMessage = () => {
         if (message !== "") {
@@ -40,7 +44,7 @@ const ChatContent = ({ user }) => {
 
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            event.preventDefault(); // disable the default property, starting a new line in this case
+            event.preventDefault(); // Disable the default property, starting a new line in this case
             handleSendMessage();
         }
     }
@@ -68,7 +72,7 @@ const ChatContent = ({ user }) => {
             scrollToBottom();
     }, [chat?.messages]);
 
-    return otherUser &&
+    return otherUser && chat &&
         <div className="chat-content">
             <div className="chat-content-header">
                 <img src={otherUser.photoURL} />

@@ -3,5 +3,6 @@
   "editor.formatOnSave": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
+  "liveServer.settings.port": 5501
 }
