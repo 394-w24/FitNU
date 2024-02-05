@@ -3,33 +3,28 @@ import { useDbData } from "../utilities/firebase";
 let userDB = [];
 let userFavs = [];
 
-function generateArrayOfDicts() {
-  // my_id = "0"; //this is for testing purposes
+function generateEventsObject() {
   const [events] = useDbData("/events/");
-  const keyValPairsArr = events && Object.entries(events);
-  console.log(keyValPairsArr);
+  const eventsObject = {};
 
-  if (keyValPairsArr) {
-    const arrayOfDicts = keyValPairsArr
-      .filter(([key, event]) => event && (
-        event.title !== undefined ||
-        event.desc !== undefined ||
-        event.location !== undefined ||
-        event.date !== undefined
-      ))
-      .map(([key, event]) => ({
-        id: key,
-        title: event?.title === undefined ? "" : event.title.toString(),
-        desc: event?.desc === undefined ? "" : event.desc.toString(),
-        location: event?.location === undefined ? "" : event.location.toString(),
-        date: event?.date === undefined ? "" : event.date.toString(),
-      }));
-
-    // Print or use the generated array of dictionaries
-    userDB = arrayOfDicts;
+  if (events) {
+    Object.entries(events).forEach(([key, event]) => {
+      if (event && (event.title !== undefined || event.desc !== undefined || event.location !== undefined || event.date !== undefined)) {
+        // Directly use the key as the property in the eventsObject, storing the event details
+        eventsObject[key] = {
+          title: event.title ?? "", // Using nullish coalescing operator for simplicity
+          desc: event.desc ?? "",
+          location: event.location ?? "",
+          date: event.date ?? "",
+        };
+      }
+    });
   }
 
+  // Now, userDB will directly be an object with event IDs as keys and their details as values
+  userDB = eventsObject;
 }
+
 
 function generateArrayOfFavorites() {
   // my_id = "0"; //this is for testing purposes
@@ -43,7 +38,7 @@ function generateArrayOfFavorites() {
 }
 
 const getEvents = () => {
-  generateArrayOfDicts();
+  generateEventsObject();
   return userDB;
 };
 

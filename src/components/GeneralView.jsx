@@ -8,8 +8,8 @@ import React from "react";
 
 // export default GeneralView;
 const GeneralView = ({ user }) => {
-  console.log("this is the general view now");
-  console.log("user:", user.uid, typeof (user.uid));
+  //console.log("this is the general view now");
+  //console.log("user:", user.uid, typeof (user.uid));
   const events = getEvents();
 
 
@@ -26,14 +26,18 @@ const GeneralView = ({ user }) => {
   if (!favorites) return <h1>no favorites found</h1>
 
 
-  console.log("favorites: ", favorites);
-  const favoritesIdList = favorites.split(",");
+  //console.log("favorites: ", favorites);
+  const favoritesIdList = favorites.split(",").map(id => id.trim());
+  //console.log("Event keys:", Object.keys(events));
+  //console.log("Favorites IDs:", favoritesIdList);
 
 
-  console.log("events: ", events);
+  //console.log("events: ", events);
+
+  //console.log("test: ", events["7EwdbFQJkRUOj6OnnrKrxsPqdBG2"]);
 
   const favoritesList = favoritesIdList.map(id => events[id]);
-  console.log("favorites list objects: ", favoritesList);
+  //console.log("favorites list objects: ", favoritesList);
 
   return (
     <div className="general-view">
