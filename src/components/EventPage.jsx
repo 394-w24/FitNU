@@ -4,7 +4,11 @@ import "./EventPage.css";
 import EventInterested from "./EventInterested.jsx";
 import { useState } from 'react';
 
-const EventPage = ({ events }) => {
+import { useDbUpdate, useDbRead } from '../utilities/firebase';
+
+
+
+const EventPage = ({ events, favorites }) => {
     const imageStyle = {
         width: '300px', // Adjust width as needed
         height: 'auto', // Maintains aspect ratio
@@ -21,8 +25,11 @@ const EventPage = ({ events }) => {
         textAlign: 'center', // Corrected styling for text alignment
     };
 
+
     // for liking/marking events as interested, pulled up state from EventList.jsx
-    const [selected, setSelected] = useState([]);
+
+    const [selected, setSelected] = useState(favorites);
+    console.log("selected: ", selected);
     const toggleSelected = (item) => setSelected(
         selected.includes(item)
             ? selected.filter(x => x !== item)
@@ -31,14 +38,8 @@ const EventPage = ({ events }) => {
 
     return (
         <div className="event-page">
-            <img
-                src="https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/nusports.com/images/2021/10/20/Picture1.png"
-                alt="Description"
-                style={imageStyle}
-            />
-            <h2 style={textStyle}>
-                Let's start Swiping!
-            </h2>
+
+            <EventList events={events} selected={selected} toggleSelected={toggleSelected} />
 
             <button
                 className="new"
@@ -51,7 +52,9 @@ const EventPage = ({ events }) => {
 
             <EventInterested selected={selected} />
 
-            <EventList events={events} selected={selected} toggleSelected={toggleSelected} />
+
+
+
         </div>
     );
 };

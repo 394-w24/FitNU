@@ -15,7 +15,7 @@ const Router = ({ user, firstTimeUserCallBack }) => {
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<PersonalizedView user={user} />} />
       <Route path="/PersonalizedView" element={<PersonalizedView user={user} />} />
-      <Route path="/GeneralView" element={<GeneralView />} />
+      <Route path="/GeneralView" element={<GeneralView user={user} />} />
       <Route path="/Chat" element={<Chat user={user} />} />
       <Route path="/EditProfile" element={<CreateProfile user={user} userData={userData} firstTimeUserCallBack={firstTimeUserCallBack} />} />
       <Route path="/Chat/:chatId" element={<ChatContent user={user} />} />

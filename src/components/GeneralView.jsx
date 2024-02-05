@@ -3,15 +3,41 @@
 import "./GeneralView.css";
 import { getEvents } from "./EventHandler.jsx";
 import EventPage from "./EventPage";
+import { useDbData } from "../utilities/firebase";
+import React from "react";
 
 // export default GeneralView;
-const GeneralView = () => {
+const GeneralView = ({ user }) => {
+  console.log("this is the general view now");
+  console.log("user:", user.uid, typeof (user.uid));
   const events = getEvents();
-  console.log(events);
+
+
+  //${user.uid}
+
+  const [favorites, error] = useDbData(`/favorites/${user.uid}`);
+
+  //
+
+  //console.log(favoritesList);
+
+  if (error) return <h1>error loading favorites</h1>
+  if (error === undefined) return <h1>loading...</h1>
+  if (!favorites) return <h1>no favorites found</h1>
+
+
+  console.log("favorites: ", favorites);
+  const favoritesIdList = favorites.split(",");
+
+
+  console.log("events: ", events);
+
+  const favoritesList = favoritesIdList.map(id => events[id]);
+  console.log("favorites list objects: ", favoritesList);
 
   return (
     <div className="general-view">
-      <EventPage events={events} />
+      <EventPage events={events} favorites={favoritesList} />
     </div>
   );
 };

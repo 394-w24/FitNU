@@ -1,6 +1,7 @@
 import { useDbData } from "../utilities/firebase";
 
 let userDB = [];
+let userFavs = [];
 
 function generateArrayOfDicts() {
   // my_id = "0"; //this is for testing purposes
@@ -27,6 +28,17 @@ function generateArrayOfDicts() {
     // Print or use the generated array of dictionaries
     userDB = arrayOfDicts;
   }
+
+}
+
+function generateArrayOfFavorites() {
+  // my_id = "0"; //this is for testing purposes
+  const [events] = useDbData("/favorites/");
+  const keyValPairsArr = events && Object.entries(events);
+  console.log(keyValPairsArr);
+
+  // Print or use the generated array of dictionaries
+  userDB = arrayOfDicts;
 
 }
 

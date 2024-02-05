@@ -3,7 +3,9 @@ const EventInterested = ({ selected }) => (
         <h4>Interested Events</h4>
         {
             selected.length === 0
-                ? <p>No events have been selected. Click on a heart to show you're interested!</p>
+                ? <div style={{ textAlign: "center", fontSize: "30px" }}>
+                    Welcome to General View! You can find group events here. Click on a heart to show you're interested!
+                </div>
                 : Object.entries(selected).map(([id, event]) => {
                     return <li key={id}>{event.title}</li>
                 })
