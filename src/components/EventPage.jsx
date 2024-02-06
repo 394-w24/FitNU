@@ -12,7 +12,7 @@ const EventPage = ({ events }) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         // marginTop: '-100px'
-        marginTop: '500px'
+        marginTop: '70px'
     };
 
     const navigate = useNavigate();

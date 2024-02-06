@@ -81,6 +81,8 @@ const Chat = ({ user }) => {
         deleteChat(user.uid, otherUserId, chatId);
     };
 
+    // console.log(new Date(Date.now()).toLocaleTimeString());
+
     return (
         <div className="chat-container">
             <h2 className="chat-title">Your Chats</h2>
