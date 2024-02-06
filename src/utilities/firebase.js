@@ -17,16 +17,30 @@ import {
 } from "firebase/auth";
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
+// OLD Firebase
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDX309Qm4ldvUFxWjj4fKhgy3dLUvbIZaQ",
+//   authDomain: "fitnu-305a3.firebaseapp.com",
+//   databaseURL: "https://fitnu-305a3-default-rtdb.firebaseio.com",
+//   projectId: "fitnu-305a3",
+//   storageBucket: "fitnu-305a3.appspot.com",
+//   messagingSenderId: "1078061988604",
+//   appId: "1:1078061988604:web:3a16eedfd6f474837ab579",
+//   measurementId: "G-FV5B15CE6C",
+// };
+
+// NEW Firebase (Note: website isn't up yet because I'm waiting for group meeting for that)
 const firebaseConfig = {
-  apiKey: "AIzaSyDX309Qm4ldvUFxWjj4fKhgy3dLUvbIZaQ",
-  authDomain: "fitnu-305a3.firebaseapp.com",
-  databaseURL: "https://fitnu-305a3-default-rtdb.firebaseio.com",
-  projectId: "fitnu-305a3",
-  storageBucket: "fitnu-305a3.appspot.com",
-  messagingSenderId: "1078061988604",
-  appId: "1:1078061988604:web:3a16eedfd6f474837ab579",
-  measurementId: "G-FV5B15CE6C",
+  apiKey: "AIzaSyApxhsea_WmX8nFSK7zMuut4S27u8Os914",
+  authDomain: "cs394fitnessapp.firebaseapp.com",
+  databaseURL: "https://cs394fitnessapp-default-rtdb.firebaseio.com",
+  projectId: "cs394fitnessapp",
+  storageBucket: "cs394fitnessapp.appspot.com",
+  messagingSenderId: "279762030876",
+  appId: "1:279762030876:web:94a6fa40e0ec130e41aad9",
+  measurementId: "G-X5FV6V3H9T"
 };
 
 // Initialize Firebase
