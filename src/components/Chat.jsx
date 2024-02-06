@@ -33,11 +33,10 @@ const updateData = (path, data) => {
         });
 };
 
-const deleteChat = async (userId, otherUserId, chatId, setChatData) => {
-    setChatData({}); // clear chat data
+const deleteChat = async (userId, otherUserId, chatId) => {
     await remove(ref(database, `/users/${userId}/chat/${otherUserId}`));
     await remove(ref(database, `/users/${otherUserId}/chat/${userId}`));
-    await remove(ref(database, `/chats/${chatId}`));
+    remove(ref(database, `/chats/${chatId}`));
 }
 
 const Chat = ({ user }) => {
@@ -47,6 +46,7 @@ const Chat = ({ user }) => {
 
     useEffect(() => {
         const unsubscribes = []; // Store unsubscribe functions
+        setChatData({});
 
         if (chats) {
             Object.entries(chats).forEach(([otherUserId, chatId]) => {
@@ -78,7 +78,7 @@ const Chat = ({ user }) => {
 
     const handleCloseChat = (event, chatId, otherUserId) => {
         event.stopPropagation();
-        deleteChat(user.uid, otherUserId, chatId, setChatData);
+        deleteChat(user.uid, otherUserId, chatId);
     };
 
     return (
