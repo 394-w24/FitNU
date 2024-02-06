@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import Router from "./Router";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import { getEvents } from "./components/EventHandler";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useAuthState } from "./utilities/firebase";
@@ -17,6 +18,7 @@ const App = () => {
   const [user] = useAuthState();
   const [firstTimeUser, setFirstTimeUser] = useState(false);
 
+  const [events, nextAvailId] = getEvents();
   // for image uploads
   const { profile } = useProfileStore();
 
@@ -35,7 +37,7 @@ const App = () => {
             <>
               <Header user={user} profile={profile} />
               <div className="app-content">
-                <Router user={user} firstTimeUserCallBack={setFirstTimeUser} />
+                <Router user={user} firstTimeUserCallBack={setFirstTimeUser} events={events} nextAvailId={nextAvailId} />
               </div>
               <Navbar />
             </>}

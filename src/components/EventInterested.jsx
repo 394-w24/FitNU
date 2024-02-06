@@ -6,7 +6,7 @@ const EventInterested = ({ selected }) => (
                 ? <div style={{ textAlign: "center", fontSize: "30px" }}>
                     Welcome to General View! You can find group events here. Click on a heart to show you're interested!
                 </div>
-                : Object.entries(selected).map(([id, event]) => {
+                : selected.map(([event, id]) => {
                     return <li key={id}>{event.title}</li>
                 })
         }

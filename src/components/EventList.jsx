@@ -6,7 +6,7 @@ const EventList = ({ events, selected, toggleSelected }) => {
 
     return (
         <div className="event-list">
-            {Object.entries(events).map(([id, event]) => <Event key={id} event={event} selected={selected} toggleSelected={toggleSelected} />)}
+            {Object.entries(events).map(([id, event]) => <Event key={id} event={event} index={id} selected={selected} toggleSelected={toggleSelected} />)}
         </div>
         // <ProductList products={products} selected={selected} toggleSelected={toggleSelected} />
     );
