@@ -3,14 +3,15 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  max-height: 500px;
-  margin-top: 60px;
+  max-height: 520px;
+  margin-top: 80px;
 }
 
 .chat-content-header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 5px;
 }
 
 .chat-content-header::after {

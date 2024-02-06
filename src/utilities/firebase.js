@@ -18,7 +18,6 @@ import {
 
 // Your web app's Firebase configuration
 
-
 // OLD Firebase
 // const firebaseConfig = {
 //   apiKey: "AIzaSyDX309Qm4ldvUFxWjj4fKhgy3dLUvbIZaQ",
@@ -40,7 +39,7 @@ const firebaseConfig = {
   storageBucket: "cs394fitnessapp.appspot.com",
   messagingSenderId: "279762030876",
   appId: "1:279762030876:web:94a6fa40e0ec130e41aad9",
-  measurementId: "G-X5FV6V3H9T"
+  measurementId: "G-X5FV6V3H9T",
 };
 
 // Initialize Firebase
