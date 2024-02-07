@@ -43,34 +43,34 @@ const handleUserLogin = (user, firstTimeUserCallBack) => {
             console.error("Error checking for user:", error);
         });
 
-    get(eventRef)
-        .then((snapshot) => {
-            if (snapshot.exists() && snapshot.hasChild(uid)) {
-                matchableClear()
-                console.log(`User with user_id ${uid} exists in /events.`);
+    // get(eventRef)
+    //     .then((snapshot) => {
+    //         if (snapshot.exists() && snapshot.hasChild(uid)) {
+    //             matchableClear()
+    //             console.log(`User with user_id ${uid} exists in /events.`);
 
-            } else {
-                // new user login
-                firstTimeUserCallBack(true);
-                console.log(`User with user_id ${uid} does not exist in /events.`);
+    //         } else {
+    //             // new user login
+    //             firstTimeUserCallBack(true);
+    //             console.log(`User with user_id ${uid} does not exist in /events.`);
 
-                const eventData = {
-                    name: user.displayName
-                };
-                const newEventRef = ref(database, `events/${uid}`);
-                set(newEventRef, eventData)
-                    .then(() => {
-                        console.log(`User_id ${uid} added to db with no events`);
-                    })
-                    .catch((err) => {
-                        console.error("Error adding user data: ", err);
-                    });
+    //             const eventData = {
+    //                 name: user.displayName
+    //             };
+    //             const newEventRef = ref(database, `events/${uid}`);
+    //             set(newEventRef, eventData)
+    //                 .then(() => {
+    //                     console.log(`User_id ${uid} added to db with no events`);
+    //                 })
+    //                 .catch((err) => {
+    //                     console.error("Error adding user data: ", err);
+    //                 });
 
-            }
-        })
-        .catch((error) => {
-            console.error("Error checking for user in events:", error);
-        });
+    //         }
+    //     })
+    //     .catch((error) => {
+    //         console.error("Error checking for user in events:", error);
+    //     });
 };
 
 

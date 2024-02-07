@@ -2,6 +2,7 @@ import { useDbUpdate } from '../utilities/firebase';
 import { useFormData } from '../utilities/useFormData';
 import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { useCallback } from 'react';
 import "./CreateEvent.css";
 
 const validateUserData = (key, val) => {
@@ -34,41 +35,82 @@ const ButtonBar = ({ message, disabled }) => {
     );
 };
 
-const CreateEvent = ({ user }) => {
+const CreateEvent = ({ user, events, nextId }) => {
     const navigate = useNavigate();
-    //console.log('User ID:', user.uid);
-    //const [updateResult, setUpdateResult] = useState(null);
-    const userData = { id: user.uid, /* other needed fields */ };
+    const [update, updateResult] = useDbUpdate();
+    const [formData, setFormData] = useState({
+        title: '',
+        desc: '',
+        location: '',
+        date: '' // Initialize with empty fields or defaults
+    });
+    const [formErrors, setFormErrors] = useState({}); // To keep track of form errors
 
-    const [update, result] = useDbUpdate(`/events/${userData.id}`);
-    const [state, change] = useFormData(validateUserData, userData);
+    console.log("nextid: ", nextId);
 
-    const submit = (evt) => {
+    const handleInputChange = useCallback((event) => {
+        const { name, value } = event.target;
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            [name]: value
+        }));
+        // Reset individual field error
+        setFormErrors(prevFormErrors => ({
+            ...prevFormErrors,
+            [name]: validateUserData(name, value)
+        }));
+    }, []);
+
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
-        if (!state.errors) {
-            const { id, ...updateData } = state.values;
-            update(updateData); // Call update but do not set result immediately
+        // Perform validation
+        const newFormErrors = {};
+        Object.keys(formData).forEach(key => {
+            const error = validateUserData(key, formData[key]);
+            if (error) {
+                newFormErrors[key] = error;
+            }
+        });
+
+        if (Object.keys(newFormErrors).length === 0) {
+            // If there are no errors, proceed to add the event
+            const newEventKey = nextId.toString();
+            const newEvents = {
+                ...events,
+                [newEventKey]: { ...formData, id: user.uid } // Add new event data
+            };
+
+            const path = `/events/`;
+            const value = newEvents;
+
+            // Use the update function to update the entire events object
+            update(path, value)
+                .then(() => {
+                    navigate("/GeneralView")
+                    console.log("Events updated successfully") // Navigate to the new event's page
+                })
+                .catch((error) => {
+                    console.error("Error creating event:", error);
+                });
+        } else {
+            // Update state with the validation errors
+            setFormErrors(newFormErrors);
         }
     };
 
-    useEffect(() => {
-        if (result && !result.error) { // Check if result indicates success
-            navigate('/GeneralView');
-            console.log("Successfully updated and navigated");
-        }
-    }, [result, navigate]);
+
 
 
     //console.log('Rendering CreateEvent', state, result);
 
     return (
         <div className='form-container' style={location.pathname === "/EditEvent" ? { overflow: "auto" } : { overflow: "auto" }}>
-            <form onSubmit={submit} noValidate className={state.errors ? 'was-validated' : null}>
-                <InputField name="title" text="Title of Event" state={state} change={change} />
-                <InputField name="desc" text="Event Description" state={state} change={change} />
-                <InputField name="location" text="Location" state={state} change={change} />
-                <InputField name="date" text="Date" state={state} change={change} />
-                <ButtonBar message={result?.message} />
+            <form onSubmit={handleSubmit} noValidate>
+                <InputField name="title" text="Title of Event" state={formData} change={handleInputChange} />
+                <InputField name="desc" text="Event Description" state={formData} change={handleInputChange} />
+                <InputField name="location" text="Location" state={formData} change={handleInputChange} />
+                <InputField name="date" text="Date" state={formData} change={handleInputChange} />
+                <ButtonBar message={updateResult?.message || ''} />
             </form>
         </div>
     );

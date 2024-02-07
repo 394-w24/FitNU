@@ -1,14 +1,20 @@
-const EventInterested = ({ selected }) => (
-    <div className="event-interested">
-        <h4>Interested Events</h4>
-        {
-            selected.length === 0
-                ? <p>No events have been selected. Click on a heart to show you're interested!</p>
-                : Object.entries(selected).map(([id, event]) => {
-                    return <li key={id}>{event.title}</li>
-                })
-        }
-    </div>
-);
+const EventInterested = ({ selected }) => {
+    console.log("in event interested: ", selected);
+
+    return (
+        <div className="event-interested">
+            <h4>Interested Events</h4>
+            {
+                selected.length === 0
+                    ? <div style={{ textAlign: "center", fontSize: "15px" }}>
+                        No interested events!
+                    </div>
+                    : selected.map(([event, id]) => {
+                        return <li key={id}>{event.title}</li>
+                    })
+            }
+        </div>
+    );
+};
 
 export default EventInterested;

@@ -8,18 +8,19 @@ import CreateProfile from "./components/CreateProfile";
 import { useDbData } from "./utilities/firebase";
 import CreateEvent from "./components/CreateEvent";
 
-const Router = ({ user, firstTimeUserCallBack }) => {
+const Router = ({ user, firstTimeUserCallBack, events, nextAvailId }) => {
   const [userData, userDataError] = useDbData(`/users/${user.uid}`);
+  console.log("nextavailid: ", nextAvailId);
   return (
     <Routes>
       <Route path="*" element={<PageNotFound />} />
       <Route path="/" element={<PersonalizedView user={user} />} />
       <Route path="/PersonalizedView" element={<PersonalizedView user={user} />} />
-      <Route path="/GeneralView" element={<GeneralView />} />
+      <Route path="/GeneralView" element={<GeneralView user={user} events={events} />} />
       <Route path="/Chat" element={<Chat user={user} />} />
       <Route path="/EditProfile" element={<CreateProfile user={user} userData={userData} firstTimeUserCallBack={firstTimeUserCallBack} />} />
       <Route path="/Chat/:chatId" element={<ChatContent user={user} />} />
-      <Route path="/EditEvent" element={<CreateEvent user={user} />} />
+      <Route path="/EditEvent" element={<CreateEvent user={user} events={events} nextId={nextAvailId} />} />
     </Routes>
   );
 };
