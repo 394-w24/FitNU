@@ -52,10 +52,10 @@ const getDayColor = (day, daymatches) => {
 
 const Card = ({ profile }) => (
 
-    <div className="card m-1 p-2">
+    <div className="card m-1 p-2" style={{ maxHeight: "500px", display: "flex", alignItems: "center" }}>
         {/* for image uploads */}
 
-        {profile.photoURL && <img src={profile.photoURL} className="card-img-top" alt={profile.name} />}
+        {profile.photoURL && <img src={profile.photoURL} className="card-img-top" alt={profile.name} style={{ maxHeight: "130px", maxWidth: "130px" }} />}
 
         <div className="card-body">
             <h5 className="card-title">{getBetterName(profile)}</h5>

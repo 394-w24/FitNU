@@ -53,7 +53,6 @@ const Chat = ({ user }) => {
                 const chatRef = ref(database, `/chats/${chatId}/mrm`);
 
                 const unsubscribe = onValue(chatRef, snapshot => {
-                    console.log(snapshot.val())
                     setChatData(prevChatData => ({
                         ...prevChatData,
                         [chatId]: { otherUserId: otherUserId, ...snapshot.val() }
