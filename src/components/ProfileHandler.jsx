@@ -163,7 +163,7 @@ function showEmpty() {
     // the following is a temp solution more will need to be done!!!
 
     useProfileStore.setState({ profile: null });
-    alert("You've reached the end of the personalized feed!")
+    // alert("You've reached the end of the personalized feed!")
 
 
 }

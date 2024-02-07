@@ -57,7 +57,7 @@ const Cross = ({ user }) => {
         // Initialize chat data structure
         const initialChatData = {
           mrm: {
-            textContent: "I do not want to work out with you",
+            textContent: "This user has declined to match with you",
             timestamp: timestamp,
             senderId: myUid,
             read: false
@@ -73,7 +73,7 @@ const Cross = ({ user }) => {
 
         // Initialize the first message in the Messages subcollection
         const firstMessage = {
-          textContent: "I do not want to work out with you",
+          textContent: "This user has declined to match with you",
           timestamp: timestamp,
           senderId: myUid,
         };
