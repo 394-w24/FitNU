@@ -23,16 +23,25 @@ const GeneralView = ({ user, events }) => {
 
   if (error) return <h1>error loading favorites</h1>
   if (error === undefined) return <h1>loading...</h1>
-  if (!favorites) return <h1>no favorites found</h1>
+  if (!favorites) {
+    return (
+      <div className="general-view">
+        <EventPage events={events} favorites={[]} user={user} />
+      </div>
+    );
+  }
 
-
-  //console.log("favorites: ", favorites);
-
-  //console.log("favorites list objects: ", favoritesList);
+  // Assuming each event in `events` has a unique `id` property
+  console.log("Favorites before split:", favorites, typeof favorites);
+  const favoritesString = favorites || '';
+  const favoritesList = favoritesString.split(",").map(id => id.trim());
+  const favoritesEvents = favoritesList.map(id => [events[id], id]);
+  console.log("Favorites IDs:", favoritesList);
+  console.log("Favorite Events: ", favoritesEvents);
 
   return (
     <div className="general-view">
-      <EventPage events={events} favorites={favorites} user={user} />
+      <EventPage events={events} favorites={favoritesEvents} user={user} />
     </div>
   );
 };

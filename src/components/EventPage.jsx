@@ -10,18 +10,16 @@ import { useEffect } from "react";
 
 
 const EventPage = ({ events, favorites, user }) => {
-    // Assuming each event in `events` has a unique `id` property
-    console.log("Favorites before split:", favorites, typeof favorites);
-    const favoritesString = favorites || '';
-    const favoritesList = favoritesString.split(",").map(id => id.trim());
-    const favoritesEvents = favoritesList.map(id => [events[id], id]);
 
     console.log("Events: ", events);
     console.log("Event keys:", Object.keys(events));
-    console.log("Favorites IDs:", favoritesList);
-    console.log("Favorite Events: ", favoritesEvents);
 
-    const [selected, setSelected] = useState(favoritesEvents);
+    console.log("in event page favorites: ", favorites);
+
+    const [selected, setSelected] = useState(favorites);
+    // useState initial value setting only happens on FIRST RENDER! must use useEffect for every render to work
+    useEffect(() => { setSelected(favorites) }, [favorites])
+
     const [updateFavorites, updateResult] = useDbUpdate();
 
     const toggleSelected = (item, index) => {
