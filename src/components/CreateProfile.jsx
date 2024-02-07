@@ -384,7 +384,7 @@ function CreateProfile({ user, userData, firstTimeUserCallBack }) {
 
 
     return (
-        <div className="form-and-image-container" style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "600px" } : {
+        <div className="form-and-image-container" style={location.pathname === "/EditProfile" ? { overflow: "auto", marginTop: "100px" } : {
             overflow: "auto"
         }}>
 
