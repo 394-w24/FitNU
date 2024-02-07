@@ -33,7 +33,7 @@ const Navbar = () => {
         color={isActive("/GeneralView") ? "success" : "primary"}
         onClick={() => navigate("/GeneralView")}
       >
-        General
+        Events
       </Button>
       <Button
         variant="contained"
@@ -42,7 +42,7 @@ const Navbar = () => {
         }
         onClick={() => navigate("/PersonalizedView")}
       >
-        Personalized
+        My Matching
       </Button>
       <Button
         variant="contained"
